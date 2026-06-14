@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Documentation — BurgerLab Premium Burger &amp; Restaurant HTML Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Alissio">
+<meta name="description" content="Complete documentation for the BurgerLab HTML template — setup, file structure, theming, headers/footers, pickers, Web3Forms and deployment.">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body class="docs-body">
+
+<a class="bl-skip-link" href="#introduction">Skip to content</a>
+
+<!-- ===== Top bar ===== -->
+<header class="docs-topbar">
+  <div class="bl-container bl-container--wide">
+    <div class="docs-topbar__inner">
+      <a href="index.html" class="docs-logo">Burger<span>Lab</span><small>Docs</small></a>
+      <div class="docs-topbar__actions">
+        <a href="../landing/index.html" class="bl-btn bl-btn--ghost bl-btn--sm docs-btn">Live Demo</a>
+        <a href="https://themeforest.net/user/alissio" class="bl-btn bl-btn--primary bl-btn--sm docs-btn" target="_blank" rel="noopener">Buy Now</a>
+        <button class="docs-menu-toggle" type="button" aria-label="Toggle documentation menu" aria-controls="docs-sidebar" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          Menu
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="bl-container bl-container--wide">
+  <div class="docs-layout">
+
+    <!-- ===== Sidebar TOC ===== -->
+    <div class="docs-sidebar__overlay" aria-hidden="true"></div>
+    <aside class="docs-sidebar" id="docs-sidebar" aria-label="Documentation navigation">
+      <nav class="docs-nav-group">
+        <p class="docs-nav-group__title">Getting started</p>
+        <ul class="docs-nav">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#whats-included">What's included</a></li>
+          <li><a href="#quick-start">Quick start</a></li>
+          <li><a href="#file-structure">File structure</a></li>
+        </ul>
+      </nav>
+      <nav class="docs-nav-group">
+        <p class="docs-nav-group__title">Customization</p>
+        <ul class="docs-nav">
+          <li><a href="#scss">SCSS workflow</a></li>
+          <li><a href="#colors">Colors &amp; theme</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#branding">Logo &amp; favicon</a></li>
+        </ul>
+      </nav>
+      <nav class="docs-nav-group">
+        <p class="docs-nav-group__title">Layouts &amp; pages</p>
+        <ul class="docs-nav">
+          <li><a href="#home-variants">Home variants</a></li>
+          <li><a href="#headers">Header layouts</a></li>
+          <li><a href="#footers">Footer layouts</a></li>
+          <li><a href="#pages">Inner pages</a></li>
+        </ul>
+      </nav>
+      <nav class="docs-nav-group">
+        <p class="docs-nav-group__title">Features</p>
+        <ul class="docs-nav">
+          <li><a href="#components">Components</a></li>
+          <li><a href="#pickers">Date &amp; time pickers</a></li>
+          <li><a href="#forms">Forms &amp; Web3Forms</a></li>
+          <li><a href="#sliders">Sliders &amp; lightbox</a></li>
+          <li><a href="#animations">Animations</a></li>
+          <li><a href="#rtl">RTL support</a></li>
+        </ul>
+      </nav>
+      <nav class="docs-nav-group">
+        <p class="docs-nav-group__title">Going live</p>
+        <ul class="docs-nav">
+          <li><a href="#deployment">Deployment</a></li>
+          <li><a href="#browser-support">Browser support</a></li>
+          <li><a href="#credits">Credits</a></li>
+          <li><a href="#support">Support &amp; updates</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ===== Content ===== -->
+    <main class="docs-content">
+
+      <div class="docs-hero">
+        <p class="docs-hero__eyebrow">BurgerLab Documentation</p>
+        <h1 class="docs-hero__title">Everything you need to ship.</h1>
+        <p class="docs-hero__lede">Thanks for purchasing BurgerLab — a premium burger &amp; restaurant HTML template. This guide covers setup, customization and every feature, with copy-paste snippets throughout.</p>
+      </div>
+
+      <!-- Introduction -->
+      <section class="docs-section" id="introduction" style="border-top:0;margin-top:clamp(8px,2vw,16px)">
+        <h2 class="docs-section__title">Introduction</h2>
+        <p>BurgerLab is a static HTML5/CSS3/JavaScript template — no build server or database required. It ships with <strong>6 homepages</strong>, <strong>10 header</strong> and <strong>10 footer</strong> layouts, <strong>30+ inner pages</strong>, a complete SCSS design-token system, GSAP-powered motion, custom date &amp; time pickers, and serverless forms via Web3Forms.</p>
+        <p>You can use it exactly as-is (just edit the HTML and images), or recompile the SCSS for deeper theming. Both workflows are documented below.</p>
+        <div class="docs-callout">
+          <span class="docs-callout__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+          <p>New here? Jump to <a href="#quick-start">Quick start</a> to preview the template locally in under a minute.</p>
+        </div>
+      </section>
+
+      <!-- What's included -->
+      <section class="docs-section" id="whats-included">
+        <h2 class="docs-section__title">What's included</h2>
+        <ul>
+          <li><strong>6 home variants</strong> — Cinematic, Slider, App, Split, Statement and Bento (<code>index.html</code> … <code>index-6.html</code>).</li>
+          <li><strong>10 header layouts</strong> and <strong>10 footer layouts</strong>, each a single modifier class (showcased in <code>headers.html</code> / <code>footers.html</code>).</li>
+          <li><strong>Inner pages</strong> — menu, about, gallery, journal + article, contact, reservation, single product, privacy policy and terms.</li>
+          <li><strong>Landing/demo page</strong> (<code>landing/</code>) and this <strong>documentation</strong>.</li>
+          <li><strong>Source SCSS</strong> with a full design-token system, plus the compiled <code>style.css</code>.</li>
+          <li><strong>Vendor libraries</strong> — GSAP + ScrollTrigger, Swiper, Fancybox (self-hosted in <code>assets/js/vendors/</code>).</li>
+          <li><strong>Custom date &amp; time pickers</strong> and <strong>Web3Forms</strong> integration — no jQuery, no backend.</li>
+        </ul>
+      </section>
+
+      <!-- Quick start -->
+      <section class="docs-section" id="quick-start">
+        <h2 class="docs-section__title">Quick start</h2>
+        <p>The template is plain HTML — open any <code>.html</code> file in a browser to preview it. Because some assets load over <code>fetch</code>/relative paths, it's best to run a tiny local server rather than opening files directly:</p>
+        <pre><code># From the template root, pick any one:
+python3 -m http.server 8000        # Python 3
+npx serve .                        # Node (npx)
+php -S localhost:8000              # PHP</code></pre>
+        <p>Then visit <code>http://localhost:8000/</code> for the home page, or <code>/landing/</code> for the demo overview.</p>
+        <div class="docs-callout">
+          <span class="docs-callout__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></span>
+          <p>You only need Node/Sass if you want to <strong>recompile the SCSS</strong>. To edit content and colors inline, plain HTML/CSS edits are enough.</p>
+        </div>
+      </section>
+
+      <!-- File structure -->
+      <section class="docs-section" id="file-structure">
+        <h2 class="docs-section__title">File structure</h2>
+        <pre><code>burgerlab-html/
+├── index.html              Home 01 — Cinematic
+├── index-2.html … index-6.html   Home 02–06
+├── headers.html            10 header layouts showcase
+├── footers.html            10 footer layouts showcase
+├── menu.html  about.html  gallery.html
+├── blog.html  blog-single.html  contact.html
+├── reservation.html  single-product.html
+├── privacy-policy.html  terms.html
+├── landing/                Demo / preview page
+├── documentation/          This documentation
+└── assets/
+    ├── css/style.css        Compiled CSS — do NOT edit by hand
+    ├── scss/                Source SCSS — edit these
+    │   ├── _tokens.scss     Colors, fonts, radii, breakpoints
+    │   ├── _base, _layout, _nav, _hero, _components …
+    │   ├── _variants.scss   10 headers + 10 footers
+    │   ├── _pickers.scss     Calendar + clock pickers
+    │   └── style.scss        Imports all partials
+    ├── js/main.js           Template scripts (vanilla)
+    ├── js/vendors/          GSAP, Swiper, Fancybox …
+    └── images/              Photography &amp; favicon</code></pre>
+      </section>
+
+      <!-- SCSS workflow -->
+      <section class="docs-section" id="scss">
+        <h2 class="docs-section__title">SCSS workflow</h2>
+        <p>Styles are authored in <code>assets/scss/</code> and compiled to <code>assets/css/style.css</code>. Edit the partials, then compile with the Dart Sass CLI (no install needed via <code>npx</code>):</p>
+        <pre><code># One-off build
+npx sass assets/scss/style.scss assets/css/style.css --style=expanded --no-source-map
+
+# Watch &amp; rebuild on save
+npx sass --watch assets/scss/style.scss assets/css/style.css --no-source-map</code></pre>
+        <div class="docs-callout">
+          <span class="docs-callout__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+          <p>Never edit <code>style.css</code> directly — it's generated and your changes will be overwritten on the next compile.</p>
+        </div>
+      </section>
+
+      <!-- Colors -->
+      <section class="docs-section" id="colors">
+        <h2 class="docs-section__title">Colors &amp; theme</h2>
+        <p>The palette lives in <code>assets/scss/_tokens.scss</code> as Sass variables, and is also exposed as CSS custom properties on <code>:root</code> so you can override colors at runtime. Edit the variable, recompile, and the whole template updates.</p>
+        <table class="docs-table">
+          <thead><tr><th>Token</th><th>Value</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td><span class="docs-swatch" style="background:#10100F"></span><code>--bl-bg</code></td><td>#10100F</td><td>Page background</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#181816"></span><code>--bl-bg-2</code></td><td>#181816</td><td>Alternate section bg</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#20201D"></span><code>--bl-surface</code></td><td>#20201D</td><td>Cards / surfaces</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#2A2924"></span><code>--bl-surface-2</code></td><td>#2A2924</td><td>Raised surfaces</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#F8F4EA"></span><code>--bl-text</code></td><td>#F8F4EA</td><td>Primary text</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#A9A193"></span><code>--bl-muted</code></td><td>#A9A193</td><td>Muted text</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#F5B31A"></span><code>--bl-accent</code></td><td>#F5B31A</td><td>Brand amber (CTAs)</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#FF6A2A"></span><code>--bl-accent-2</code></td><td>#FF6A2A</td><td>Flame orange</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#4CD36F"></span><code>--bl-green</code></td><td>#4CD36F</td><td>Success / positive</td></tr>
+            <tr><td><span class="docs-swatch" style="background:#35332D"></span><code>--bl-line</code></td><td>#35332D</td><td>Borders / dividers</td></tr>
+          </tbody>
+        </table>
+        <h3>Option A — recompile (recommended)</h3>
+        <pre><code>// assets/scss/_tokens.scss
+$bl-accent: #F5B31A;   // change to your brand color
+// then: npx sass assets/scss/style.scss assets/css/style.css --no-source-map</code></pre>
+        <h3>Option B — runtime override (no build)</h3>
+        <p>Add a small stylesheet or inline block after <code>style.css</code> and override the custom properties:</p>
+        <pre><code>&lt;style&gt;
+  :root { --bl-accent: #E23744; --bl-accent-2: #FF8A3D; }
+&lt;/style&gt;</code></pre>
+      </section>
+
+      <!-- Typography -->
+      <section class="docs-section" id="typography">
+        <h2 class="docs-section__title">Typography</h2>
+        <p>Three Google Fonts are used: <strong>Space Grotesk</strong> (headings), <strong>Inter</strong> (body) and <strong>JetBrains Mono</strong> (labels/eyebrows). They're loaded via the <code>&lt;link&gt;</code> in each page's <code>&lt;head&gt;</code> and mapped to tokens in <code>_tokens.scss</code>:</p>
+        <pre><code>$bl-font:      "Inter", system-ui, sans-serif;       // body
+$bl-font-head: "Space Grotesk", system-ui, sans-serif; // headings
+$bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
+        <p>To change a font: update the Google Fonts <code>&lt;link&gt;</code> in the <code>&lt;head&gt;</code> of each page (or your includes), then change the matching variable and recompile.</p>
+      </section>
+
+      <!-- Branding -->
+      <section class="docs-section" id="branding">
+        <h2 class="docs-section__title">Logo &amp; favicon</h2>
+        <p>The logo is text-based for crispness at any size — edit it directly in the header markup:</p>
+        <pre><code>&lt;a href="index.html" class="bl-logo"&gt;Burger&lt;span&gt;Lab&lt;/span&gt;&lt;/a&gt;</code></pre>
+        <p>To use an image logo, replace the inner text with an <code>&lt;img&gt;</code>. The favicon lives at <code>assets/images/favicon.png</code> and is referenced in each page's <code>&lt;head&gt;</code> — swap the file (keep the name) or update the path.</p>
+      </section>
+
+      <!-- Home variants -->
+      <section class="docs-section" id="home-variants">
+        <h2 class="docs-section__title">Home variants</h2>
+        <p>Each homepage is a standalone file with a genuinely different hero and section flow:</p>
+        <table class="docs-table">
+          <thead><tr><th>File</th><th>Name</th><th>Best for</th></tr></thead>
+          <tbody>
+            <tr><td><code>index.html</code></td><td>Cinematic</td><td>Scroll-scrubbed video hero (flagship)</td></tr>
+            <tr><td><code>index-2.html</code></td><td>Slider</td><td>Image carousel hero</td></tr>
+            <tr><td><code>index-3.html</code></td><td>App</td><td>Delivery / ordering-first</td></tr>
+            <tr><td><code>index-4.html</code></td><td>Split</td><td>Editorial split-screen</td></tr>
+            <tr><td><code>index-5.html</code></td><td>Statement</td><td>Big typographic brand</td></tr>
+            <tr><td><code>index-6.html</code></td><td>Bento</td><td>Modular grid layout</td></tr>
+          </tbody>
+        </table>
+        <p>To make a variant your homepage, set it as <code>index.html</code> (rename your chosen file, or point your server's default document at it). The floating switcher in the corner of each demo lets you jump between variants — remove the <code>.bl-home-switcher</code> block from the markup before going live.</p>
+      </section>
+
+      <!-- Headers -->
+      <section class="docs-section" id="headers">
+        <h2 class="docs-section__title">Header layouts</h2>
+        <p>All headers share one markup convention — switch layout by changing the modifier class on <code>&lt;header class="bl-header …"&gt;</code>. See every variant live in <a href="../headers.html">headers.html</a>.</p>
+        <pre><code>&lt;!-- Default solid bar --&gt;
+&lt;header class="bl-header bl-header--solid"&gt; … &lt;/header&gt;
+
+&lt;!-- Floating pill nav --&gt;
+&lt;header class="bl-header bl-header--floating"&gt; … &lt;/header&gt;</code></pre>
+        <table class="docs-table">
+          <thead><tr><th>Class</th><th>Layout</th></tr></thead>
+          <tbody>
+            <tr><td><code>.bl-header</code></td><td>Transparent overlay (default home)</td></tr>
+            <tr><td><code>.bl-header--solid</code></td><td>Solid bar (inner pages)</td></tr>
+            <tr><td><code>.bl-nav--centered</code></td><td>Centered logo, split menu</td></tr>
+            <tr><td><code>.bl-header--topbar</code></td><td>Utility topbar above nav</td></tr>
+            <tr><td><code>.bl-header--floating</code></td><td>Floating frosted pill</td></tr>
+            <tr><td><code>.bl-header--boxed</code></td><td>Boxed nav items</td></tr>
+            <tr><td><code>.bl-header--icons</code></td><td>Icon nav + cart</td></tr>
+            <tr><td><code>.bl-header--tabs</code></td><td>Underline tab bar</td></tr>
+            <tr><td><code>.bl-header--sidebar</code></td><td>Vertical sidebar nav</td></tr>
+            <tr><td><code>.bl-header--search</code></td><td>Inline search + order</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Footers -->
+      <section class="docs-section" id="footers">
+        <h2 class="docs-section__title">Footer layouts</h2>
+        <p>Same idea for footers — one modifier class on <code>&lt;footer class="bl-footer …"&gt;</code>. Browse them in <a href="../footers.html">footers.html</a>.</p>
+        <table class="docs-table">
+          <thead><tr><th>Class</th><th>Layout</th></tr></thead>
+          <tbody>
+            <tr><td><code>.bl-footer</code></td><td>Mega footer (4 columns)</td></tr>
+            <tr><td><code>.bl-footer--newsletter</code></td><td>Newsletter signup band</td></tr>
+            <tr><td><code>.bl-footer--minimal</code></td><td>Minimal centered</td></tr>
+            <tr><td><code>.bl-footer--cta</code></td><td>CTA banner</td></tr>
+            <tr><td><code>.bl-footer--map</code></td><td>Embedded map</td></tr>
+            <tr><td><code>.bl-footer--statement</code></td><td>Big wordmark</td></tr>
+            <tr><td><code>.bl-footer--social</code></td><td>Social + app badges</td></tr>
+            <tr><td><code>.bl-footer--locations</code></td><td>Location cards</td></tr>
+            <tr><td><code>.bl-footer--ticker</code></td><td>Scrolling marquee</td></tr>
+            <tr><td><code>.bl-footer--simple</code></td><td>Two-column simple</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Pages -->
+      <section class="docs-section" id="pages">
+        <h2 class="docs-section__title">Inner pages</h2>
+        <p>Every inner page reuses the same header, footer and component classes, so edits are consistent. Available pages: <code>menu.html</code>, <code>about.html</code>, <code>gallery.html</code>, <code>blog.html</code>, <code>blog-single.html</code>, <code>contact.html</code>, <code>reservation.html</code>, <code>single-product.html</code>, <code>privacy-policy.html</code> and <code>terms.html</code>. Duplicate any file to add more pages — the markup is self-documenting with section comments.</p>
+      </section>
+
+      <!-- Components -->
+      <section class="docs-section" id="components">
+        <h2 class="docs-section__title">Components</h2>
+        <p>Reusable UI lives in <code>_buttons.scss</code> and <code>_components.scss</code>. The most-used pieces:</p>
+        <pre><code>&lt;!-- Buttons --&gt;
+&lt;a class="bl-btn bl-btn--primary"&gt;Order now&lt;/a&gt;
+&lt;a class="bl-btn bl-btn--ghost bl-btn--sm"&gt;View menu&lt;/a&gt;
+&lt;a class="bl-btn bl-btn--flame bl-btn--lg"&gt;Reserve&lt;/a&gt;
+
+&lt;!-- Section heading --&gt;
+&lt;div class="bl-section-head bl-section-head--center"&gt;
+  &lt;span class="bl-eyebrow"&gt;The menu&lt;/span&gt;
+  &lt;h2 class="bl-section-title"&gt;Signature &lt;em&gt;burgers&lt;/em&gt;&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+        <p>Button modifiers: <code>--primary</code>, <code>--flame</code>, <code>--ghost</code>, <code>--light</code>, plus sizes <code>--sm</code> / <code>--lg</code> and <code>--block</code>. Layout helpers include <code>.bl-container(--wide/--narrow)</code>, <code>.bl-section(--bg2/--surface)</code> and <code>.bl-grid--2/3/4</code>.</p>
+      </section>
+
+      <!-- Pickers -->
+      <section class="docs-section" id="pickers">
+        <h2 class="docs-section__title">Date &amp; time pickers</h2>
+        <p>BurgerLab ships brand-themed calendar and analog-clock pickers (vanilla JS, no plugins) — see them on <a href="../reservation.html">reservation.html</a>. Wrap a text input in a <code>data-datepicker</code> or <code>data-timepicker</code> element:</p>
+        <pre><code>&lt;div class="bl-picker" data-datepicker&gt;
+  &lt;input class="bl-input" type="text" name="date" placeholder="Select a date" required&gt;
+  &lt;span class="bl-picker__icon"&gt;…calendar svg…&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        <p>The script (in <code>main.js</code>) shows a human value in the field (e.g. <code>Jun 14, 2026</code> / <code>7:30 PM</code>) and stores a machine value in <code>input.dataset.value</code> (ISO date / 24-hour time) for reliable parsing. Past dates are disabled automatically.</p>
+      </section>
+
+      <!-- Forms -->
+      <section class="docs-section" id="forms">
+        <h2 class="docs-section__title">Forms &amp; Web3Forms</h2>
+        <p>The contact and reservation forms submit through <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a> — serverless, no backend. To receive submissions, create a free access key and replace the placeholder in each form:</p>
+        <pre><code>&lt;form action="https://api.web3forms.com/submit" method="POST" data-form&gt;
+  &lt;input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE"&gt;
+  …
+&lt;/form&gt;</code></pre>
+        <div class="docs-callout">
+          <span class="docs-callout__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+          <p>Replace the access key in <strong>both</strong> <code>contact.html</code> and <code>reservation.html</code>. The form handler in <code>main.js</code> manages validation and success/error states for you.</p>
+        </div>
+      </section>
+
+      <!-- Sliders -->
+      <section class="docs-section" id="sliders">
+        <h2 class="docs-section__title">Sliders &amp; lightbox</h2>
+        <p><strong>Swiper</strong> powers the home-v2 hero carousel and the reviews slider; <strong>Fancybox</strong> powers the gallery lightbox. Both are self-hosted in <code>assets/js/vendors/</code> and initialized in <code>main.js</code> (<code>initHeroSlider</code>, <code>initReviewsSlider</code>, <code>initFancybox</code>). Add a lightbox to any image with:</p>
+        <pre><code>&lt;a data-fancybox="gallery" href="assets/images/your-photo.jpg"&gt;
+  &lt;img src="assets/images/your-photo.jpg" alt="…"&gt;
+&lt;/a&gt;</code></pre>
+      </section>
+
+      <!-- Animations -->
+      <section class="docs-section" id="animations">
+        <h2 class="docs-section__title">Animations</h2>
+        <p>Scroll animations use <strong>GSAP + ScrollTrigger</strong>. Add reveal behavior with utility classes — no JS required:</p>
+        <pre><code>&lt;div class="bl-reveal-up"&gt;Slides up on scroll&lt;/div&gt;
+&lt;div class="bl-reveal-fade"&gt;Fades in on scroll&lt;/div&gt;
+&lt;div data-stagger&gt;
+  &lt;div&gt;Child 1&lt;/div&gt;&lt;div&gt;Child 2&lt;/div&gt; &lt;!-- staggered --&gt;
+&lt;/div&gt;</code></pre>
+        <p>All motion respects <code>prefers-reduced-motion</code> — when a visitor opts out, content renders statically. If GSAP is missing, the page still displays correctly (graceful fallback).</p>
+      </section>
+
+      <!-- RTL -->
+      <section class="docs-section" id="rtl">
+        <h2 class="docs-section__title">RTL support</h2>
+        <p>A right-to-left stylesheet (<code>_rtl.scss</code>) is compiled into the main CSS. Enable it by setting the document direction:</p>
+        <pre><code>&lt;html lang="ar" dir="rtl"&gt;</code></pre>
+        <p>Layout, spacing and nav mirror automatically for Arabic, Hebrew and Persian content.</p>
+      </section>
+
+      <!-- Deployment -->
+      <section class="docs-section" id="deployment">
+        <h2 class="docs-section__title">Deployment</h2>
+        <p>Because the template is fully static, deployment is just uploading the files. It works on any static host — Netlify, Vercel, Cloudflare Pages, GitHub Pages, or classic shared hosting via FTP.</p>
+        <ul>
+          <li>Upload the entire template folder (keep the <code>assets/</code> structure intact — paths are relative).</li>
+          <li>Set <code>index.html</code> as the default document.</li>
+          <li>Optionally remove <code>documentation/</code> and <code>landing/</code> from your production upload.</li>
+          <li>Recompile <code>style.css</code> first if you changed any SCSS.</li>
+        </ul>
+      </section>
+
+      <!-- Browser support -->
+      <section class="docs-section" id="browser-support">
+        <h2 class="docs-section__title">Browser support</h2>
+        <p>Tested on the latest versions of Chrome, Edge, Firefox and Safari (desktop &amp; mobile), and responsive from 320 px to 1920 px. The template uses modern CSS (grid, custom properties, <code>clamp()</code>) supported by all current evergreen browsers.</p>
+      </section>
+
+      <!-- Credits -->
+      <section class="docs-section" id="credits">
+        <h2 class="docs-section__title">Credits</h2>
+        <ul>
+          <li><strong>Fonts:</strong> Space Grotesk, Inter, JetBrains Mono — Google Fonts (Open Font License).</li>
+          <li><strong>GSAP + ScrollTrigger</strong> — greensock.com (standard "no charge" license for this use).</li>
+          <li><strong>Swiper</strong> — swiperjs.com (MIT).</li>
+          <li><strong>Fancybox</strong> — fancyapps.com (check license for commercial use).</li>
+          <li><strong>Map embed:</strong> OpenStreetMap (no API key required).</li>
+        </ul>
+        <div class="docs-callout">
+          <span class="docs-callout__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
+          <p>Demo food photography is used for preview only. Replace the images in <code>assets/images/</code> with your own licensed photos before publishing.</p>
+        </div>
+      </section>
+
+      <!-- Support -->
+      <section class="docs-section" id="support">
+        <h2 class="docs-section__title">Support &amp; updates</h2>
+        <p>Thanks again for choosing BurgerLab. For questions, customization help or bug reports, reach out via the author profile on ThemeForest — support requests are answered quickly.</p>
+        <p><a href="https://themeforest.net/user/alissio" class="bl-btn bl-btn--primary docs-btn" target="_blank" rel="noopener" style="margin-top:.5rem">Contact Alissio on ThemeForest</a></p>
+        <p style="margin-top:2rem;color:var(--bl-muted);font-size:.85rem">© <span data-year>2026</span> BurgerLab by Alissio. Documentation for the Premium Burger &amp; Restaurant HTML Template.</p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="docs.js"></script>
+</body>
+</html>
