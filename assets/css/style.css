@@ -734,6 +734,731 @@ button {
   }
 }
 /* ==========================================================================
+   Header & Footer variant library (10 + 10)
+   Variant 1 = .bl-header / .bl-footer (defaults, used on home-v1)
+   Variant 2 = .bl-header--solid (already used on inner pages)
+   Variants 3–10 below. Demo frame styles power headers.html / footers.html.
+   ========================================================================== */
+/* ---- Showcase frame (headers.html / footers.html) ---- */
+.bl-hf-demo {
+  padding: clamp(40px, 5vw, 64px) 0;
+  border-bottom: 1px solid var(--bl-line);
+}
+
+.bl-hf-demo:last-child {
+  border-bottom: none;
+}
+
+.bl-hf-demo__label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.bl-hf-demo__num {
+  font-family: var(--bl-font-mono);
+  color: var(--bl-accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.bl-hf-demo__name {
+  font-family: var(--bl-font-head);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0.3rem 0 0;
+}
+
+.bl-hf-demo__desc {
+  color: var(--bl-muted);
+  font-size: 0.92rem;
+  margin: 0;
+  max-width: 46ch;
+}
+
+.bl-hf-demo__frame {
+  position: relative;
+  border: 1px solid var(--bl-line);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bl-bg-2);
+  min-height: 110px;
+}
+
+.bl-hf-demo__frame--bleed {
+  padding: 0;
+}
+
+.bl-hf-demo__frame--image {
+  background-size: cover;
+  background-position: center;
+}
+
+.bl-hf-demo__frame--image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 16, 15, 0.55), rgba(16, 16, 15, 0.75));
+}
+
+.bl-hf-demo__frame--split {
+  display: flex;
+  min-height: 420px;
+}
+
+.bl-hf-demo__frame--content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--bl-muted);
+  font-family: var(--bl-font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.bl-hf-demo__frame .bl-header,
+.bl-hf-demo__frame .bl-footer {
+  position: relative;
+  inset: auto;
+  z-index: 2;
+}
+
+.bl-hf-demo__frame .bl-header.is-scrolled {
+  background: rgba(16, 16, 15, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--bl-line);
+}
+
+.bl-hf-demo__frame .bl-mobile-menu,
+.bl-hf-demo__frame .bl-burger {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .bl-hf-demo__frame .bl-nav__menu,
+  .bl-hf-demo__frame .bl-nav__phone,
+  .bl-hf-demo__frame .bl-nav__cta,
+  .bl-hf-demo__frame .bl-nav__search,
+  .bl-hf-demo__frame .bl-topbar {
+    display: flex !important;
+  }
+  .bl-hf-demo__frame .bl-nav--centered {
+    display: grid !important;
+  }
+}
+/* ==========================================================================
+   HEADER VARIANT 3 — Centered Logo
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .bl-nav--centered {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .bl-nav--centered .bl-nav__menu--left {
+    justify-content: flex-start;
+  }
+  .bl-nav--centered .bl-logo {
+    justify-self: center;
+  }
+  .bl-nav--centered .bl-nav__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+}
+/* ==========================================================================
+   HEADER VARIANT 4 — Topbar + Nav
+   ========================================================================== */
+.bl-topbar {
+  display: none;
+  border-bottom: 1px solid var(--bl-line);
+  background: var(--bl-bg-2);
+}
+
+.bl-topbar__inner {
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 42px;
+  font-family: var(--bl-font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--bl-muted);
+}
+
+.bl-topbar__items {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.bl-topbar__social {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.bl-topbar__social a {
+  color: var(--bl-muted);
+}
+
+.bl-topbar__social a:hover {
+  color: var(--bl-accent);
+}
+
+.bl-header--topbar.is-scrolled .bl-topbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bl-topbar {
+    display: block;
+  }
+  .bl-topbar__inner {
+    display: flex;
+  }
+}
+/* ==========================================================================
+   HEADER VARIANT 5 — Floating Pill
+   ========================================================================== */
+.bl-header--floating {
+  background: transparent;
+  border-bottom: none;
+  padding-top: 14px;
+}
+
+.bl-header--floating .bl-nav {
+  height: 74px;
+  padding: 0 1.5rem;
+  background: rgba(32, 32, 29, 0.7);
+  border: 1px solid var(--bl-line);
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.bl-header--floating.is-scrolled {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media (min-width: 768px) {
+  .bl-header--floating {
+    padding-top: 22px;
+  }
+  .bl-header--floating .bl-nav {
+    padding: 0 2.2rem;
+  }
+}
+/* ==========================================================================
+   HEADER VARIANT 6 — Boxed Nav Items
+   ========================================================================== */
+.bl-header--boxed .bl-nav__menu {
+  gap: 0.35rem;
+}
+
+.bl-header--boxed .bl-nav__menu a {
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.bl-header--boxed .bl-nav__menu a::after {
+  display: none;
+}
+
+.bl-header--boxed .bl-nav__menu a:hover {
+  border-color: var(--bl-line);
+}
+
+.bl-header--boxed .bl-nav__menu a.is-active {
+  background: var(--bl-accent);
+  color: #1a1300;
+}
+
+/* ==========================================================================
+   HEADER VARIANT 7 — Icon Nav
+   ========================================================================== */
+.bl-header--icons .bl-nav__menu a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.bl-header--icons .bl-nav__menu svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  opacity: 0.7;
+}
+
+.bl-header--icons .bl-nav__menu a:hover svg,
+.bl-header--icons .bl-nav__menu a.is-active svg {
+  opacity: 1;
+  color: var(--bl-accent);
+}
+
+.bl-header--icons .bl-nav__actions .bl-icon-btn {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .bl-header--icons .bl-nav__actions .bl-icon-btn {
+    display: inline-flex;
+  }
+}
+/* ==========================================================================
+   HEADER VARIANT 8 — Underline Tabs (justified)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .bl-header--tabs .bl-nav {
+    gap: 3rem;
+  }
+  .bl-header--tabs .bl-nav__menu {
+    flex: 1;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .bl-header--tabs .bl-nav__menu a {
+    height: 84px;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    padding: 0;
+  }
+  .bl-header--tabs .bl-nav__menu a::after {
+    display: none;
+  }
+  .bl-header--tabs .bl-nav__menu a:hover,
+  .bl-header--tabs .bl-nav__menu a.is-active {
+    border-bottom-color: var(--bl-accent);
+  }
+}
+/* ==========================================================================
+   HEADER VARIANT 9 — Vertical Sidebar
+   ========================================================================== */
+.bl-header--sidebar {
+  width: 260px;
+  border-right: 1px solid var(--bl-line);
+  border-bottom: none;
+  background: var(--bl-bg-2);
+  flex: 0 0 auto;
+}
+
+.bl-header--sidebar .bl-nav {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 2rem 1.6rem;
+  gap: 2.4rem;
+}
+
+.bl-header--sidebar .bl-nav__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.bl-header--sidebar .bl-nav__menu a::after {
+  display: none;
+}
+
+.bl-header--sidebar .bl-nav__actions {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   HEADER VARIANT 10 — Search + Order
+   ========================================================================== */
+.bl-nav__search {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bl-surface-2);
+  border: 1px solid var(--bl-line);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  color: var(--bl-muted);
+}
+
+.bl-nav__search svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.bl-nav__search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--bl-text);
+  font-family: var(--bl-font);
+  font-size: 0.86rem;
+  width: 110px;
+}
+
+.bl-nav__search input::placeholder {
+  color: var(--bl-muted);
+}
+
+.bl-header--search .bl-nav__actions {
+  gap: 1.2rem;
+}
+
+@media (min-width: 1024px) {
+  .bl-header--search .bl-nav__search {
+    display: flex;
+  }
+}
+/* ==========================================================================
+   FOOTER VARIANT 2 — Newsletter
+   ========================================================================== */
+.bl-footer--newsletter {
+  padding-top: 0;
+}
+
+.bl-footer--newsletter .bl-footer__top {
+  padding-top: clamp(36px, 5vw, 60px);
+}
+
+.bl-footer--newsletter .bl-footer__newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: clamp(36px, 5vw, 60px) 0;
+  border-bottom: 1px solid var(--bl-line);
+}
+
+.bl-footer__newsletter h3 {
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin: 0;
+  max-width: 22ch;
+}
+
+.bl-footer__newsletter-form {
+  display: flex;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.bl-footer__newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  color: var(--bl-text);
+  font-family: var(--bl-font);
+}
+
+.bl-footer__newsletter-form input::placeholder {
+  color: var(--bl-muted);
+}
+
+@media (min-width: 768px) {
+  .bl-footer--newsletter .bl-footer__newsletter {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/* ==========================================================================
+   FOOTER VARIANT 3 — Minimal Centered
+   ========================================================================== */
+.bl-footer--minimal .bl-footer__top {
+  text-align: center;
+  justify-items: center;
+  padding-bottom: clamp(28px, 4vw, 48px);
+}
+
+.bl-footer--minimal .bl-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bl-footer--minimal .bl-footer__about {
+  text-align: center;
+}
+
+.bl-footer__minimal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+  font-family: var(--bl-font-head);
+  font-weight: 500;
+}
+
+.bl-footer__minimal-links a {
+  color: var(--bl-muted);
+}
+
+.bl-footer__minimal-links a:hover {
+  color: var(--bl-text);
+}
+
+/* ==========================================================================
+   FOOTER VARIANT 4 — CTA Banner
+   ========================================================================== */
+.bl-footer--cta {
+  padding-top: 0;
+}
+
+.bl-footer__cta-banner {
+  background: linear-gradient(135deg, var(--bl-surface-2), var(--bl-surface));
+  border: 1px solid var(--bl-line);
+  border-radius: 24px;
+  padding: clamp(28px, 5vw, 52px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: clamp(40px, 6vw, 70px);
+  margin-bottom: clamp(40px, 6vw, 70px);
+}
+
+.bl-footer__cta-banner h3 {
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  margin: 0;
+  max-width: 18ch;
+}
+
+.bl-footer__cta-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .bl-footer__cta-banner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/* ==========================================================================
+   FOOTER VARIANT 5 — Map
+   ========================================================================== */
+.bl-footer__map-grid {
+  display: grid;
+  gap: 32px;
+  padding-bottom: clamp(40px, 6vw, 70px);
+}
+
+.bl-footer__map-grid iframe {
+  width: 100%;
+  height: 240px;
+  border: 1px solid var(--bl-line);
+  border-radius: 14px;
+  filter: grayscale(0.5) invert(0.92) contrast(0.9);
+}
+
+@media (min-width: 768px) {
+  .bl-footer__map-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .bl-footer--map .bl-footer__top {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ==========================================================================
+   FOOTER VARIANT 6 — Statement
+   ========================================================================== */
+.bl-footer--statement {
+  padding-top: 0;
+}
+
+.bl-footer__statement {
+  text-align: center;
+  padding: clamp(32px, 7vw, 90px) 0 clamp(20px, 3vw, 40px);
+}
+
+.bl-footer__statement h2 {
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 9vw, 6.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.bl-footer__statement h2 span {
+  color: var(--bl-accent);
+}
+
+.bl-footer__statement p {
+  color: var(--bl-muted);
+  margin: 1rem 0 0;
+}
+
+.bl-footer__statement-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 2.2rem;
+  padding-bottom: clamp(36px, 5vw, 64px);
+  border-bottom: 1px solid var(--bl-line);
+}
+
+.bl-footer__statement-links a {
+  color: var(--bl-muted);
+  font-family: var(--bl-font-head);
+  font-weight: 500;
+}
+
+.bl-footer__statement-links a:hover {
+  color: var(--bl-text);
+}
+
+/* ==========================================================================
+   FOOTER VARIANT 7 — Social / App
+   ========================================================================== */
+.bl-footer--social .bl-footer__social a {
+  width: 50px;
+  height: 50px;
+}
+
+.bl-footer__app-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.bl-footer__app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--bl-line);
+  border-radius: 14px;
+  font-family: var(--bl-font-mono);
+  font-size: 0.78rem;
+  color: var(--bl-text);
+}
+
+.bl-footer__app-badge svg {
+  width: 18px;
+  height: 18px;
+  color: var(--bl-accent);
+}
+
+/* ==========================================================================
+   FOOTER VARIANT 8 — Locations
+   ========================================================================== */
+.bl-footer--locations {
+  padding-top: clamp(40px, 6vw, 70px);
+}
+
+.bl-footer--locations .bl-footer__top {
+  padding-top: 0;
+}
+
+.bl-footer__locations {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  padding-bottom: clamp(40px, 6vw, 70px);
+}
+
+.bl-footer__location {
+  border: 1px solid var(--bl-line);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.bl-footer__location h3,
+.bl-footer__location h4 {
+  font-family: var(--bl-font-head);
+  font-size: 1.02rem;
+  color: var(--bl-accent);
+  margin: 0 0 0.6rem;
+}
+
+.bl-footer__location p {
+  color: var(--bl-muted);
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .bl-footer__locations {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ==========================================================================
+   FOOTER VARIANT 9 — Ticker
+   ========================================================================== */
+.bl-footer__ticker-wrap {
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.bl-footer__ticker-wrap .bl-ticker {
+  border-radius: 14px;
+}
+
+/* ==========================================================================
+   FOOTER VARIANT 10 — Simple
+   ========================================================================== */
+.bl-footer--simple .bl-footer__top {
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-bottom: clamp(28px, 4vw, 48px);
+}
+
+.bl-footer__simple-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem 2.4rem;
+}
+
+.bl-footer__simple-links a {
+  color: var(--bl-muted);
+  font-family: var(--bl-font-head);
+  font-weight: 500;
+}
+
+.bl-footer__simple-links a:hover {
+  color: var(--bl-text);
+}
+
+@media (min-width: 768px) {
+  .bl-footer--simple .bl-footer__top {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+}
+/* ==========================================================================
    Home v1 — Scroll-scrubbed video hero (signature)
    ========================================================================== */
 .bl-hero {
@@ -770,7 +1495,8 @@ button {
 }
 
 /* Content overlay */
-.bl-hero__content {
+.bl-hero__content,
+.bl-hero-slider__content {
   position: absolute;
   inset: 0;
   z-index: 4;
@@ -1015,6 +1741,440 @@ button {
     display: block;
   }
 }
+/* ==========================================================================
+   Home v2 — Image slider hero
+   ========================================================================== */
+.bl-hero--slider {
+  overflow: hidden;
+}
+
+.bl-hero-slider,
+.bl-hero-slider .swiper-wrapper,
+.bl-hero-slider .swiper-slide {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+}
+
+.bl-hero-slider__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bl-hero-slider__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(16, 16, 15, 0) 35%, rgba(16, 16, 15, 0.5) 100%), linear-gradient(180deg, rgba(16, 16, 15, 0.65) 0%, rgba(16, 16, 15, 0.15) 30%, rgba(16, 16, 15, 0.85) 100%);
+  pointer-events: none;
+}
+
+.bl-hero-slider__pagination {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(24px, 4vh, 48px);
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bl-hero-slider__pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: rgba(248, 244, 234, 0.35);
+  opacity: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.bl-hero-slider__pagination .swiper-pagination-bullet-active {
+  background: var(--bl-accent);
+  width: 26px;
+  border-radius: 9px;
+}
+
+.bl-hero-slider__arrows {
+  position: absolute;
+  right: clamp(20px, 4vw, 64px);
+  bottom: clamp(24px, 4vh, 48px);
+  z-index: 5;
+  display: none;
+  gap: 0.6rem;
+}
+
+.bl-hero-slider__arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--bl-line);
+  background: rgba(32, 32, 29, 0.6);
+  color: var(--bl-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.bl-hero-slider__arrow:hover {
+  background: var(--bl-accent);
+  border-color: var(--bl-accent);
+  color: var(--bl-bg);
+}
+
+.bl-hero-slider__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 768px) {
+  .bl-hero-slider__arrows {
+    display: flex;
+  }
+}
+/* ==========================================================================
+   Home v3 — App dashboard hero
+   ========================================================================== */
+.bl-hero--app {
+  position: relative;
+  padding: clamp(130px, 16vw, 200px) 0 clamp(56px, 7vw, 96px);
+  background: radial-gradient(120% 120% at 50% 0%, rgba(245, 179, 26, 0.1), transparent 55%), var(--bl-bg);
+  overflow: hidden;
+}
+
+.bl-hero--app .bl-hero__inner {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .bl-hero--app .bl-hero__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.bl-hero-bento {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "order" "map" "eta" "rating";
+}
+
+@media (min-width: 576px) {
+  .bl-hero-bento {
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas: "order map" "order eta" "rating rating";
+  }
+}
+.bl-hero-bento__cell {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 24px;
+  padding: 1.4rem;
+}
+
+.bl-hero-bento__cell--order {
+  grid-area: order;
+}
+
+.bl-hero-bento__cell--map {
+  grid-area: map;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bl-hero-bento__cell--eta {
+  grid-area: eta;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.bl-hero-bento__cell--rating {
+  grid-area: rating;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bl-hero-bento__map {
+  position: relative;
+  height: 90px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--bl-bg-2), var(--bl-surface-2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+}
+
+.bl-hero-bento__route {
+  flex: 1;
+  height: 1px;
+  margin: 0 10px;
+  background-image: repeating-linear-gradient(to right, var(--bl-accent) 0 6px, transparent 6px 12px);
+}
+
+.bl-hero-bento__pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bl-accent);
+  color: var(--bl-bg);
+  flex: 0 0 auto;
+}
+
+.bl-hero-bento__pin--end {
+  background: var(--bl-accent-2);
+}
+
+.bl-hero-bento__pin svg {
+  width: 16px;
+  height: 16px;
+}
+
+.bl-hero-bento__map-label {
+  margin: 0.8rem 0 0;
+  font-family: var(--bl-font-mono);
+  font-size: 0.72rem;
+  color: var(--bl-muted);
+}
+
+.bl-hero-bento__eta-num {
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--bl-accent);
+  line-height: 1;
+}
+
+.bl-hero-bento__eta-num small {
+  font-family: var(--bl-font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--bl-muted);
+  margin-left: 0.3rem;
+}
+
+.bl-hero-bento__eta-label {
+  font-family: var(--bl-font-mono);
+  font-size: 0.74rem;
+  color: var(--bl-muted);
+}
+
+.bl-hero-bento__rating-stars {
+  display: flex;
+  gap: 0.2rem;
+  color: var(--bl-accent);
+  flex: 0 0 auto;
+}
+
+.bl-hero-bento__rating-stars svg {
+  width: 16px;
+  height: 16px;
+}
+
+.bl-hero-bento__cell--rating p {
+  margin: 0;
+  color: var(--bl-muted);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Home v4 — Split-screen hero
+   ========================================================================== */
+.bl-hero--split {
+  background: var(--bl-bg);
+}
+
+.bl-hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .bl-hero-split {
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+}
+.bl-hero-split__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(130px, 16vw, 200px) clamp(24px, 5vw, 64px) clamp(56px, 7vw, 96px);
+}
+
+.bl-hero-split__media {
+  position: relative;
+  min-height: 360px;
+}
+
+.bl-hero-split__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Home v5 — Statement (big typography) hero
+   ========================================================================== */
+.bl-hero--statement {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(130px, 16vw, 200px) 0 clamp(56px, 7vw, 96px);
+  background: radial-gradient(120% 90% at 50% 100%, rgba(245, 179, 26, 0.1), transparent 60%), var(--bl-bg);
+  overflow: hidden;
+}
+
+.bl-hero-statement__title {
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 12vw, 9rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.bl-hero-statement__title em {
+  font-style: normal;
+  color: var(--bl-accent);
+}
+
+.bl-hero-statement__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+.bl-hero-statement__lede {
+  max-width: 420px;
+  margin: 0;
+  color: var(--bl-muted);
+}
+
+.bl-hero-statement__media {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+.bl-hero-statement__media img {
+  width: 100%;
+  height: clamp(110px, 18vw, 240px);
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* ==========================================================================
+   Home v6 — Bento mosaic hero
+   ========================================================================== */
+.bl-hero--bento {
+  position: relative;
+  padding: clamp(130px, 16vw, 200px) 0 clamp(56px, 7vw, 96px);
+  background: radial-gradient(120% 100% at 100% 0%, rgba(245, 179, 26, 0.08), transparent 55%), var(--bl-bg);
+  overflow: hidden;
+}
+
+.bl-hero-bento-layout {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .bl-hero-bento-layout {
+    grid-template-columns: 1.05fr 1fr;
+  }
+}
+.bl-hero-mosaic {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "a b" "a c" "d c";
+}
+
+.bl-hero-mosaic__cell {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.bl-hero-mosaic__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bl-hero-mosaic__cell--a {
+  grid-area: a;
+  min-height: 280px;
+}
+
+.bl-hero-mosaic__cell--b {
+  grid-area: b;
+  min-height: 130px;
+}
+
+.bl-hero-mosaic__cell--c {
+  grid-area: c;
+  min-height: 200px;
+}
+
+.bl-hero-mosaic__cell--d {
+  grid-area: d;
+  min-height: 130px;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1.2rem;
+}
+
+.bl-hero-mosaic__stat-num {
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--bl-accent);
+  line-height: 1;
+}
+
+.bl-hero-mosaic__stat-label {
+  font-family: var(--bl-font-mono);
+  font-size: 0.74rem;
+  color: var(--bl-muted);
+}
+
 /* ==========================================================================
    Components — preloader, marquee, cards, sliders, CTA, forms, utilities
    ========================================================================== */
@@ -1641,6 +2801,83 @@ button {
   height: 20px;
 }
 
+/* ----- Home variant switcher ----- */
+.bl-home-switcher {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 900;
+}
+
+.bl-home-switcher__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 999px;
+  padding: 0.75rem 1.3rem;
+  color: var(--bl-text);
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 0.84rem;
+  box-shadow: 0 14px 40px -16px rgba(0, 0, 0, 0.6);
+}
+
+.bl-home-switcher__btn svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-home-switcher.is-open .bl-home-switcher__btn svg {
+  transform: rotate(180deg);
+}
+
+.bl-home-switcher__panel {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  min-width: 188px;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 14px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.25s;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.75);
+}
+
+.bl-home-switcher.is-open .bl-home-switcher__panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.bl-home-switcher__panel a {
+  padding: 0.6rem 0.85rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-family: var(--bl-font-head);
+  font-weight: 500;
+  color: var(--bl-muted);
+}
+
+.bl-home-switcher__panel a:hover {
+  background: var(--bl-surface-2);
+  color: var(--bl-text);
+}
+
+.bl-home-switcher__panel a.is-active {
+  color: var(--bl-accent);
+  background: var(--bl-surface-2);
+}
+
 /* ----- Forms (shared) ----- */
 .bl-field {
   margin-bottom: 1.1rem;
@@ -1707,6 +2944,357 @@ button {
   height: 0;
   width: 0;
   overflow: hidden;
+}
+
+/* ==========================================================================
+   BurgerLab — Custom date & time pickers (reservation form)
+   Calendar + analog clock, themed to the dark-amber brand.
+   Markup is progressively injected by initPickers() in main.js; if JS is
+   disabled the field stays a plain text input, so the form still works.
+   ========================================================================== */
+/* ----- Field wrapper + trigger ----- */
+.bl-picker {
+  position: relative;
+}
+
+.bl-input--picker {
+  padding-right: 2.7rem;
+  cursor: pointer;
+}
+
+.bl-picker__icon {
+  position: absolute;
+  top: 50%;
+  right: 0.95rem;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  color: var(--bl-muted);
+  pointer-events: none;
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-picker__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.bl-picker.is-open .bl-picker__icon {
+  color: var(--bl-accent);
+}
+
+/* ----- Shared popover shell ----- */
+.bl-picker__pop {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 60;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  padding: 16px;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.65);
+  animation: bl-picker-in 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.bl-picker__pop[hidden] {
+  display: none;
+}
+
+@keyframes bl-picker-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.bl-picker__link {
+  background: none;
+  border: 0;
+  padding: 0.4rem 0.2rem;
+  font-family: var(--bl-font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bl-muted);
+  cursor: pointer;
+  transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-picker__link:hover {
+  color: var(--bl-accent);
+}
+
+/* ==========================================================================
+   Calendar
+   ========================================================================== */
+.bl-datepicker__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.bl-datepicker__title {
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bl-text);
+}
+
+.bl-datepicker__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--bl-line);
+  border-radius: 50%;
+  background: var(--bl-bg);
+  color: var(--bl-text);
+  cursor: pointer;
+  transition: border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-datepicker__nav svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bl-datepicker__nav:hover {
+  border-color: var(--bl-accent);
+  color: var(--bl-accent);
+}
+
+.bl-datepicker__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+
+.bl-datepicker__weekdays span {
+  text-align: center;
+  font-family: var(--bl-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bl-muted);
+}
+
+.bl-datepicker__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.bl-datepicker__pad {
+  aspect-ratio: 1;
+}
+
+.bl-datepicker__day {
+  aspect-ratio: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--bl-text);
+  font-family: var(--bl-font);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.18s cubic-bezier(0.22, 1, 0.36, 1), color 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-datepicker__day:hover:not(:disabled) {
+  background: var(--bl-surface-2);
+}
+
+.bl-datepicker__day.is-today {
+  box-shadow: inset 0 0 0 1px var(--bl-line);
+}
+
+.bl-datepicker__day.is-selected,
+.bl-datepicker__day.is-selected:hover {
+  background: var(--bl-accent);
+  color: #1A1305;
+  font-weight: 600;
+}
+
+.bl-datepicker__day:disabled {
+  color: var(--bl-muted);
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+
+.bl-datepicker__foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bl-line);
+}
+
+/* ==========================================================================
+   Analog clock
+   ========================================================================== */
+.bl-clock {
+  width: 272px;
+}
+
+.bl-clock__readout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.bl-clock__seg {
+  min-width: 54px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--bl-line);
+  border-radius: 14px;
+  background: var(--bl-bg);
+  color: var(--bl-text);
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-clock__seg.is-active {
+  border-color: var(--bl-accent);
+  color: var(--bl-accent);
+}
+
+.bl-clock__colon {
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--bl-muted);
+}
+
+.bl-clock__ampm {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.bl-clock__ampm-btn {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--bl-line);
+  border-radius: 999px;
+  background: var(--bl-bg);
+  color: var(--bl-muted);
+  font-family: var(--bl-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-clock__ampm-btn.is-active {
+  background: var(--bl-accent);
+  border-color: var(--bl-accent);
+  color: #1A1305;
+}
+
+.bl-clock__face {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--bl-bg);
+  border: 1px solid var(--bl-line);
+}
+
+.bl-clock__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--bl-accent);
+  z-index: 3;
+}
+
+.bl-clock__hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 2px;
+  height: 96px;
+  background: var(--bl-accent);
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bl-clock__hand::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: var(--bl-accent);
+}
+
+.bl-clock__num {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--bl-text);
+  font-family: var(--bl-font);
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-clock__num:hover {
+  color: var(--bl-accent);
+}
+
+.bl-clock__num.is-active {
+  color: #1A1305;
+  font-weight: 600;
+}
+
+.bl-clock__foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 /* ==========================================================================

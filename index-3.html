@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>BurgerLab — Premium Burger &amp; Restaurant HTML Template</title>
+<title>BurgerLab — Home 03 · App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="BurgerLab">
-<meta name="description" content="BurgerLab is a premium dark-luxury burger & restaurant HTML template with a cinematic scroll-scrubbed video hero, GSAP motion, 6 home variants and 30+ pages. Built for smash-burger joints, gourmet grills and modern food brands.">
+<meta name="description" content="BurgerLab Home 03 — a premium dark-luxury burger & restaurant home page with an app-dashboard hero, topbar navigation and a newsletter footer.">
 <meta name="keywords" content="burger template, restaurant html template, dark restaurant template, food delivery, GSAP, scroll animation, premium burger, smash burger, BurgerLab">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="BurgerLab — Premium Burger &amp; Restaurant HTML Template">
-<meta property="og:description" content="Cinematic dark burger template with scroll-scrubbed video hero and GSAP motion.">
+<meta property="og:title" content="BurgerLab — Home 03 · App">
+<meta property="og:description" content="App-dashboard hero with live order tracking and topbar navigation.">
 <meta property="og:image" content="assets/images/hero-poster.jpg">
 
 <!-- Favicon -->
@@ -39,8 +39,23 @@
   <div class="bl-preloader__count">000 / 100</div>
 </div>
 
-<!-- ===== Header ===== -->
-<header class="bl-header">
+<!-- ===== Header (Topbar + Nav) ===== -->
+<header class="bl-header bl-header--solid bl-header--topbar">
+  <div class="bl-topbar">
+    <div class="bl-container bl-container--wide">
+      <div class="bl-topbar__inner">
+        <div class="bl-topbar__items">
+          <span>148 Spring Street, SoHo, NY</span>
+          <span>Mon–Sun 11:00–23:00</span>
+        </div>
+        <div class="bl-topbar__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="15" height="15"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="15" height="15"><path d="M3 3l7.5 9.5L3.5 21H6l5.3-6.3L16 21h5l-7.8-10L20.5 3H18l-5 5.9L8 3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="bl-container bl-container--wide">
     <nav class="bl-nav" aria-label="Primary">
       <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
@@ -82,54 +97,70 @@
 
 <main id="main">
 
-  <!-- ===== Hero (scroll-scrubbed video) ===== -->
-  <section class="bl-hero" id="home">
-    <div class="bl-hero__media">
-      <video class="bl-hero__video" muted loop playsinline preload="none" poster="assets/images/hero-poster.jpg">
-        <source src="assets/videos/bg.mp4" type="video/mp4">
-      </video>
-      <img class="bl-hero__poster" src="assets/images/hero-poster.jpg" alt="The Lab Burger, flame-grilled and stacked high">
-      <div class="bl-hero__scrim"></div>
+  <!-- ===== Hero (app dashboard) ===== -->
+  <section class="bl-hero bl-hero--app" id="home">
+    <div class="bl-container bl-container--wide">
+      <div class="bl-hero__inner">
+        <div class="bl-hero__copy">
+          <div class="bl-hero__chips">
+            <span class="bl-chip"><span class="bl-chip__dot"></span>Live tracking</span>
+            <span class="bl-chip"><span class="bl-chip__dot bl-chip__dot--green"></span>30 min delivery</span>
+            <span class="bl-chip"><span class="bl-chip__dot bl-chip__dot--flame"></span>4.9 rating</span>
+          </div>
+          <h1 class="bl-hero__title">
+            <span class="bl-line">Order it.</span>
+            <span class="bl-line">Track it <em>live.</em></span>
+            <span class="bl-line">Devour it.</span>
+          </h1>
+          <p class="bl-hero__lede">From tap to table in under 30 minutes. Real-time order tracking, live ETAs, and the same flame-grilled quality every single time.</p>
+          <div class="bl-hero__actions">
+            <a href="menu.html" class="bl-btn bl-btn--primary bl-btn--lg">Order The Lab Burger
+              <svg class="bl-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="menu.html" class="bl-btn bl-btn--ghost bl-btn--lg">View full menu</a>
+          </div>
+        </div>
 
-      <div class="bl-hero__content">
-        <div class="bl-container bl-container--wide">
-          <div class="bl-hero__inner">
-            <div class="bl-hero__copy">
-              <div class="bl-hero__chips">
-                <span class="bl-chip"><span class="bl-chip__dot"></span>Crafted fresh</span>
-                <span class="bl-chip"><span class="bl-chip__dot bl-chip__dot--green"></span>30 min delivery</span>
-                <span class="bl-chip"><span class="bl-chip__dot bl-chip__dot--flame"></span>4.9 rating</span>
-              </div>
-              <h1 class="bl-hero__title">
-                <span class="bl-line">Built in the</span>
-                <span class="bl-line"><em>lab.</em> Grilled</span>
-                <span class="bl-line">over fire.</span>
-              </h1>
-              <p class="bl-hero__lede">Hand-pressed patties, flame-grilled to order, stacked with house sauce and toasted brioche. This is the burger, engineered.</p>
-              <div class="bl-hero__actions">
-                <a href="menu.html" class="bl-btn bl-btn--primary bl-btn--lg">Order The Lab Burger
-                  <svg class="bl-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-                <a href="menu.html" class="bl-btn bl-btn--ghost bl-btn--lg">View full menu</a>
-              </div>
+        <div class="bl-hero-bento">
+          <div class="bl-hero-bento__cell bl-hero-bento__cell--order">
+            <span class="bl-order-card__eyebrow">Order #482 · Live</span>
+            <div class="bl-order-card__title">The Lab Burger ×2</div>
+            <p class="bl-order-card__desc">Flame-grilled, double cheddar, hand-cut fries.</p>
+            <div class="bl-order-card__bar"><span></span></div>
+            <p class="bl-order-card__status">On the grill · arriving 7:42 PM</p>
+            <div class="bl-order-card__buy">
+              <span class="bl-order-card__price">$24.80</span>
+              <a href="reservation.html" class="bl-btn bl-btn--flame">Track order</a>
             </div>
-
-            <aside class="bl-order-card" aria-label="Featured burger">
-              <span class="bl-order-card__eyebrow">Double patty · 25 min</span>
-              <div class="bl-order-card__title">The Lab Burger</div>
-              <p class="bl-order-card__desc">Flame-grilled patty, aged cheddar, house sauce, sesame brioche.</p>
-              <div class="bl-order-card__bar"><span></span></div>
-              <p class="bl-order-card__status">On the grill · arriving 7:42 PM</p>
-              <div class="bl-order-card__buy">
-                <span class="bl-order-card__price">$15.90</span>
-                <a href="reservation.html" class="bl-btn bl-btn--flame">Add to order</a>
-              </div>
-            </aside>
+          </div>
+          <div class="bl-hero-bento__cell bl-hero-bento__cell--map">
+            <div class="bl-hero-bento__map">
+              <span class="bl-hero-bento__pin bl-hero-bento__pin--start" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c2 3 5 5 5 9a5 5 0 0 1-10 0c0-1 .3-2 1-3 .3 1.5 1.5 2 2 1-1-2-1-4 2-7z"/></svg>
+              </span>
+              <span class="bl-hero-bento__route" aria-hidden="true"></span>
+              <span class="bl-hero-bento__pin bl-hero-bento__pin--end" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+              </span>
+            </div>
+            <p class="bl-hero-bento__map-label">BurgerLab SoHo → 148 Spring St</p>
+          </div>
+          <div class="bl-hero-bento__cell bl-hero-bento__cell--eta">
+            <span class="bl-hero-bento__eta-num">12<small>min</small></span>
+            <span class="bl-hero-bento__eta-label">Estimated arrival</span>
+          </div>
+          <div class="bl-hero-bento__cell bl-hero-bento__cell--rating">
+            <span class="bl-hero-bento__rating-stars" role="img" aria-label="4.9 out of 5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+            </span>
+            <p>4.9 average from 12k+ verified orders this month.</p>
           </div>
         </div>
       </div>
-
-      <div class="bl-hero__scroll"><span class="bl-hero__scroll-line"></span>Scroll</div>
     </div>
   </section>
 
@@ -431,9 +462,16 @@
 
 </main>
 
-<!-- ===== Footer ===== -->
-<footer class="bl-footer">
+<!-- ===== Footer (Newsletter) ===== -->
+<footer class="bl-footer bl-footer--newsletter">
   <div class="bl-container bl-container--wide">
+    <div class="bl-footer__newsletter">
+      <h3>Get menu drops &amp; offers in your inbox.</h3>
+      <form class="bl-footer__newsletter-form">
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+        <button type="button" class="bl-btn bl-btn--primary">Subscribe</button>
+      </form>
+    </div>
     <div class="bl-footer__top">
       <div class="bl-footer__brand">
         <div class="bl-footer__brand-name">Burger<span>Lab</span></div>
@@ -483,13 +521,13 @@
 <!-- ===== Home variant switcher ===== -->
 <div class="bl-home-switcher" data-home-switcher>
   <button class="bl-home-switcher__btn" type="button" aria-expanded="false" aria-controls="bl-home-switcher-panel">
-    Home 01
+    Home 03
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </button>
   <div class="bl-home-switcher__panel" id="bl-home-switcher-panel">
-    <a href="index.html" class="is-active">Home 01 — Cinematic</a>
+    <a href="index.html">Home 01 — Cinematic</a>
     <a href="index-2.html">Home 02 — Slider</a>
-    <a href="index-3.html">Home 03 — App</a>
+    <a href="index-3.html" class="is-active">Home 03 — App</a>
     <a href="index-4.html">Home 04 — Split</a>
     <a href="index-5.html">Home 05 — Statement</a>
     <a href="index-6.html">Home 06 — Bento</a>

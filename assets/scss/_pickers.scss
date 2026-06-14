@@ -1,0 +1,280 @@
+/* ==========================================================================
+   BurgerLab — Custom date & time pickers (reservation form)
+   Calendar + analog clock, themed to the dark-amber brand.
+   Markup is progressively injected by initPickers() in main.js; if JS is
+   disabled the field stays a plain text input, so the form still works.
+   ========================================================================== */
+
+/* ----- Field wrapper + trigger ----- */
+.bl-picker { position: relative; }
+
+.bl-input--picker {
+  padding-right: 2.7rem;
+  cursor: pointer;
+}
+
+.bl-picker__icon {
+  position: absolute;
+  top: 50%;
+  right: 0.95rem;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  color: var(--bl-muted);
+  pointer-events: none;
+  transition: color 0.25s $bl-ease;
+}
+.bl-picker__icon svg { width: 100%; height: 100%; display: block; }
+.bl-picker.is-open .bl-picker__icon { color: var(--bl-accent); }
+
+/* ----- Shared popover shell ----- */
+.bl-picker__pop {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 60;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  padding: 16px;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: $bl-radius-lg;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.65);
+  animation: bl-picker-in 0.18s $bl-ease both;
+}
+.bl-picker__pop[hidden] { display: none; }
+
+@keyframes bl-picker-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bl-picker__link {
+  background: none;
+  border: 0;
+  padding: 0.4rem 0.2rem;
+  font-family: var(--bl-font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bl-muted);
+  cursor: pointer;
+  transition: color 0.2s $bl-ease;
+}
+.bl-picker__link:hover { color: var(--bl-accent); }
+
+/* ==========================================================================
+   Calendar
+   ========================================================================== */
+.bl-datepicker__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.bl-datepicker__title {
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bl-text);
+}
+.bl-datepicker__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--bl-line);
+  border-radius: 50%;
+  background: var(--bl-bg);
+  color: var(--bl-text);
+  cursor: pointer;
+  transition: border-color 0.2s $bl-ease, color 0.2s $bl-ease;
+}
+.bl-datepicker__nav svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bl-datepicker__nav:hover { border-color: var(--bl-accent); color: var(--bl-accent); }
+
+.bl-datepicker__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+.bl-datepicker__weekdays span {
+  text-align: center;
+  font-family: var(--bl-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bl-muted);
+}
+
+.bl-datepicker__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.bl-datepicker__pad { aspect-ratio: 1; }
+.bl-datepicker__day {
+  aspect-ratio: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--bl-text);
+  font-family: var(--bl-font);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.18s $bl-ease, color 0.18s $bl-ease;
+}
+.bl-datepicker__day:hover:not(:disabled) { background: var(--bl-surface-2); }
+.bl-datepicker__day.is-today { box-shadow: inset 0 0 0 1px var(--bl-line); }
+.bl-datepicker__day.is-selected,
+.bl-datepicker__day.is-selected:hover {
+  background: var(--bl-accent);
+  color: #1A1305;
+  font-weight: 600;
+}
+.bl-datepicker__day:disabled {
+  color: var(--bl-muted);
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+
+.bl-datepicker__foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bl-line);
+}
+
+/* ==========================================================================
+   Analog clock
+   ========================================================================== */
+.bl-clock { width: 272px; }
+
+.bl-clock__readout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.bl-clock__seg {
+  min-width: 54px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--bl-line);
+  border-radius: $bl-radius;
+  background: var(--bl-bg);
+  color: var(--bl-text);
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s $bl-ease, color 0.2s $bl-ease;
+}
+.bl-clock__seg.is-active { border-color: var(--bl-accent); color: var(--bl-accent); }
+.bl-clock__colon {
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--bl-muted);
+}
+.bl-clock__ampm {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 8px;
+}
+.bl-clock__ampm-btn {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--bl-line);
+  border-radius: $bl-radius-pill;
+  background: var(--bl-bg);
+  color: var(--bl-muted);
+  font-family: var(--bl-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s $bl-ease;
+}
+.bl-clock__ampm-btn.is-active {
+  background: var(--bl-accent);
+  border-color: var(--bl-accent);
+  color: #1A1305;
+}
+
+.bl-clock__face {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--bl-bg);
+  border: 1px solid var(--bl-line);
+}
+.bl-clock__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--bl-accent);
+  z-index: 3;
+}
+.bl-clock__hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 2px;
+  height: 96px;
+  background: var(--bl-accent);
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.bl-clock__hand::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: var(--bl-accent);
+}
+.bl-clock__num {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--bl-text);
+  font-family: var(--bl-font);
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.18s $bl-ease;
+}
+.bl-clock__num:hover { color: var(--bl-accent); }
+.bl-clock__num.is-active { color: #1A1305; font-weight: 600; }
+
+.bl-clock__foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}

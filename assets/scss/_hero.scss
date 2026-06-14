@@ -35,7 +35,8 @@
 }
 
 /* Content overlay */
-.bl-hero__content {
+.bl-hero__content,
+.bl-hero-slider__content {
   position: absolute;
   inset: 0;
   z-index: 4;
@@ -216,4 +217,371 @@
   .bl-hero__media { height: 92vh; }
   .bl-hero__video { display: none; }
   .bl-hero__poster { display: block; }
+}
+
+/* ==========================================================================
+   Home v2 — Image slider hero
+   ========================================================================== */
+.bl-hero--slider {
+  overflow: hidden;
+}
+.bl-hero-slider,
+.bl-hero-slider .swiper-wrapper,
+.bl-hero-slider .swiper-slide {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+}
+.bl-hero-slider__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bl-hero-slider__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(16,16,15,0) 35%, rgba(16,16,15,0.5) 100%),
+    linear-gradient(180deg, rgba(16,16,15,0.65) 0%, rgba(16,16,15,0.15) 30%, rgba(16,16,15,0.85) 100%);
+  pointer-events: none;
+}
+.bl-hero-slider__pagination {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(24px, 4vh, 48px);
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 0.5rem;
+}
+.bl-hero-slider__pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: rgba(248, 244, 234, 0.35);
+  opacity: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.bl-hero-slider__pagination .swiper-pagination-bullet-active {
+  background: var(--bl-accent);
+  width: 26px;
+  border-radius: 9px;
+}
+.bl-hero-slider__arrows {
+  position: absolute;
+  right: clamp(20px, 4vw, 64px);
+  bottom: clamp(24px, 4vh, 48px);
+  z-index: 5;
+  display: none;
+  gap: 0.6rem;
+}
+.bl-hero-slider__arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--bl-line);
+  background: rgba(32, 32, 29, 0.6);
+  color: var(--bl-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s, border-color 0.2s;
+}
+.bl-hero-slider__arrow:hover {
+  background: var(--bl-accent);
+  border-color: var(--bl-accent);
+  color: var(--bl-bg);
+}
+.bl-hero-slider__arrow svg { width: 20px; height: 20px; }
+
+@media (min-width: $bp-md) {
+  .bl-hero-slider__arrows { display: flex; }
+}
+
+/* ==========================================================================
+   Home v3 — App dashboard hero
+   ========================================================================== */
+.bl-hero--app {
+  position: relative;
+  padding: clamp(130px, 16vw, 200px) 0 clamp(56px, 7vw, 96px);
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(245, 179, 26, 0.10), transparent 55%),
+    var(--bl-bg);
+  overflow: hidden;
+}
+.bl-hero--app .bl-hero__inner {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: $bp-md) {
+  .bl-hero--app .bl-hero__inner { grid-template-columns: 1fr 1fr; }
+}
+
+.bl-hero-bento {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "order" "map" "eta" "rating";
+}
+@media (min-width: $bp-sm) {
+  .bl-hero-bento {
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas:
+      "order map"
+      "order eta"
+      "rating rating";
+  }
+}
+.bl-hero-bento__cell {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: $bl-radius-lg;
+  padding: 1.4rem;
+}
+.bl-hero-bento__cell--order { grid-area: order; }
+.bl-hero-bento__cell--map {
+  grid-area: map;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bl-hero-bento__cell--eta {
+  grid-area: eta;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.bl-hero-bento__cell--rating {
+  grid-area: rating;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bl-hero-bento__map {
+  position: relative;
+  height: 90px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--bl-bg-2), var(--bl-surface-2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+}
+.bl-hero-bento__route {
+  flex: 1;
+  height: 1px;
+  margin: 0 10px;
+  background-image: repeating-linear-gradient(to right, var(--bl-accent) 0 6px, transparent 6px 12px);
+}
+.bl-hero-bento__pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bl-accent);
+  color: var(--bl-bg);
+  flex: 0 0 auto;
+}
+.bl-hero-bento__pin--end { background: var(--bl-accent-2); }
+.bl-hero-bento__pin svg { width: 16px; height: 16px; }
+.bl-hero-bento__map-label {
+  margin: 0.8rem 0 0;
+  font-family: var(--bl-font-mono);
+  font-size: 0.72rem;
+  color: var(--bl-muted);
+}
+
+.bl-hero-bento__eta-num {
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--bl-accent);
+  line-height: 1;
+}
+.bl-hero-bento__eta-num small {
+  font-family: var(--bl-font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--bl-muted);
+  margin-left: 0.3rem;
+}
+.bl-hero-bento__eta-label {
+  font-family: var(--bl-font-mono);
+  font-size: 0.74rem;
+  color: var(--bl-muted);
+}
+
+.bl-hero-bento__rating-stars {
+  display: flex;
+  gap: 0.2rem;
+  color: var(--bl-accent);
+  flex: 0 0 auto;
+}
+.bl-hero-bento__rating-stars svg { width: 16px; height: 16px; }
+.bl-hero-bento__cell--rating p { margin: 0; color: var(--bl-muted); font-size: 0.85rem; }
+
+/* ==========================================================================
+   Home v4 — Split-screen hero
+   ========================================================================== */
+.bl-hero--split { background: var(--bl-bg); }
+.bl-hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: $bp-md) {
+  .bl-hero-split { grid-template-columns: 1fr 1fr; min-height: 100vh; }
+}
+.bl-hero-split__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(130px, 16vw, 200px) clamp(24px, 5vw, 64px) clamp(56px, 7vw, 96px);
+}
+.bl-hero-split__media {
+  position: relative;
+  min-height: 360px;
+}
+.bl-hero-split__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Home v5 — Statement (big typography) hero
+   ========================================================================== */
+.bl-hero--statement {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(130px, 16vw, 200px) 0 clamp(56px, 7vw, 96px);
+  background:
+    radial-gradient(120% 90% at 50% 100%, rgba(245, 179, 26, 0.10), transparent 60%),
+    var(--bl-bg);
+  overflow: hidden;
+}
+.bl-hero-statement__title {
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 12vw, 9rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.bl-hero-statement__title em {
+  font-style: normal;
+  color: var(--bl-accent);
+}
+.bl-hero-statement__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.bl-hero-statement__lede {
+  max-width: 420px;
+  margin: 0;
+  color: var(--bl-muted);
+}
+.bl-hero-statement__media {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: clamp(40px, 6vw, 72px);
+}
+.bl-hero-statement__media img {
+  width: 100%;
+  height: clamp(110px, 18vw, 240px);
+  object-fit: cover;
+  border-radius: $bl-radius-lg;
+}
+
+/* ==========================================================================
+   Home v6 — Bento mosaic hero
+   ========================================================================== */
+.bl-hero--bento {
+  position: relative;
+  padding: clamp(130px, 16vw, 200px) 0 clamp(56px, 7vw, 96px);
+  background:
+    radial-gradient(120% 100% at 100% 0%, rgba(245, 179, 26, 0.08), transparent 55%),
+    var(--bl-bg);
+  overflow: hidden;
+}
+.bl-hero-bento-layout {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: $bp-md) {
+  .bl-hero-bento-layout { grid-template-columns: 1.05fr 1fr; }
+}
+.bl-hero-mosaic {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "a b"
+    "a c"
+    "d c";
+}
+.bl-hero-mosaic__cell {
+  position: relative;
+  border-radius: $bl-radius-lg;
+  overflow: hidden;
+}
+.bl-hero-mosaic__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.bl-hero-mosaic__cell--a { grid-area: a; min-height: 280px; }
+.bl-hero-mosaic__cell--b { grid-area: b; min-height: 130px; }
+.bl-hero-mosaic__cell--c { grid-area: c; min-height: 200px; }
+.bl-hero-mosaic__cell--d {
+  grid-area: d;
+  min-height: 130px;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1.2rem;
+}
+.bl-hero-mosaic__stat-num {
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--bl-accent);
+  line-height: 1;
+}
+.bl-hero-mosaic__stat-label {
+  font-family: var(--bl-font-mono);
+  font-size: 0.74rem;
+  color: var(--bl-muted);
 }

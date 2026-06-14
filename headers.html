@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Header Layouts — BurgerLab Premium Burger &amp; Restaurant Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="BurgerLab">
+<meta name="description" content="Browse all 10 header / navigation layouts included with the BurgerLab HTML template — mix and match across any page.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="bl-skip-link" href="#main">Skip to content</a>
+
+<!-- ===== Header ===== -->
+<header class="bl-header bl-header--solid">
+  <div class="bl-container bl-container--wide">
+    <nav class="bl-nav" aria-label="Primary">
+      <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+      <ul class="bl-nav__menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="bl-nav__actions">
+        <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+        <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+        <button class="bl-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="bl-mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Mobile menu ===== -->
+<div class="bl-mobile-menu" id="bl-mobile-menu">
+  <button class="bl-mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
+  <nav class="bl-mobile-menu__list" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="bl-mobile-menu__foot">
+    <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+    <a href="reservation.html" class="bl-btn bl-btn--primary">Order Now</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ===== Page hero ===== -->
+  <section class="bl-page-hero">
+    <div class="bl-container bl-container--wide">
+      <span class="bl-page-hero__eyebrow">Template assets</span>
+      <h1 class="bl-page-hero__title">Header <em>layouts</em></h1>
+      <p class="bl-page-hero__lede">10 reusable header / navigation styles included with BurgerLab. Each one shares the same markup conventions — swap the modifier class to switch layouts on any page. Previews below show the desktop layout.</p>
+      <nav class="bl-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="bl-breadcrumb__sep">/</span>
+        <span aria-current="page">Header layouts</span>
+      </nav>
+    </div>
+  </section>
+
+  <section class="bl-section">
+    <div class="bl-container bl-container--wide">
+      <h2 class="bl-visually-hidden">Header layout previews</h2>
+
+      <!-- 01 — Transparent Overlay -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 01</span>
+            <h3 class="bl-hf-demo__name">Transparent Overlay</h3>
+          </div>
+          <p class="bl-hf-demo__desc">Default home-v1 header — transparent over the hero, fades to a blurred dark bar on scroll. Class: <code class="bl-mono">.bl-header</code></p>
+        </div>
+        <div class="bl-hf-demo__frame bl-hf-demo__frame--image" style="background-image:url('assets/images/hero-poster.jpg')">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="blog.html">Journal</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 — Solid Bar -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 02</span>
+            <h3 class="bl-hf-demo__name">Solid Bar</h3>
+          </div>
+          <p class="bl-hf-demo__desc">Always-on solid bar, used across every inner page. Class: <code class="bl-mono">.bl-header.bl-header--solid</code></p>
+        </div>
+        <div class="bl-hf-demo__frame">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header bl-header--solid is-scrolled">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="blog.html">Journal</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 — Centered Logo -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 03</span>
+            <h3 class="bl-hf-demo__name">Centered Logo</h3>
+          </div>
+          <p class="bl-hf-demo__desc">Logo centered with navigation split left and right. Class: <code class="bl-mono">.bl-header--solid .bl-nav--centered</code></p>
+        </div>
+        <div class="bl-hf-demo__frame">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header bl-header--solid is-scrolled">
+              <nav class="bl-nav bl-nav--centered" aria-label="Primary">
+                <ul class="bl-nav__menu bl-nav__menu--left">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                </ul>
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <div class="bl-nav__right">
+                  <ul class="bl-nav__menu bl-nav__menu--right">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Journal</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 — Topbar + Nav -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 04</span>
+            <h3 class="bl-hf-demo__name">Topbar + Nav</h3>
+          </div>
+          <p class="bl-hf-demo__desc">Two-row header — a thin utility bar with location, hours and socials sits above the main nav. Class: <code class="bl-mono">.bl-header--topbar</code></p>
+        </div>
+        <div class="bl-hf-demo__frame bl-hf-demo__frame--bleed">
+          <div class="bl-header bl-header--solid bl-header--topbar is-scrolled">
+            <div class="bl-topbar">
+              <div class="bl-container bl-container--wide">
+                <div class="bl-topbar__inner">
+                  <div class="bl-topbar__items">
+                    <span>148 Spring Street, SoHo, NY</span>
+                    <span>Mon–Sun 11:00–23:00</span>
+                  </div>
+                  <div class="bl-topbar__social">
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="15" height="15"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+                    <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="15" height="15"><path d="M3 3l7.5 9.5L3.5 21H6l5.3-6.3L16 21h5l-7.8-10L20.5 3H18l-5 5.9L8 3z"/></svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bl-container bl-container--wide">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="blog.html">Journal</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 — Floating Pill -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 05</span>
+            <h3 class="bl-hf-demo__name">Floating Pill</h3>
+          </div>
+          <p class="bl-hf-demo__desc">A frosted, pill-shaped nav floating with a margin over the hero. Class: <code class="bl-mono">.bl-header--floating</code></p>
+        </div>
+        <div class="bl-hf-demo__frame bl-hf-demo__frame--image" style="background-image:url('assets/images/hero-poster.jpg')">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header bl-header--floating">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="blog.html">Journal</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 — Boxed Nav Items -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 06</span>
+            <h3 class="bl-hf-demo__name">Boxed Nav Items</h3>
+          </div>
+          <p class="bl-hf-demo__desc">Each nav link sits in its own pill; the active link fills with the brand amber. Class: <code class="bl-mono">.bl-header--boxed</code></p>
+        </div>
+        <div class="bl-hf-demo__frame">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header bl-header--solid bl-header--boxed is-scrolled">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="blog.html">Journal</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 — Icon Nav -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 07</span>
+            <h3 class="bl-hf-demo__name">Icon Nav</h3>
+          </div>
+          <p class="bl-hf-demo__desc">Navigation links paired with line icons, plus a quick-access cart icon. Class: <code class="bl-mono">.bl-header--icons</code></p>
+        </div>
+        <div class="bl-hf-demo__frame">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header bl-header--solid bl-header--icons is-scrolled">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home</a></li>
+                  <li><a href="menu.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Menu</a></li>
+                  <li><a href="about.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>About</a></li>
+                  <li><a href="gallery.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Gallery</a></li>
+                  <li><a href="blog.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V4z"/><path d="M8 8h8M8 12h8"/></svg>Journal</a></li>
+                  <li><a href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <button class="bl-icon-btn" type="button" aria-label="View order">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+                  </button>
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 — Underline Tabs -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 08</span>
+            <h3 class="bl-hf-demo__name">Underline Tabs</h3>
+          </div>
+          <p class="bl-hf-demo__desc">Full-width, evenly spaced links with an amber underline on hover/active — tab-bar style. Class: <code class="bl-mono">.bl-header--tabs</code></p>
+        </div>
+        <div class="bl-hf-demo__frame">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header bl-header--solid bl-header--tabs is-scrolled">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="blog.html">Journal</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 — Vertical Sidebar -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 09</span>
+            <h3 class="bl-hf-demo__name">Vertical Sidebar</h3>
+          </div>
+          <p class="bl-hf-demo__desc">A fixed-width sidebar nav for a editorial / agency-style layout, with page content alongside. Class: <code class="bl-mono">.bl-header--sidebar</code></p>
+        </div>
+        <div class="bl-hf-demo__frame bl-hf-demo__frame--bleed bl-hf-demo__frame--split">
+          <div class="bl-header bl-header--sidebar">
+            <nav class="bl-nav" aria-label="Primary">
+              <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+              <ul class="bl-nav__menu">
+                <li><a href="index.html" class="is-active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+              <div class="bl-nav__actions">
+                <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+                <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+              </div>
+            </nav>
+          </div>
+          <div class="bl-hf-demo__frame--content">Page content area</div>
+        </div>
+      </div>
+
+      <!-- 10 — Search + Order -->
+      <div class="bl-hf-demo">
+        <div class="bl-hf-demo__label">
+          <div>
+            <span class="bl-hf-demo__num">Header 10</span>
+            <h3 class="bl-hf-demo__name">Search + Order</h3>
+          </div>
+          <p class="bl-hf-demo__desc">An inline search field plus paired Reserve / Order actions for ordering-focused pages. Class: <code class="bl-mono">.bl-header--search</code></p>
+        </div>
+        <div class="bl-hf-demo__frame">
+          <div class="bl-container bl-container--wide">
+            <div class="bl-header bl-header--solid bl-header--search is-scrolled">
+              <nav class="bl-nav" aria-label="Primary">
+                <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+                <ul class="bl-nav__menu">
+                  <li><a href="index.html" class="is-active">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="bl-nav__actions">
+                  <label class="bl-nav__search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                    <input type="search" placeholder="Search menu" aria-label="Search menu">
+                  </label>
+                  <a href="reservation.html" class="bl-btn bl-btn--ghost bl-btn--sm">Reserve</a>
+                  <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bl-footer">
+  <div class="bl-container bl-container--wide">
+    <div class="bl-footer__top">
+      <div class="bl-footer__brand">
+        <div class="bl-footer__brand-name">Burger<span>Lab</span></div>
+        <p class="bl-footer__about">Premium burgers, engineered in the lab and grilled over fire. Crafted fresh, delivered fast — across the city, every day.</p>
+        <div class="bl-footer__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 3c.3 2.2 1.7 3.8 3.9 4v3c-1.4 0-2.8-.4-3.9-1.1V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1A3 3 0 1 0 13 15V3z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3l7.5 9.5L3.5 21H6l5.3-6.3L16 21h5l-7.8-10L20.5 3H18l-5 5.9L8 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Journal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Visit</h3>
+        <ul>
+          <li>148 Spring Street</li>
+          <li>SoHo, New York</li>
+          <li><a href="tel:+12125550148">+1 (212) 555 — 0148</a></li>
+          <li><a href="mailto:hello@burgerlab.com">hello@burgerlab.com</a></li>
+        </ul>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Hours</h3>
+        <div class="bl-footer__hours">
+          <div><span>Mon — Thu</span><span>11:00 — 23:00</span></div>
+          <div><span>Fri — Sat</span><span>11:00 — 01:00</span></div>
+          <div><span>Sunday</span><span>12:00 — 22:00</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bl-footer__bottom">
+      <span>© <span data-year>2026</span> BurgerLab — All rights reserved.</span>
+      <span><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="bl-totop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Vendor JS -->
+<script src="assets/js/vendors/gsap.min.js"></script>
+<script src="assets/js/vendors/ScrollTrigger.min.js"></script>
+<!-- Template JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -45,6 +45,9 @@
     initForms();
     initToTop();
     initYear();
+    initHomeSwitcher();
+    initHeroSlider();
+    initPickers();
   });
 
   /* ----- Preloader (always hides — window load OR 5s failsafe) ----- */
@@ -432,6 +435,295 @@
   function initYear() {
     document.querySelectorAll("[data-year]").forEach(function (el) {
       el.textContent = new Date().getFullYear();
+    });
+  }
+
+  /* ----- Home variant switcher ----- */
+  function initHomeSwitcher() {
+    var el = document.querySelector("[data-home-switcher]");
+    if (!el) return;
+    var btn = el.querySelector(".bl-home-switcher__btn");
+    var close = function () {
+      el.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    };
+    btn.addEventListener("click", function () {
+      var open = el.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("click", function (e) {
+      if (!el.contains(e.target)) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  }
+
+  /* ----- Custom date & time pickers (reservation form) -----
+     Replaces native type="date"/type="time" with brand-themed widgets:
+     a calendar grid and an analog clock. Each input keeps a human value
+     (e.g. "Jun 14, 2026" / "7:30 PM") for the email, plus a machine value
+     in dataset.value (ISO date / 24h time) for reliable re-parsing. */
+  function initPickers() {
+    var MONTHS = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+    var MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var WEEKDAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+    var open = null; // { wrap, pop, input }
+
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+    function closeOpen() {
+      if (!open) return;
+      open.wrap.classList.remove("is-open");
+      open.pop.setAttribute("hidden", "");
+      open.input.setAttribute("aria-expanded", "false");
+      open = null;
+    }
+
+    // One shared outside-click / Escape handler for whichever pop is open.
+    // Runs on the CAPTURE phase, before any delegated click handler inside
+    // the popover can re-render (and thus detach) the clicked element —
+    // otherwise the bubbling click would see a detached e.target and look
+    // like an "outside" click, slamming the popover shut on every selection.
+    document.addEventListener("click", function (e) {
+      if (open && !open.wrap.contains(e.target)) closeOpen();
+    }, true);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeOpen();
+    });
+
+    // Shared trigger wiring: block typing, open on click/focus/keydown.
+    function wireTrigger(input, doOpen) {
+      input.setAttribute("autocomplete", "off");
+      input.setAttribute("inputmode", "none");
+      input.setAttribute("aria-haspopup", "dialog");
+      input.setAttribute("aria-expanded", "false");
+      input.classList.add("bl-input--picker");
+      input.addEventListener("click", doOpen);
+      input.addEventListener("focus", doOpen);
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Tab") return;
+        e.preventDefault();
+        if (e.key === "Escape") { closeOpen(); return; }
+        doOpen();
+      });
+    }
+
+    /* ---------- Calendar ---------- */
+    document.querySelectorAll("[data-datepicker]").forEach(function (wrap) {
+      var input = wrap.querySelector("input");
+      if (!input) return;
+
+      var pop = document.createElement("div");
+      pop.className = "bl-picker__pop bl-datepicker";
+      pop.setAttribute("role", "dialog");
+      pop.setAttribute("aria-label", "Choose a date");
+      pop.setAttribute("hidden", "");
+      wrap.appendChild(pop);
+
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      var viewY, viewM, selected;
+
+      function render() {
+        var startDow = new Date(viewY, viewM, 1).getDay();
+        var daysInMonth = new Date(viewY, viewM + 1, 0).getDate();
+        var html = "";
+        html += '<div class="bl-datepicker__head">';
+        html += '<button type="button" class="bl-datepicker__nav" data-prev aria-label="Previous month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>';
+        html += '<div class="bl-datepicker__title" aria-live="polite">' + MONTHS[viewM] + " " + viewY + "</div>";
+        html += '<button type="button" class="bl-datepicker__nav" data-next aria-label="Next month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>';
+        html += "</div>";
+        html += '<div class="bl-datepicker__weekdays">';
+        WEEKDAYS.forEach(function (d) { html += "<span>" + d + "</span>"; });
+        html += "</div>";
+        html += '<div class="bl-datepicker__grid">';
+        var i;
+        for (i = 0; i < startDow; i++) html += '<span class="bl-datepicker__pad"></span>';
+        for (var d = 1; d <= daysInMonth; d++) {
+          var cur = new Date(viewY, viewM, d);
+          var iso = viewY + "-" + pad(viewM + 1) + "-" + pad(d);
+          var isToday = cur.getTime() === today.getTime();
+          var isSel = selected && cur.getTime() === selected.getTime();
+          var disabled = cur < today;
+          var cls = "bl-datepicker__day" + (isToday ? " is-today" : "") + (isSel ? " is-selected" : "");
+          html += '<button type="button" class="' + cls + '" data-date="' + iso + '"' +
+            (disabled ? " disabled" : "") +
+            (isSel ? ' aria-pressed="true"' : "") +
+            ' aria-label="' + MONTHS[viewM] + " " + d + ", " + viewY + '">' + d + "</button>";
+        }
+        html += "</div>";
+        html += '<div class="bl-datepicker__foot">';
+        html += '<button type="button" class="bl-picker__link" data-today>Today</button>';
+        html += '<button type="button" class="bl-picker__link" data-clear>Clear</button>';
+        html += "</div>";
+        pop.innerHTML = html;
+      }
+
+      function commit(date) {
+        selected = date;
+        if (date) {
+          input.value = MONTHS_SHORT[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+          input.dataset.value = date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate());
+        } else {
+          input.value = "";
+          delete input.dataset.value;
+        }
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+
+      function doOpen() {
+        if (open && open.pop !== pop) closeOpen();
+        if (input.dataset.value) {
+          var p = input.dataset.value.split("-");
+          selected = new Date(+p[0], +p[1] - 1, +p[2]);
+          viewY = selected.getFullYear();
+          viewM = selected.getMonth();
+        } else {
+          selected = null;
+          viewY = today.getFullYear();
+          viewM = today.getMonth();
+        }
+        render();
+        pop.removeAttribute("hidden");
+        wrap.classList.add("is-open");
+        input.setAttribute("aria-expanded", "true");
+        open = { wrap: wrap, pop: pop, input: input };
+      }
+
+      wireTrigger(input, doOpen);
+
+      pop.addEventListener("click", function (e) {
+        var t = e.target.closest("button");
+        if (!t) return;
+        if (t.hasAttribute("data-prev")) { if (--viewM < 0) { viewM = 11; viewY--; } render(); return; }
+        if (t.hasAttribute("data-next")) { if (++viewM > 11) { viewM = 0; viewY++; } render(); return; }
+        if (t.hasAttribute("data-today")) { commit(new Date(today.getTime())); closeOpen(); return; }
+        if (t.hasAttribute("data-clear")) { commit(null); render(); return; }
+        if (t.hasAttribute("data-date") && !t.disabled) {
+          var p = t.getAttribute("data-date").split("-");
+          commit(new Date(+p[0], +p[1] - 1, +p[2]));
+          closeOpen();
+        }
+      });
+    });
+
+    /* ---------- Analog clock ---------- */
+    document.querySelectorAll("[data-timepicker]").forEach(function (wrap) {
+      var input = wrap.querySelector("input");
+      if (!input) return;
+
+      var pop = document.createElement("div");
+      pop.className = "bl-picker__pop bl-clock";
+      pop.setAttribute("role", "dialog");
+      pop.setAttribute("aria-label", "Choose a time");
+      pop.setAttribute("hidden", "");
+      wrap.appendChild(pop);
+
+      var mode = "hour";       // "hour" | "minute"
+      var hour = 7, minute = 0, ampm = "PM"; // hour is 1-12
+
+      function faceHtml() {
+        var R = 96, cx = 120, cy = 120, nums = [], i;
+        if (mode === "hour") {
+          for (i = 1; i <= 12; i++) nums.push({ label: i, value: i, deg: i * 30 });
+        } else {
+          for (i = 0; i < 60; i += 5) nums.push({ label: pad(i), value: i, deg: i * 6 });
+        }
+        var activeDeg = mode === "hour" ? hour * 30 : minute * 6;
+        var html = '<div class="bl-clock__hand" style="transform: translateX(-50%) rotate(' + activeDeg + 'deg)"></div>';
+        html += '<span class="bl-clock__center"></span>';
+        nums.forEach(function (n) {
+          var rad = (n.deg - 90) * Math.PI / 180;
+          var x = cx + R * Math.cos(rad);
+          var y = cy + R * Math.sin(rad);
+          var active = (mode === "hour" && n.value === hour) || (mode === "minute" && n.value === minute);
+          html += '<button type="button" class="bl-clock__num' + (active ? " is-active" : "") +
+            '" data-val="' + n.value + '" style="left:' + x + "px;top:" + y + 'px">' + n.label + "</button>";
+        });
+        return html;
+      }
+
+      function render() {
+        var html = '<div class="bl-clock__readout">';
+        html += '<button type="button" class="bl-clock__seg' + (mode === "hour" ? " is-active" : "") + '" data-seg="hour" aria-label="Set hour">' + hour + "</button>";
+        html += '<span class="bl-clock__colon">:</span>';
+        html += '<button type="button" class="bl-clock__seg' + (mode === "minute" ? " is-active" : "") + '" data-seg="minute" aria-label="Set minutes">' + pad(minute) + "</button>";
+        html += '<div class="bl-clock__ampm">';
+        html += '<button type="button" class="bl-clock__ampm-btn' + (ampm === "AM" ? " is-active" : "") + '" data-ampm="AM">AM</button>';
+        html += '<button type="button" class="bl-clock__ampm-btn' + (ampm === "PM" ? " is-active" : "") + '" data-ampm="PM">PM</button>';
+        html += "</div></div>";
+        html += '<div class="bl-clock__face">' + faceHtml() + "</div>";
+        html += '<div class="bl-clock__foot">';
+        html += '<button type="button" class="bl-picker__link" data-clock-cancel>Cancel</button>';
+        html += '<button type="button" class="bl-btn bl-btn--primary bl-btn--sm" data-clock-ok>Done</button>';
+        html += "</div>";
+        pop.innerHTML = html;
+      }
+
+      function commit() {
+        var h24 = hour % 12 + (ampm === "PM" ? 12 : 0);
+        input.value = hour + ":" + pad(minute) + " " + ampm;
+        input.dataset.value = pad(h24) + ":" + pad(minute);
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+
+      function doOpen() {
+        if (open && open.pop !== pop) closeOpen();
+        if (input.dataset.value) {
+          var p = input.dataset.value.split(":");
+          var h24 = +p[0];
+          minute = +p[1];
+          ampm = h24 >= 12 ? "PM" : "AM";
+          hour = h24 % 12 || 12;
+        } else {
+          hour = 7; minute = 0; ampm = "PM";
+        }
+        mode = "hour";
+        render();
+        pop.removeAttribute("hidden");
+        wrap.classList.add("is-open");
+        input.setAttribute("aria-expanded", "true");
+        open = { wrap: wrap, pop: pop, input: input };
+      }
+
+      wireTrigger(input, doOpen);
+
+      pop.addEventListener("click", function (e) {
+        var t = e.target.closest("button");
+        if (!t) return;
+        if (t.hasAttribute("data-seg")) { mode = t.getAttribute("data-seg"); render(); return; }
+        if (t.hasAttribute("data-ampm")) { ampm = t.getAttribute("data-ampm"); render(); return; }
+        if (t.classList.contains("bl-clock__num")) {
+          var val = +t.getAttribute("data-val");
+          if (mode === "hour") { hour = val; mode = "minute"; } else { minute = val; }
+          render();
+          return;
+        }
+        if (t.hasAttribute("data-clock-cancel")) { closeOpen(); return; }
+        if (t.hasAttribute("data-clock-ok")) { commit(); closeOpen(); }
+      });
+    });
+  }
+
+  /* ----- Hero image slider (home-v2) ----- */
+  function initHeroSlider() {
+    if (!window.Swiper) return;
+    var el = document.querySelector(".bl-hero-slider");
+    if (!el) return;
+    new Swiper(el, {
+      loop: true,
+      autoplay: { delay: 7000, disableOnInteraction: false },
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      speed: 900,
+      pagination: { el: ".bl-hero-slider__pagination", clickable: true },
+      navigation: {
+        nextEl: ".bl-hero-slider__arrow--next",
+        prevEl: ".bl-hero-slider__arrow--prev",
+      },
     });
   }
 })();
