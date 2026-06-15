@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Terms &amp; Conditions — BurgerLab Premium Burger &amp; Restaurant Template</title>
+<title>Checkout — BurgerLab Premium Burger &amp; Restaurant Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="BurgerLab">
-<meta name="description" content="The terms and conditions for using the BurgerLab website, ordering and reservations.">
+<meta name="description" content="Complete your BurgerLab order — enter delivery details, pick a payment method, and place your order.">
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,49 +62,114 @@
   <!-- ===== Page hero ===== -->
   <section class="bl-page-hero">
     <div class="bl-container bl-container--wide">
-      <span class="bl-page-hero__eyebrow">Legal</span>
-      <h1 class="bl-page-hero__title">Terms &amp; <em>Conditions</em></h1>
+      <span class="bl-page-hero__eyebrow">Last step</span>
+      <h1 class="bl-page-hero__title">Almost <em>there</em></h1>
+      <p class="bl-page-hero__lede">Add your delivery details and pick a payment method — your kitchen ticket prints the moment you place the order.</p>
       <nav class="bl-breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
         <span class="bl-breadcrumb__sep">/</span>
-        <span aria-current="page">Terms &amp; Conditions</span>
+        <a href="shopping-cart.html">Cart</a>
+        <span class="bl-breadcrumb__sep">/</span>
+        <span aria-current="page">Checkout</span>
       </nav>
     </div>
   </section>
 
-  <!-- ===== Content ===== -->
+  <!-- ===== Checkout ===== -->
   <section class="bl-section">
-    <div class="bl-container bl-container--narrow">
-      <article class="bl-prose">
-        <p class="bl-prose__updated">Last updated: June 1, 2026</p>
+    <div class="bl-container bl-container--wide">
+      <form action="https://api.web3forms.com/submit" method="POST" data-form data-success="Order received — a confirmation text is on its way and your kitchen ticket just printed.">
+        <input type="hidden" name="access_key" value="1689852d-c68d-46fa-977e-51c4bc04d29a">
+        <input type="hidden" name="subject" value="New BurgerLab order">
+        <input type="hidden" name="from_name" value="BurgerLab Website">
+        <input type="checkbox" name="botcheck" class="bl-honeypot" tabindex="-1" aria-hidden="true">
 
-        <p>These Terms &amp; Conditions govern your use of the BurgerLab website and services. By using the site, placing an order or making a reservation, you agree to these terms. This is sample template content — replace it with your own terms before going live.</p>
+        <div class="bl-cart">
 
-        <h2>1. Using our website</h2>
-        <p>You agree to use this website lawfully and not to attempt to disrupt, damage or gain unauthorised access to any part of it. Content on the site is provided for general information about our menu and locations.</p>
+          <div class="bl-form-card bl-reveal-up">
+            <h2 class="bl-cart-summary__title">Contact details</h2>
+            <div class="bl-form-grid">
+              <div class="bl-field">
+                <label for="co-first">First name</label>
+                <input class="bl-input" type="text" id="co-first" name="first_name" autocomplete="given-name" required>
+              </div>
+              <div class="bl-field">
+                <label for="co-last">Last name</label>
+                <input class="bl-input" type="text" id="co-last" name="last_name" autocomplete="family-name" required>
+              </div>
+              <div class="bl-field">
+                <label for="co-email">Email</label>
+                <input class="bl-input" type="email" id="co-email" name="email" autocomplete="email" required>
+              </div>
+              <div class="bl-field">
+                <label for="co-phone">Phone</label>
+                <input class="bl-input" type="tel" id="co-phone" name="phone" autocomplete="tel" required>
+              </div>
+            </div>
 
-        <h2>2. Orders &amp; pricing</h2>
-        <p>All prices are shown in US dollars and may change without notice. We do our best to keep menu items, availability and prices accurate, but errors can occur and we reserve the right to correct them.</p>
+            <h2 class="bl-cart-summary__title">Delivery address</h2>
+            <div class="bl-form-grid">
+              <div class="bl-field bl-field--full">
+                <label for="co-address">Street address</label>
+                <input class="bl-input" type="text" id="co-address" name="address" autocomplete="address-line1" required>
+              </div>
+              <div class="bl-field">
+                <label for="co-city">City</label>
+                <input class="bl-input" type="text" id="co-city" name="city" autocomplete="address-level2" required>
+              </div>
+              <div class="bl-field">
+                <label for="co-zip">ZIP / postal code</label>
+                <input class="bl-input" type="text" id="co-zip" name="zip" autocomplete="postal-code" required>
+              </div>
+              <div class="bl-field">
+                <label for="co-method">Delivery method</label>
+                <select class="bl-select" id="co-method" name="delivery_method">
+                  <option>Delivery — 25–35 min</option>
+                  <option>Pickup — ready in 15 min</option>
+                </select>
+              </div>
+              <div class="bl-field">
+                <label for="co-payment">Payment method</label>
+                <select class="bl-select" id="co-payment" name="payment_method">
+                  <option>Card on delivery</option>
+                  <option>Cash on delivery</option>
+                  <option>Apple Pay</option>
+                  <option>Google Pay</option>
+                </select>
+              </div>
+              <div class="bl-field bl-field--full">
+                <label for="co-notes">Delivery notes (optional)</label>
+                <textarea class="bl-textarea" id="co-notes" name="notes" placeholder="Gate code, floor, allergies…"></textarea>
+              </div>
+            </div>
+            <p class="bl-form-hint">This is a demo checkout — no payment is processed and no order is sent to a kitchen.</p>
+          </div>
 
-        <h2>3. Reservations</h2>
-        <ul>
-          <li>Reservation requests are confirmed by email and are not guaranteed until confirmed.</li>
-          <li>Please let us know in advance of any changes or cancellations.</li>
-          <li>Tables may be released after 15 minutes if the party has not arrived.</li>
-        </ul>
+          <aside class="bl-cart-summary bl-reveal-up">
+            <h2 class="bl-cart-summary__title">Order summary</h2>
+            <div class="bl-spec">
+              <div class="bl-spec__row"><span>Classic Stack × 2</span><span>$25.80</span></div>
+              <div class="bl-spec__row"><span>Loaded Fries × 1</span><span>$7.50</span></div>
+              <div class="bl-spec__row"><span>Craft Cola × 2</span><span>$7.00</span></div>
+            </div>
+            <div class="bl-exp__summary-row"><span>Subtotal</span><strong>$40.30</strong></div>
+            <div class="bl-exp__summary-row"><span>Delivery</span><strong>$4.00</strong></div>
+            <div class="bl-exp__summary-row"><span>Tax (8.875%)</span><strong>$3.58</strong></div>
+            <div class="bl-exp__total"><span>Total</span><span>$47.88</span></div>
+            <div class="bl-actions">
+              <button type="submit" class="bl-btn bl-btn--primary bl-btn--lg bl-btn--block">Place order</button>
+            </div>
+            <div class="bl-more-links">
+              <a href="shopping-cart.html" class="bl-btn bl-btn--ghost">
+                <svg class="bl-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+                Back to cart
+              </a>
+            </div>
+            <p class="bl-form__note" role="status" aria-live="polite"></p>
+          </aside>
 
-        <h2>4. Allergies &amp; dietary information</h2>
-        <p>Our food is prepared in kitchens that handle common allergens. While we take care, we cannot guarantee any item is completely free of a given allergen. Please tell us about allergies before ordering.</p>
-
-        <h2>5. Intellectual property</h2>
-        <p>All branding, text, images and design on this site belong to BurgerLab or its licensors and may not be reused without permission.</p>
-
-        <h2>6. Limitation of liability</h2>
-        <p>To the fullest extent permitted by law, BurgerLab is not liable for any indirect or consequential loss arising from use of this website or our services.</p>
-
-        <h2>7. Contact</h2>
-        <p>Questions about these terms? Email <a href="mailto:hello@burgerlab.com">hello@burgerlab.com</a> or call +1 (212) 555 — 0148.</p>
-      </article>
+        </div>
+      </form>
     </div>
   </section>
 

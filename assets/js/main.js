@@ -48,6 +48,7 @@
     initHomeSwitcher();
     initHeroSlider();
     initPickers();
+    initCountdown();
   });
 
   /* ----- Preloader (always hides — window load OR 5s failsafe) ----- */
@@ -436,6 +437,30 @@
     document.querySelectorAll("[data-year]").forEach(function (el) {
       el.textContent = new Date().getFullYear();
     });
+  }
+
+  /* ----- Countdown (coming-soon page) ----- */
+  function initCountdown() {
+    var el = document.querySelector("[data-countdown]");
+    if (!el) return;
+    var target = new Date(el.dataset.countdown).getTime();
+    var nums = {
+      days: el.querySelector('[data-cd="days"]'),
+      hours: el.querySelector('[data-cd="hours"]'),
+      minutes: el.querySelector('[data-cd="minutes"]'),
+      seconds: el.querySelector('[data-cd="seconds"]'),
+    };
+    var pad = function (n) { return String(n).padStart(2, "0"); };
+    var render = function () {
+      var diff = Math.max(0, target - Date.now());
+      var sec = Math.floor(diff / 1000);
+      if (nums.days) nums.days.textContent = pad(Math.floor(sec / 86400));
+      if (nums.hours) nums.hours.textContent = pad(Math.floor((sec % 86400) / 3600));
+      if (nums.minutes) nums.minutes.textContent = pad(Math.floor((sec % 3600) / 60));
+      if (nums.seconds) nums.seconds.textContent = pad(sec % 60);
+    };
+    render();
+    setInterval(render, 1000);
   }
 
   /* ----- Home variant switcher ----- */

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>The Lab Burger — BurgerLab Premium Burger &amp; Restaurant Template</title>
+<title>Inside the Build — BurgerLab Premium Burger &amp; Restaurant Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="BurgerLab">
-<meta name="description" content="The Lab Burger — flame-grilled double patty, aged cheddar, house sauce and toasted brioche. Our signature build.">
+<meta name="description" content="A layer-by-layer look at The Lab Burger — full nutrition specs, allergens, and more picks from the kitchen.">
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,83 +62,91 @@
   <!-- ===== Page hero ===== -->
   <section class="bl-page-hero">
     <div class="bl-container bl-container--wide">
-      <span class="bl-page-hero__eyebrow">Signature build</span>
-      <h1 class="bl-page-hero__title">The <em>Lab</em> Burger</h1>
+      <span class="bl-page-hero__eyebrow">Featured build</span>
+      <h1 class="bl-page-hero__title">Inside <em>The Lab Burger</em></h1>
+      <p class="bl-page-hero__lede">Every layer, weighed and tasted before it goes on the menu. Here's exactly what's stacked between the buns — and what it costs you, nutritionally.</p>
       <nav class="bl-breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
         <span class="bl-breadcrumb__sep">/</span>
         <a href="menu.html">Menu</a>
         <span class="bl-breadcrumb__sep">/</span>
-        <span aria-current="page">The Lab Burger</span>
+        <span aria-current="page">Inside the build</span>
       </nav>
     </div>
   </section>
 
-  <!-- ===== Product detail ===== -->
+  <!-- ===== Build breakdown ===== -->
   <section class="bl-section">
     <div class="bl-container bl-container--wide">
-      <div class="bl-product-detail">
-        <div class="bl-product-detail__media bl-reveal-fade">
-          <img src="assets/images/hero-burger.jpg" alt="The Lab Burger, flame-grilled and stacked high">
+      <div class="bl-split__grid">
+        <div class="bl-split__media bl-reveal-up">
+          <img src="assets/images/exploded-burger-reference.jpg" alt="The Lab Burger separated into its layers" loading="lazy">
+          <span class="bl-split__badge">Layer-by-layer build</span>
         </div>
         <div class="bl-reveal-up">
-          <span class="bl-product-detail__eyebrow">Double patty · 25 min · 4.9 ★</span>
-          <h2 class="bl-product-detail__title">Engineered for the perfect bite</h2>
-          <div class="bl-product-detail__price">$15.90</div>
-          <p class="bl-product-detail__desc">Two flame-grilled smash patties, aged cheddar, crisp lettuce, vine tomato, pickles and our signature lab sauce — all stacked on brioche toasted to order. The burger we built the whole menu around.</p>
-
-          <div class="bl-spec">
-            <div class="bl-spec__row"><span>Patty</span><span>2 × 90g flame-grilled</span></div>
-            <div class="bl-spec__row"><span>Cheese</span><span>Aged cheddar, double</span></div>
-            <div class="bl-spec__row"><span>Bun</span><span>Toasted brioche</span></div>
-            <div class="bl-spec__row"><span>Heat</span><span>Mild</span></div>
-            <div class="bl-spec__row"><span>Prep time</span><span>~25 minutes</span></div>
+          <span class="bl-eyebrow">The Lab Burger · $15.90</span>
+          <h2 class="bl-section-title">Four layers, <em>zero</em> filler</h2>
+          <p class="bl-section-lede">Two flame-grilled smash patties, aged cheddar, crisp lettuce, vine tomato, pickles and our signature lab sauce — all stacked on brioche toasted to order.</p>
+          <div class="bl-split__layers" data-stagger>
+            <div class="bl-layer-row" data-stagger-item><span class="bl-layer-row__no">01</span><span class="bl-layer-row__name">Toasted brioche crown</span><span class="bl-layer-row__tag">Buttered</span></div>
+            <div class="bl-layer-row" data-stagger-item><span class="bl-layer-row__no">02</span><span class="bl-layer-row__name">Flame-grilled patty x2</span><span class="bl-layer-row__tag">180g each</span></div>
+            <div class="bl-layer-row" data-stagger-item><span class="bl-layer-row__no">03</span><span class="bl-layer-row__name">Aged cheddar melt</span><span class="bl-layer-row__tag">Smoked</span></div>
+            <div class="bl-layer-row" data-stagger-item><span class="bl-layer-row__no">04</span><span class="bl-layer-row__name">Signature lab sauce</span><span class="bl-layer-row__tag">House</span></div>
           </div>
-
-          <div class="bl-cta__actions" style="justify-content:flex-start">
-            <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--lg">Add to order — $15.90</a>
-            <a href="menu.html" class="bl-btn bl-btn--ghost bl-btn--lg">Back to menu</a>
+          <div class="bl-actions">
+            <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--lg">Add to order</a>
+            <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--lg">Full details</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Related ===== -->
-  <section class="bl-section bl-section--bg2">
+  <!-- ===== Nutrition ===== -->
+  <section class="bl-section bl-section--bg2 bl-section--tight">
+    <div class="bl-container bl-container--narrow">
+      <div class="bl-section-head bl-section-head--center">
+        <span class="bl-eyebrow">Good to know</span>
+        <h2 class="bl-section-title">Nutrition <em>&amp; allergens</em></h2>
+      </div>
+      <div class="bl-spec">
+        <div class="bl-spec__row"><span>Calories</span><span>860 kcal</span></div>
+        <div class="bl-spec__row"><span>Protein</span><span>52 g</span></div>
+        <div class="bl-spec__row"><span>Carbohydrates</span><span>48 g</span></div>
+        <div class="bl-spec__row"><span>Fat</span><span>49 g</span></div>
+        <div class="bl-spec__row"><span>Allergens</span><span>Gluten, dairy, egg, sesame</span></div>
+        <div class="bl-spec__row"><span>Prep time</span><span>~25 minutes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== More from the kitchen ===== -->
+  <section class="bl-section">
     <div class="bl-container bl-container--wide">
       <div class="bl-section-head bl-section-head--center">
-        <span class="bl-eyebrow">You might also like</span>
-        <h2 class="bl-section-title">More from the <em>lab</em></h2>
+        <span class="bl-eyebrow">Pairs well with</span>
+        <h2 class="bl-section-title">More from the <em>kitchen</em></h2>
       </div>
       <div class="bl-cat-grid" data-stagger>
 
         <article class="bl-product" data-stagger-item>
           <div class="bl-product__media">
             <img src="assets/images/catalog-smoky-bacon.jpg" alt="Smoky Bacon Lab burger" loading="lazy">
+            <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Smoky Bacon Lab" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+            </button>
             <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9</span>
           </div>
           <div class="bl-product__body">
-            <div class="bl-product__head"><h3 class="bl-product__name">Smoky Bacon Lab</h3><span class="bl-product__price">$14.90</span></div>
-            <p class="bl-product__desc">Crispy bacon, smoked sauce, grilled onion, cheddar.</p>
-            <div class="bl-product__foot">
-              <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
-              <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+            <div class="bl-product__head">
+              <h3 class="bl-product__name">Smoky Bacon Lab</h3>
+              <span class="bl-product__price">$14.90</span>
             </div>
-          </div>
-        </article>
-
-        <article class="bl-product" data-stagger-item>
-          <div class="bl-product__media">
-            <img src="assets/images/catalog-spicy-lab.jpg" alt="Spicy Lab burger" loading="lazy">
-            <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7</span>
-          </div>
-          <div class="bl-product__body">
-            <div class="bl-product__head"><h3 class="bl-product__name">Spicy Lab</h3><span class="bl-product__price">$13.90</span></div>
-            <p class="bl-product__desc">Jalapeño, chili glaze, pepper jack, flame-grilled patty.</p>
+            <p class="bl-product__desc">Crispy bacon, smoked sauce, grilled onion, cheddar.</p>
+            <div class="bl-product__meta"><span>30 min</span><span>Medium</span></div>
             <div class="bl-product__foot">
               <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
-              <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+              <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
             </div>
           </div>
         </article>
@@ -146,18 +154,51 @@
         <article class="bl-product" data-stagger-item>
           <div class="bl-product__media">
             <img src="assets/images/catalog-truffle-melt.jpg" alt="Truffle Melt burger" loading="lazy">
+            <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Truffle Melt" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+            </button>
             <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9</span>
           </div>
           <div class="bl-product__body">
-            <div class="bl-product__head"><h3 class="bl-product__name">Truffle Melt</h3><span class="bl-product__price">$16.90</span></div>
+            <div class="bl-product__head">
+              <h3 class="bl-product__name">Truffle Melt</h3>
+              <span class="bl-product__price">$16.90</span>
+            </div>
             <p class="bl-product__desc">Mushroom, truffle-style cream, Swiss melt, soft brioche.</p>
+            <div class="bl-product__meta"><span>32 min</span><span>Mild</span></div>
             <div class="bl-product__foot">
               <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
-              <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+              <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
             </div>
           </div>
         </article>
 
+        <article class="bl-product" data-stagger-item>
+          <div class="bl-product__media">
+            <img src="assets/images/exploded-burger-reference.jpg" alt="Salted caramel shake" loading="lazy">
+            <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Caramel Shake" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+            </button>
+            <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9</span>
+          </div>
+          <div class="bl-product__body">
+            <div class="bl-product__head">
+              <h3 class="bl-product__name">Caramel Shake</h3>
+              <span class="bl-product__price">$5.90</span>
+            </div>
+            <p class="bl-product__desc">Salted caramel, vanilla soft-serve, whipped cream.</p>
+            <div class="bl-product__meta"><span>5 min</span><span>Sweet</span></div>
+            <div class="bl-product__foot">
+              <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+              <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <div class="bl-more-links">
+        <a href="menu.html" class="bl-btn bl-btn--ghost">See the full menu</a>
+        <a href="menu-category.html" class="bl-btn bl-btn--ghost">Browse by category</a>
       </div>
     </div>
   </section>

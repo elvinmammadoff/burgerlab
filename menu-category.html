@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Menu by Category — BurgerLab Premium Burger &amp; Restaurant Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="BurgerLab">
+<meta name="description" content="Browse the BurgerLab menu by category — burgers, sides, drinks and desserts, with a quick-jump category sidebar.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="bl-skip-link" href="#main">Skip to content</a>
+
+<!-- ===== Header ===== -->
+<header class="bl-header bl-header--solid">
+  <div class="bl-container bl-container--wide">
+    <nav class="bl-nav" aria-label="Primary">
+      <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+      <ul class="bl-nav__menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="is-active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="bl-nav__actions">
+        <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+        <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+        <button class="bl-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="bl-mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Mobile menu ===== -->
+<div class="bl-mobile-menu" id="bl-mobile-menu">
+  <button class="bl-mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
+  <nav class="bl-mobile-menu__list" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="bl-mobile-menu__foot">
+    <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+    <a href="reservation.html" class="bl-btn bl-btn--primary">Order Now</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ===== Page hero ===== -->
+  <section class="bl-page-hero">
+    <div class="bl-container bl-container--wide">
+      <span class="bl-page-hero__eyebrow">Browse by category</span>
+      <h1 class="bl-page-hero__title">The full menu, <em>by category</em></h1>
+      <p class="bl-page-hero__lede">Same kitchen, organized your way — jump straight to burgers, sides, drinks or desserts.</p>
+      <nav class="bl-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="bl-breadcrumb__sep">/</span>
+        <a href="menu.html">Menu</a>
+        <span class="bl-breadcrumb__sep">/</span>
+        <span aria-current="page">By category</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===== Menu by category ===== -->
+  <section class="bl-section">
+    <div class="bl-container bl-container--wide">
+      <h2 class="bl-visually-hidden">Menu by category</h2>
+      <div class="bl-menu-layout">
+
+        <aside class="bl-menu-sidebar">
+          <p class="bl-menu-sidebar__title">Categories</p>
+          <ul class="bl-menu-nav">
+            <li><a href="#burgers">Burgers <span>04</span></a></li>
+            <li><a href="#sides">Sides <span>02</span></a></li>
+            <li><a href="#drinks">Drinks <span>01</span></a></li>
+            <li><a href="#desserts">Desserts <span>01</span></a></li>
+          </ul>
+          <p class="bl-menu-sidebar__title">Other layouts</p>
+          <ul class="bl-menu-nav">
+            <li><a href="menu.html">Grid view <span>↗</span></a></li>
+            <li><a href="menu-inside.html">Featured build <span>↗</span></a></li>
+          </ul>
+        </aside>
+
+        <div>
+
+          <section class="bl-menu-cat" id="burgers">
+            <div class="bl-menu-cat__head">
+              <h2>Burgers</h2>
+              <span class="bl-menu-cat__count">4 builds</span>
+            </div>
+            <div class="bl-cat-grid" data-stagger>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/catalog-classic-stack.jpg" alt="Classic Stack burger" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Classic Stack" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Classic Stack</h3>
+                    <span class="bl-product__price">$12.90</span>
+                  </div>
+                  <p class="bl-product__desc">Double cheddar, pickles, onion, BurgerLab sauce.</p>
+                  <div class="bl-product__meta"><span>25 min</span><span>Mild</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/catalog-smoky-bacon.jpg" alt="Smoky Bacon Lab burger" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Smoky Bacon Lab" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Smoky Bacon Lab</h3>
+                    <span class="bl-product__price">$14.90</span>
+                  </div>
+                  <p class="bl-product__desc">Crispy bacon, smoked sauce, grilled onion, cheddar.</p>
+                  <div class="bl-product__meta"><span>30 min</span><span>Medium</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/catalog-spicy-lab.jpg" alt="Spicy Lab burger" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Spicy Lab" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Spicy Lab</h3>
+                    <span class="bl-product__price">$13.90</span>
+                  </div>
+                  <p class="bl-product__desc">Jalapeño, chili glaze, pepper jack, flame-grilled patty.</p>
+                  <div class="bl-product__meta"><span>28 min</span><span>Hot</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/catalog-truffle-melt.jpg" alt="Truffle Melt burger" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Truffle Melt" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Truffle Melt</h3>
+                    <span class="bl-product__price">$16.90</span>
+                  </div>
+                  <p class="bl-product__desc">Mushroom, truffle-style cream, Swiss melt, soft brioche.</p>
+                  <div class="bl-product__meta"><span>32 min</span><span>Mild</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <section class="bl-menu-cat" id="sides">
+            <div class="bl-menu-cat__head">
+              <h2>Sides</h2>
+              <span class="bl-menu-cat__count">2 builds</span>
+            </div>
+            <div class="bl-cat-grid" data-stagger>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/ingredients-detail.jpg" alt="Loaded fries" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Loaded Fries" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Loaded Fries</h3>
+                    <span class="bl-product__price">$7.50</span>
+                  </div>
+                  <p class="bl-product__desc">Hand-cut fries, melted cheddar, bacon bits, scallion.</p>
+                  <div class="bl-product__meta"><span>15 min</span><span>Side</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/hero-burger.jpg" alt="Crispy onion rings" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Onion Rings" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.6</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Onion Rings</h3>
+                    <span class="bl-product__price">$6.00</span>
+                  </div>
+                  <p class="bl-product__desc">Beer-battered sweet onions, smoked paprika dip.</p>
+                  <div class="bl-product__meta"><span>12 min</span><span>Side</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <section class="bl-menu-cat" id="drinks">
+            <div class="bl-menu-cat__head">
+              <h2>Drinks</h2>
+              <span class="bl-menu-cat__count">1 build</span>
+            </div>
+            <div class="bl-cat-grid" data-stagger>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/burger-no-watermark.jpg" alt="Craft cola" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Craft Cola" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Craft Cola</h3>
+                    <span class="bl-product__price">$3.50</span>
+                  </div>
+                  <p class="bl-product__desc">House-made cola, cane sugar, citrus and spice.</p>
+                  <div class="bl-product__meta"><span>2 min</span><span>Cold</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <section class="bl-menu-cat" id="desserts">
+            <div class="bl-menu-cat__head">
+              <h2>Desserts</h2>
+              <span class="bl-menu-cat__count">1 build</span>
+            </div>
+            <div class="bl-cat-grid" data-stagger>
+
+              <article class="bl-product" data-stagger-item>
+                <div class="bl-product__media">
+                  <img src="assets/images/exploded-burger-reference.jpg" alt="Salted caramel shake" loading="lazy">
+                  <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Caramel Shake" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
+                  </button>
+                  <span class="bl-product__rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9</span>
+                </div>
+                <div class="bl-product__body">
+                  <div class="bl-product__head">
+                    <h3 class="bl-product__name">Caramel Shake</h3>
+                    <span class="bl-product__price">$5.90</span>
+                  </div>
+                  <p class="bl-product__desc">Salted caramel, vanilla soft-serve, whipped cream.</p>
+                  <div class="bl-product__meta"><span>5 min</span><span>Sweet</span></div>
+                  <div class="bl-product__foot">
+                    <a href="single-product.html" class="bl-btn bl-btn--ghost bl-btn--sm">Details</a>
+                    <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">Add to order</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bl-footer">
+  <div class="bl-container bl-container--wide">
+    <div class="bl-footer__top">
+      <div class="bl-footer__brand">
+        <div class="bl-footer__brand-name">Burger<span>Lab</span></div>
+        <p class="bl-footer__about">Premium burgers, engineered in the lab and grilled over fire. Crafted fresh, delivered fast — across the city, every day.</p>
+        <div class="bl-footer__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 3c.3 2.2 1.7 3.8 3.9 4v3c-1.4 0-2.8-.4-3.9-1.1V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1A3 3 0 1 0 13 15V3z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3l7.5 9.5L3.5 21H6l5.3-6.3L16 21h5l-7.8-10L20.5 3H18l-5 5.9L8 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="chef.html">The Lab Crew</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Journal</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Visit</h3>
+        <ul>
+          <li>148 Spring Street</li>
+          <li>SoHo, New York</li>
+          <li><a href="tel:+12125550148">+1 (212) 555 — 0148</a></li>
+          <li><a href="mailto:hello@burgerlab.com">hello@burgerlab.com</a></li>
+        </ul>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Hours</h3>
+        <div class="bl-footer__hours">
+          <div><span>Mon — Thu</span><span>11:00 — 23:00</span></div>
+          <div><span>Fri — Sat</span><span>11:00 — 01:00</span></div>
+          <div><span>Sunday</span><span>12:00 — 22:00</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bl-footer__bottom">
+      <span>© <span data-year>2026</span> BurgerLab — All rights reserved.</span>
+      <span><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="bl-totop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Vendor JS -->
+<script src="assets/js/vendors/gsap.min.js"></script>
+<script src="assets/js/vendors/ScrollTrigger.min.js"></script>
+<!-- Template JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
