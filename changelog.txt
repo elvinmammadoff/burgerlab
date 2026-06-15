@@ -1,0 +1,20 @@
+BurgerLab — Changelog
+=======================
+
+= 1.0.0 - 2026-06-15 =
+* Initial release
+  - 6 homepage variants: Cinematic, Slider, App, Split, Statement, Bento
+  - 10 header layouts and 10 footer layouts (headers.html / footers.html)
+  - 20 inner pages: Menu, Menu by Category, Inside The Lab Burger, About,
+    The Lab Crew, Services, Service Detail, Gallery, Journal, Article,
+    Shopping Cart, Checkout, Contact, Reservation, Single Product, FAQ,
+    404, Coming Soon, Privacy Policy, Terms & Conditions
+  - Landing/demo overview page with live filtering
+  - Full single-page documentation (documentation/)
+  - GSAP + ScrollTrigger motion, Swiper sliders, Fancybox gallery
+  - Custom date & time pickers (vanilla JS, no plugins)
+  - Web3Forms integration on Contact and Reservation
+  - OpenStreetMap embed on Contact page
+  - Full SCSS design-token system + compiled CSS
+  - W3C-validated markup across all pages
+  - burgerlab-noImages/ package with placehold.co placeholders

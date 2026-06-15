@@ -1,0 +1,64 @@
+/* ==========================================================================
+   BurgerLab — Design Tokens
+   Brand source: burgerlab/copy/brand-kit.md (used verbatim)
+   ========================================================================== */
+
+// ---- Color palette (Sass vars) ----
+$bl-bg:          #10100F; // Deep Charcoal
+$bl-bg-2:        #181816; // Smoked Graphite
+$bl-surface:     #20201D; // Card Black
+$bl-surface-2:   #2A2924; // Warm Graphite
+$bl-text:        #F8F4EA; // Warm Cream
+$bl-muted:       #A9A193; // Toasted Gray
+$bl-accent:      #F5B31A; // BurgerLab Amber
+$bl-accent-2:    #FF6A2A; // Flame Orange
+$bl-green:       #4CD36F; // Fresh Herb Green
+$bl-line:        #35332D; // Carbon Border
+$bl-danger:      #F04438; // Like / favorite accent only
+
+// ---- Typography ----
+$bl-font:        "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+$bl-font-head:   "Space Grotesk", system-ui, sans-serif;
+$bl-font-mono:   "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+// ---- Layout ----
+$bl-container:   1240px;
+$bl-container-wide: 1480px;
+$bl-radius:      14px;
+$bl-radius-lg:   24px;
+$bl-radius-pill: 999px;
+
+// ---- Easing ----
+$bl-ease:        cubic-bezier(0.22, 1, 0.36, 1);
+$bl-ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+
+// ---- Breakpoints (match plan: 320/375/768/1024/1440/1920) ----
+$bp-sm:   576px;
+$bp-md:   768px;
+$bp-lg:   1024px;
+$bp-xl:   1280px;
+$bp-xxl:  1440px;
+
+// ---- Runtime CSS custom properties (buyers tweak these) ----
+:root {
+  --bl-bg: #{$bl-bg};
+  --bl-bg-2: #{$bl-bg-2};
+  --bl-surface: #{$bl-surface};
+  --bl-surface-2: #{$bl-surface-2};
+  --bl-surface-soft: rgba(32, 32, 29, 0.76);
+  --bl-text: #{$bl-text};
+  --bl-muted: #{$bl-muted};
+  --bl-accent: #{$bl-accent};
+  --bl-accent-2: #{$bl-accent-2};
+  --bl-green: #{$bl-green};
+  --bl-line: #{$bl-line};
+  --bl-danger: #{$bl-danger};
+
+  --bl-font: #{$bl-font};
+  --bl-font-head: #{$bl-font-head};
+  --bl-font-mono: #{$bl-font-mono};
+
+  --bl-radius: #{$bl-radius};
+  --bl-radius-lg: #{$bl-radius-lg};
+  --bl-container: #{$bl-container};
+}

@@ -60,7 +60,7 @@
 <main id="main">
 
   <!-- ===== Page hero ===== -->
-  <section class="bl-page-hero">
+  <section class="bl-page-hero bl-page-hero--photo" style="background-image: url('assets/images/hero-menu.jpg')">
     <div class="bl-container bl-container--wide">
       <span class="bl-page-hero__eyebrow">The menu</span>
       <h1 class="bl-page-hero__title">Every <em>build</em> from the lab</h1>
@@ -80,11 +80,11 @@
       <h2 class="bl-visually-hidden">Full menu</h2>
 
       <div class="bl-filter" role="tablist" aria-label="Filter menu">
-        <button class="bl-filter__btn is-active" type="button" data-filter="all">All</button>
-        <button class="bl-filter__btn" type="button" data-filter="burgers">Burgers</button>
-        <button class="bl-filter__btn" type="button" data-filter="sides">Sides</button>
-        <button class="bl-filter__btn" type="button" data-filter="drinks">Drinks</button>
-        <button class="bl-filter__btn" type="button" data-filter="desserts">Desserts</button>
+        <button class="bl-filter__btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="burgers">Burgers</button>
+        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="sides">Sides</button>
+        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="drinks">Drinks</button>
+        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="desserts">Desserts</button>
       </div>
 
       <div class="bl-cat-grid" data-stagger>
@@ -179,7 +179,7 @@
 
         <article class="bl-product" data-stagger-item data-cat="sides">
           <div class="bl-product__media">
-            <img src="assets/images/ingredients-detail.jpg" alt="Loaded fries" loading="lazy">
+            <img src="assets/images/dish-loaded-fries.jpg" alt="Loaded fries" loading="lazy">
             <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Loaded Fries" aria-pressed="false">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
             </button>
@@ -201,7 +201,7 @@
 
         <article class="bl-product" data-stagger-item data-cat="sides">
           <div class="bl-product__media">
-            <img src="assets/images/hero-burger.jpg" alt="Crispy onion rings" loading="lazy">
+            <img src="assets/images/dish-onion-rings.jpg" alt="Crispy onion rings" loading="lazy">
             <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Onion Rings" aria-pressed="false">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
             </button>
@@ -223,7 +223,7 @@
 
         <article class="bl-product" data-stagger-item data-cat="drinks">
           <div class="bl-product__media">
-            <img src="assets/images/burger-no-watermark.jpg" alt="Craft cola" loading="lazy">
+            <img src="assets/images/dish-craft-cola.jpg" alt="Craft cola" loading="lazy">
             <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Craft Cola" aria-pressed="false">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
             </button>
@@ -245,7 +245,7 @@
 
         <article class="bl-product" data-stagger-item data-cat="desserts">
           <div class="bl-product__media">
-            <img src="assets/images/exploded-burger-reference.jpg" alt="Salted caramel shake" loading="lazy">
+            <img src="assets/images/dish-caramel-shake.jpg" alt="Salted caramel shake" loading="lazy">
             <button class="bl-icon-btn bl-product__fav" type="button" data-fav aria-label="Save Caramel Shake" aria-pressed="false">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>
             </button>

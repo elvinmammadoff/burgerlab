@@ -1,0 +1,47 @@
+BurgerLab — Credits & Licenses
+================================
+
+Fonts
+-----
+- Space Grotesk, Inter, JetBrains Mono
+  Source: Google Fonts (https://fonts.google.com)
+  License: SIL Open Font License 1.1
+  Loaded via <link> from fonts.googleapis.com — no files bundled.
+
+JavaScript libraries (assets/js/vendors/)
+------------------------------------------
+- GSAP 3.12.5 + ScrollTrigger 3.12.5
+  Source: https://gsap.com
+  License: Standard "no charge" GSAP license (gsap.com/standard-license).
+  Used for scroll-driven reveals, marquees and the home-1 hero motion.
+
+- Swiper 11.2.10
+  Source: https://swiperjs.com
+  License: MIT
+  Used for hero/testimonial/gallery sliders.
+
+- Fancybox 5
+  Source: https://fancyapps.com/fancybox/
+  License: Commercial license required for production use — see
+  https://fancyapps.com/license/. Used for the gallery lightbox.
+
+Third-party services
+---------------------
+- Web3Forms (https://web3forms.com) — contact & reservation form
+  submission endpoint. Free tier, no backend required.
+- OpenStreetMap (https://www.openstreetmap.org) — embedded map on the
+  Contact page. No API key required.
+
+Custom code
+-----------
+- Date & time pickers, FAQ accordion, countdown, marquee and all
+  layout/animation code in assets/js/main.js and assets/scss/ are
+  original work created for this template.
+
+Demo imagery
+------------
+- All photography in assets/images/ (burgers, ingredients, team
+  portraits) is AI-generated, for preview/demo purposes only.
+  Replace with your own licensed photography before publishing a
+  live site. The burgerlab-noImages/ package ships with
+  placehold.co placeholders instead of these images.

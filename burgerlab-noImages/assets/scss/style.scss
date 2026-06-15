@@ -1,0 +1,21 @@
+/* ==========================================================================
+   BurgerLab — Premium Burger & Restaurant HTML Template
+   Main stylesheet. Compile:
+   npx --yes sass assets/scss/style.scss assets/css/style.css --style=expanded --no-source-map
+   ========================================================================== */
+
+@use "sass:color";
+
+@import "tokens";
+@import "base";
+@import "layout";
+@import "buttons";
+@import "nav";
+@import "footer";
+@import "variants";
+@import "hero";
+@import "components";
+@import "pickers";
+@import "pages";
+@import "responsive";
+@import "rtl";

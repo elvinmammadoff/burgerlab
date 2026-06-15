@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.bl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--bl-font-head);
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1;
+  padding: 1rem 1.7rem;
+  border-radius: $bl-radius-pill;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s $bl-ease, background 0.3s $bl-ease,
+    color 0.3s $bl-ease, border-color 0.3s $bl-ease, box-shadow 0.3s $bl-ease;
+  white-space: nowrap;
+}
+.bl-btn:hover { transform: translateY(-2px); }
+.bl-btn:active { transform: translateY(0); }
+
+.bl-btn__icon { width: 18px; height: 18px; flex: 0 0 auto; }
+
+.bl-btn--primary {
+  background: var(--bl-accent);
+  color: #1a1300;
+  box-shadow: 0 10px 30px -12px rgba(245, 179, 26, 0.6);
+}
+.bl-btn--primary:hover {
+  background: #ffc23d;
+  color: #1a1300;
+  box-shadow: 0 16px 40px -14px rgba(245, 179, 26, 0.7);
+}
+
+.bl-btn--flame {
+  background: var(--bl-accent-2);
+  color: #1a0d00;
+}
+.bl-btn--flame:hover { background: #ff7d44; color: #1a0d00; }
+
+.bl-btn--ghost {
+  background: transparent;
+  color: var(--bl-text);
+  border-color: var(--bl-line);
+}
+.bl-btn--ghost:hover {
+  border-color: var(--bl-accent);
+  color: var(--bl-accent);
+}
+
+.bl-btn--light {
+  background: var(--bl-text);
+  color: var(--bl-bg);
+}
+.bl-btn--light:hover { background: #fff; color: var(--bl-bg); }
+
+.bl-btn--sm { padding: 0.7rem 1.2rem; font-size: 0.86rem; }
+.bl-btn--lg { padding: 1.15rem 2.1rem; font-size: 1.05rem; }
+.bl-btn--block { width: 100%; }
+
+/* small icon button (favorites etc.) */
+.bl-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bl-surface-2);
+  border: 1px solid var(--bl-line);
+  color: var(--bl-text);
+  transition: all 0.25s $bl-ease;
+}
+.bl-icon-btn:hover { border-color: var(--bl-accent); color: var(--bl-accent); }
+.bl-icon-btn.is-active { color: var(--bl-danger); border-color: var(--bl-danger); }

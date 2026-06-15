@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gallery — BurgerLab Premium Burger &amp; Restaurant Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="BurgerLab">
+<meta name="description" content="A look inside BurgerLab — flame-grilled burgers, fresh ingredients and the SoHo kitchen, captured up close.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/vendors/fancybox.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="bl-skip-link" href="#main">Skip to content</a>
+
+<!-- ===== Header ===== -->
+<header class="bl-header bl-header--solid">
+  <div class="bl-container bl-container--wide">
+    <nav class="bl-nav" aria-label="Primary">
+      <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
+      <ul class="bl-nav__menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html" class="is-active">Gallery</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="bl-nav__actions">
+        <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+        <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
+        <button class="bl-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="bl-mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Mobile menu ===== -->
+<div class="bl-mobile-menu" id="bl-mobile-menu">
+  <button class="bl-mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
+  <nav class="bl-mobile-menu__list" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="bl-mobile-menu__foot">
+    <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+    <a href="reservation.html" class="bl-btn bl-btn--primary">Order Now</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ===== Page hero ===== -->
+  <section class="bl-page-hero bl-page-hero--photo" style="background-image: url('https://placehold.co/1672x941')">
+    <div class="bl-container bl-container--wide">
+      <span class="bl-page-hero__eyebrow">Gallery</span>
+      <h1 class="bl-page-hero__title">Inside the <em>lab</em></h1>
+      <p class="bl-page-hero__lede">Flame, fresh produce and the perfect stack — a closer look at what comes out of the BurgerLab kitchen.</p>
+      <nav class="bl-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="bl-breadcrumb__sep">/</span>
+        <span aria-current="page">Gallery</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ===== Gallery grid ===== -->
+  <section class="bl-section">
+    <div class="bl-container bl-container--wide">
+      <h2 class="bl-visually-hidden">Photo gallery</h2>
+      <div class="bl-gallery" data-stagger>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x1200" data-fancybox="gallery" data-caption="The Lab Burger, stacked to spec">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x1200" alt="The Lab Burger stacked high" loading="lazy">
+        </a>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x1200" data-fancybox="gallery" data-caption="Classic Stack">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x1200" alt="Classic Stack burger" loading="lazy">
+        </a>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x1200" data-fancybox="gallery" data-caption="Fresh ingredients, prepped daily">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x1200" alt="Fresh ingredients prepped in the kitchen" loading="lazy">
+        </a>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x1200" data-fancybox="gallery" data-caption="Smoky Bacon Lab">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x1200" alt="Smoky Bacon Lab burger" loading="lazy">
+        </a>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x1200" data-fancybox="gallery" data-caption="Spicy Lab">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x1200" alt="Spicy Lab burger" loading="lazy">
+        </a>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x1200" data-fancybox="gallery" data-caption="Layer by layer">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x1200" alt="The Lab Burger separated into layers" loading="lazy">
+        </a>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x669" data-fancybox="gallery" data-caption="Truffle Melt">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x669" alt="Truffle Melt burger" loading="lazy">
+        </a>
+        <a class="bl-gallery__item" data-stagger-item href="https://placehold.co/1200x669" data-fancybox="gallery" data-caption="Grilled over fire">
+          <span class="bl-gallery__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 21l-4.3-4.3M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zM11 8v6M8 11h6"/></svg></span>
+          <img src="https://placehold.co/1200x669" alt="Burger grilled over fire" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="bl-footer">
+  <div class="bl-container bl-container--wide">
+    <div class="bl-footer__top">
+      <div class="bl-footer__brand">
+        <div class="bl-footer__brand-name">Burger<span>Lab</span></div>
+        <p class="bl-footer__about">Premium burgers, engineered in the lab and grilled over fire. Crafted fresh, delivered fast — across the city, every day.</p>
+        <div class="bl-footer__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 3c.3 2.2 1.7 3.8 3.9 4v3c-1.4 0-2.8-.4-3.9-1.1V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.1A3 3 0 1 0 13 15V3z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3l7.5 9.5L3.5 21H6l5.3-6.3L16 21h5l-7.8-10L20.5 3H18l-5 5.9L8 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="chef.html">The Lab Crew</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Journal</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Visit</h3>
+        <ul>
+          <li>148 Spring Street</li>
+          <li>SoHo, New York</li>
+          <li><a href="tel:+12125550148">+1 (212) 555 — 0148</a></li>
+          <li><a href="mailto:hello@burgerlab.com">hello@burgerlab.com</a></li>
+        </ul>
+      </div>
+      <div class="bl-footer__col">
+        <h3>Hours</h3>
+        <div class="bl-footer__hours">
+          <div><span>Mon — Thu</span><span>11:00 — 23:00</span></div>
+          <div><span>Fri — Sat</span><span>11:00 — 01:00</span></div>
+          <div><span>Sunday</span><span>12:00 — 22:00</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bl-footer__bottom">
+      <span>© <span data-year>2026</span> BurgerLab — All rights reserved.</span>
+      <span><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="bl-totop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Vendor JS -->
+<script src="assets/js/vendors/gsap.min.js"></script>
+<script src="assets/js/vendors/ScrollTrigger.min.js"></script>
+<script src="assets/js/vendors/fancybox.umd.js"></script>
+<!-- Template JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

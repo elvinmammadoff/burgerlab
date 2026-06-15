@@ -1,0 +1,6 @@
+/* ==========================================================================
+   RTL helpers (full RTL stylesheet shipped separately as css/rtl.css in Phase 6)
+   This partial only holds direction-agnostic safeguards.
+   ========================================================================== */
+
+[dir="rtl"] .bl-eyebrow::before { margin-left: 0; }

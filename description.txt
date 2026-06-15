@@ -1,0 +1,138 @@
+<div class="user-html user-html__with-lazy-load"><h3 id="item-description__burgerlab-burger-and-restaurant-html-template"><strong>BurgerLab – Burger &amp; Restaurant HTML Template</strong></h3>
+<p><strong>BurgerLab</strong> is a clean, premium and modern HTML5 &amp; CSS3 template for burger joints, fast-food brands, cafés and modern restaurants. It ships with <strong>6 distinct homepages</strong> — Cinematic, Slider, App, Split, Statement and Bento — powered by GSAP + ScrollTrigger, plus <strong>10 header layouts</strong>, <strong>10 footer layouts</strong> and <strong>20 inner pages</strong>, all built on a single shared design-token system.
+<br><br>Looks great on all screen sizes and devices. Fully responsive, fast loading, and easy to customize without deep coding knowledge.</p>
+
+<p><a href="https://burgerlab-studio.vercel.app/landing/" rel="nofollow" target="_blank">View Live Demo</a> · <a href="https://burgerlab-studio.vercel.app/documentation/" rel="nofollow" target="_blank">Documentation</a> · <a href="https://themeforest.net/user/alissio/follow" target="_blank">Follow the Author</a></p>
+
+<h3 id="item-description__key-features">Key Features</h3>
+<ul>
+<li>6 homepage demos with GSAP + ScrollTrigger motion</li>
+<li>Web3Forms-powered Contact &amp; Reservation forms — no backend required</li>
+<li>Fully responsive design and fast loading across devices</li>
+</ul>
+<h3 id="item-description__why-choose-burgerlab">Why choose BurgerLab?</h3>
+<ul>
+<li>
+<strong>6 Homepage Demo Variations</strong>
+<p>Cinematic, Slider, App, Split, Statement and Bento — six distinct concepts sharing one cohesive <code>bl-</code> design system.</p>
+</li>
+<li>
+<strong>10 Header &amp; 10 Footer Layouts</strong>
+<p>Mix and match any header with any footer via a single modifier class — shown side-by-side on <code>headers.html</code> / <code>footers.html</code>.</p>
+</li>
+<li>
+<strong>GSAP + ScrollTrigger Animations</strong>
+<p>Scroll-scrubbed hero video on home-1, section reveals and a marquee — all GPU-accelerated, with reduced-motion and no-JS fallbacks.</p>
+</li>
+<li>
+<strong>Web3Forms Contact &amp; Reservation Forms</strong>
+<p>Forms submit directly via Web3Forms — no PHP or mail server needed. Success messages auto-hide after 4.5 seconds.</p>
+</li>
+<li>
+<strong>Custom Date &amp; Time Pickers</strong>
+<p>Built from scratch in vanilla JS — no third-party picker plugins.</p>
+</li>
+<li>
+<strong>Completely Responsive Design</strong>
+<p>Optimized viewing on desktop, tablet and mobile devices, from 320px to 1920px+.</p>
+</li>
+<li>
+<strong>Easy Customization</strong>
+<p>SCSS source included with design tokens for colors, fonts and spacing. Change the accent color in one variable.</p>
+</li>
+<li>
+<strong>Cross-Browser Compatibility</strong>
+<p>Seamless functionality on all modern browsers.</p>
+</li>
+<li>
+<strong>Fast Loading Speed</strong>
+<p>No jQuery, no build step required to run, optimized assets and no unnecessary dependencies.</p>
+</li>
+</ul>
+
+<h3 id="item-description__other-features">Other Features</h3>
+<ul>
+<li><strong>6 Homepage</strong> Demos plus a landing overview page. <a href="https://burgerlab-studio.vercel.app/landing/" rel="nofollow">Click to View Demo</a></li>
+<li>20 inner pages: Menu, Menu by Category, Inside The Lab Burger, About, The Lab Crew, Services, Service Detail, Gallery, Journal, Article, Shopping Cart, Checkout, Contact, Reservation, Single Product, FAQ, 404, Coming Soon, Privacy Policy &amp; Terms</li>
+<li>10 header layouts &amp; 10 footer layouts, mix-and-match via a single modifier class</li>
+<li>GSAP + ScrollTrigger motion — scroll-scrubbed hero video, reveals, marquee</li>
+<li>Web3Forms-powered Contact &amp; Reservation forms — success messages auto-hide after 4.5s</li>
+<li>Custom date &amp; time pickers, built from scratch in vanilla JS — no plugins</li>
+<li>Swiper sliders &amp; Fancybox lightbox gallery</li>
+<li>OpenStreetMap embed on the Contact page — no API key needed</li>
+<li>Fully Responsive Layout</li>
+<li>Validated HTML5, CSS3 — W3C valid code, 0 errors across every page</li>
+<li>Fast Page Load</li>
+<li>Mobile and Tablet Optimized</li>
+<li>Pixel Perfect Design</li>
+<li>Cross Browser compatibility</li>
+<li>SEO Optimized</li>
+<li>Google Fonts</li>
+<li>Better Support (response within 24 hours)</li>
+<li>Free Regular Updates</li>
+<li>Detailed Documentation</li>
+<li>"No images" version included (<code>burgerlab-noImages/</code>), using placeholder graphics so you can drop in your own photography immediately</li>
+</ul>
+
+<h3 id="item-description__files-included">Files Included</h3>
+<ul>
+<li>HTML Files (6 homepages, headers/footers layout pages, 20 inner pages, landing demo, documentation — 30 pages total)</li>
+<li>SCSS source files</li>
+<li>Compiled CSS files</li>
+<li>JavaScript files (main.js + vendor bundles)</li>
+<li>Fonts loaded via Google Fonts CDN (no local font files)</li>
+<li>Documentation in HTML</li>
+</ul>
+
+<h3 id="item-description__3rd-party-libraries-used">3rd Party Libraries License</h3>
+<ul>
+<li>GSAP + ScrollTrigger – <a href="https://gsap.com" rel="nofollow">GSAP</a></li>
+<li>Swiper 11 – <a href="https://swiperjs.com" rel="nofollow">Swiper</a></li>
+<li>Fancybox – <a href="http://fancybox.net" rel="nofollow">Fancybox</a></li>
+<li>Web3Forms – <a href="https://web3forms.com" rel="nofollow">Web3Forms</a></li>
+<li>OpenStreetMap – <a href="https://www.openstreetmap.org" rel="nofollow">OpenStreetMap</a></li>
+</ul>
+
+<h3 id="item-description__fonts-used">Fonts used:</h3>
+<ul>
+<li><a href="https://fonts.google.com/specimen/Space+Grotesk" rel="nofollow">Space Grotesk</a> — display headlines</li>
+<li><a href="https://fonts.google.com/specimen/Inter" rel="nofollow">Inter</a> — body text</li>
+<li><a href="https://fonts.google.com/specimen/JetBrains+Mono" rel="nofollow">JetBrains Mono</a> — labels / mono</li>
+</ul>
+
+<h3 id="item-description__images-license">Images License:</h3>
+<p>All images used in the demo are for preview purposes only and are <strong>not included</strong> in the final purchase files. The no-images version ships with placeholder images.</p>
+
+<h3 id="item-description__documentation">Documentation</h3>
+<a href="https://burgerlab-studio.vercel.app/documentation/" rel="nofollow">Check the docs here</a>
+
+<h3 id="item-description__important-note">Important Note:</h3>
+<ul>
+<li>All images are used for preview only and are not part of the download package.</li>
+<li>Placeholder images with recommended dimensions are provided in the no-images package.</li>
+<li>Code customization and feature additions are outside item support scope per Envato policy.</li>
+</ul>
+
+<h3 id="item-description__change-log">Change Log:</h3>
+<pre>June 15, 2026: BurgerLab v1.0.0
+-----------------------------
+- Initial release
+  - 6 homepage variants: Cinematic, Slider, App, Split, Statement, Bento
+  - 10 header layouts and 10 footer layouts (headers.html / footers.html)
+  - 20 inner pages: Menu, Menu by Category, Inside The Lab Burger, About,
+    The Lab Crew, Services, Service Detail, Gallery, Journal, Article,
+    Shopping Cart, Checkout, Contact, Reservation, Single Product, FAQ,
+    404, Coming Soon, Privacy Policy, Terms & Conditions
+  - Landing/demo overview page with live filtering
+  - Full single-page documentation
+  - GSAP + ScrollTrigger motion, Swiper sliders, Fancybox gallery
+  - Custom date & time pickers (vanilla JS, no plugins)
+  - Web3Forms integration on Contact and Reservation
+  - OpenStreetMap embed on Contact page
+  - Full SCSS design-token system + compiled CSS
+  - W3C-validated markup across all pages
+  - burgerlab-noImages package with placehold.co placeholders
+</pre>
+
+<p>If you love our product, don't forget to rate it 5 stars and leave a review. Thank you!</p>
+<p><strong>– Alissio –</strong></p></div>
