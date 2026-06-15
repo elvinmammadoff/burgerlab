@@ -115,7 +115,7 @@
         <ul>
           <li><strong>6 home variants</strong> — Cinematic, Slider, App, Split, Statement and Bento (<code>index.html</code> … <code>index-6.html</code>).</li>
           <li><strong>10 header layouts</strong> and <strong>10 footer layouts</strong>, each a single modifier class (showcased in <code>headers.html</code> / <code>footers.html</code>).</li>
-          <li><strong>Inner pages</strong> — menu, about, gallery, journal + article, contact, reservation, single product, privacy policy and terms.</li>
+          <li><strong>20 inner pages</strong> — menu, menu by category, inside-the-burger spotlight, about, the team, services + service detail, gallery, journal + article, shopping cart, checkout, contact, reservation, single product, FAQ, 404 and coming soon, plus privacy policy and terms.</li>
           <li><strong>Landing/demo page</strong> (<code>landing/</code>) and this <strong>documentation</strong>.</li>
           <li><strong>Source SCSS</strong> with a full design-token system, plus the compiled <code>style.css</code>.</li>
           <li><strong>Vendor libraries</strong> — GSAP + ScrollTrigger, Swiper, Fancybox (self-hosted in <code>assets/js/vendors/</code>).</li>
@@ -146,9 +146,12 @@ php -S localhost:8000              # PHP</code></pre>
 ├── index-2.html … index-6.html   Home 02–06
 ├── headers.html            10 header layouts showcase
 ├── footers.html            10 footer layouts showcase
-├── menu.html  about.html  gallery.html
-├── blog.html  blog-single.html  contact.html
-├── reservation.html  single-product.html
+├── menu.html  menu-category.html  menu-inside.html
+├── about.html  chef.html  services.html  service-detail.html
+├── gallery.html  blog.html  blog-single.html
+├── shopping-cart.html  checkout.html
+├── contact.html  reservation.html  single-product.html
+├── faq.html  404.html  coming-soon.html
 ├── privacy-policy.html  terms.html
 ├── landing/                Demo / preview page
 ├── documentation/          This documentation
@@ -296,7 +299,32 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
       <!-- Pages -->
       <section class="docs-section" id="pages">
         <h2 class="docs-section__title">Inner pages</h2>
-        <p>Every inner page reuses the same header, footer and component classes, so edits are consistent. Available pages: <code>menu.html</code>, <code>about.html</code>, <code>gallery.html</code>, <code>blog.html</code>, <code>blog-single.html</code>, <code>contact.html</code>, <code>reservation.html</code>, <code>single-product.html</code>, <code>privacy-policy.html</code> and <code>terms.html</code>. Duplicate any file to add more pages — the markup is self-documenting with section comments.</p>
+        <p>Every inner page reuses the same header, footer and component classes, so edits are consistent. Duplicate any file to add more pages — the markup is self-documenting with section comments.</p>
+        <table class="docs-table">
+          <thead><tr><th>File</th><th>Page</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><code>menu.html</code></td><td>Menu</td><td>Filterable catalog with category tabs and price rows</td></tr>
+            <tr><td><code>menu-category.html</code></td><td>Menu — By Category</td><td>Sidebar-nav layout: Burgers, Sides, Drinks, Desserts</td></tr>
+            <tr><td><code>menu-inside.html</code></td><td>Inside The Lab Burger</td><td>Exploded-layer build spotlight</td></tr>
+            <tr><td><code>about.html</code></td><td>About</td><td>Brand story, stats and process</td></tr>
+            <tr><td><code>chef.html</code></td><td>The Lab Crew</td><td>Team portraits, bios and stats</td></tr>
+            <tr><td><code>services.html</code></td><td>Services</td><td>Six service cards → service detail</td></tr>
+            <tr><td><code>service-detail.html</code></td><td>Service Detail</td><td>Private Events &amp; Buyouts, pricing tiers, Web3Forms quote</td></tr>
+            <tr><td><code>gallery.html</code></td><td>Gallery</td><td>Masonry grid with Fancybox lightbox</td></tr>
+            <tr><td><code>blog.html</code></td><td>Journal</td><td>Post grid with category tags</td></tr>
+            <tr><td><code>blog-single.html</code></td><td>Article</td><td>Long-form prose layout with related posts</td></tr>
+            <tr><td><code>shopping-cart.html</code></td><td>Shopping Cart</td><td>Qty controls, promo field, order summary</td></tr>
+            <tr><td><code>checkout.html</code></td><td>Checkout</td><td>Contact/delivery/payment form, order recap, Web3Forms</td></tr>
+            <tr><td><code>contact.html</code></td><td>Contact</td><td>Web3Forms contact form with map embed</td></tr>
+            <tr><td><code>reservation.html</code></td><td>Reservation</td><td>Booking form with custom date &amp; time pickers</td></tr>
+            <tr><td><code>single-product.html</code></td><td>Single Product</td><td>Gallery, build options, nutrition facts</td></tr>
+            <tr><td><code>faq.html</code></td><td>FAQ</td><td>Grouped accordions via native <code>&lt;details&gt;</code> — zero JS</td></tr>
+            <tr><td><code>404.html</code></td><td>404</td><td>Error page with quick links</td></tr>
+            <tr><td><code>coming-soon.html</code></td><td>Coming Soon</td><td>Standalone teaser, live countdown, email signup</td></tr>
+            <tr><td><code>privacy-policy.html</code></td><td>Privacy Policy</td><td>Legal page, anchored sections</td></tr>
+            <tr><td><code>terms.html</code></td><td>Terms &amp; Conditions</td><td>Legal page, matching layout</td></tr>
+          </tbody>
+        </table>
       </section>
 
       <!-- Components -->
@@ -314,6 +342,12 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
   &lt;h2 class="bl-section-title"&gt;Signature &lt;em&gt;burgers&lt;/em&gt;&lt;/h2&gt;
 &lt;/div&gt;</code></pre>
         <p>Button modifiers: <code>--primary</code>, <code>--flame</code>, <code>--ghost</code>, <code>--light</code>, plus sizes <code>--sm</code> / <code>--lg</code> and <code>--block</code>. Layout helpers include <code>.bl-container(--wide/--narrow)</code>, <code>.bl-section(--bg2/--surface)</code> and <code>.bl-grid--2/3/4</code>.</p>
+        <p>The FAQ accordion (see <a href="../faq.html">faq.html</a>) needs no JS at all — it's native <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> styled with <code>.bl-faq</code> / <code>.bl-faq__item</code>:</p>
+        <pre><code>&lt;details class="bl-faq__item" open&gt;
+  &lt;summary&gt;Do you deliver?&lt;/summary&gt;
+  &lt;div class="bl-faq__a"&gt;&lt;p&gt;Yes — 25–35 minutes across the city.&lt;/p&gt;&lt;/div&gt;
+&lt;/details&gt;</code></pre>
+        <p>The <a href="../coming-soon.html">coming-soon.html</a> page includes a live countdown — add <code>data-countdown="2026-08-15T11:00:00"</code> to a container with four <code>[data-cd="days|hours|minutes|seconds"]</code> children, and <code>initCountdown()</code> in <code>main.js</code> updates them every second.</p>
       </section>
 
       <!-- Pickers -->

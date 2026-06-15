@@ -15,25 +15,48 @@
 
   ready(function () {
     initFilters();
+    initScrollFilters();
     initTransitions();
   });
 
-  /* ----- Demo filter chips ----- */
-  function initFilters() {
+  /* ----- Apply a demo filter (shared by chips + nav links) ----- */
+  function applyFilter(filter) {
     var chips = Array.prototype.slice.call(document.querySelectorAll(".bl-chip"));
     var cards = Array.prototype.slice.call(document.querySelectorAll(".bl-demo-card"));
     if (!chips.length || !cards.length) return;
 
+    chips.forEach(function (c) {
+      c.classList.toggle("is-active", c.getAttribute("data-filter") === filter);
+    });
+    cards.forEach(function (card) {
+      var tags = card.getAttribute("data-tags") || "";
+      var show = filter === "all" || tags.split(/\s+/).indexOf(filter) !== -1;
+      card.classList.toggle("is-hidden", !show);
+    });
+  }
+
+  /* ----- Demo filter chips ----- */
+  function initFilters() {
+    var chips = Array.prototype.slice.call(document.querySelectorAll(".bl-chip"));
+    if (!chips.length) return;
     chips.forEach(function (chip) {
       chip.addEventListener("click", function () {
-        var filter = chip.getAttribute("data-filter");
-        chips.forEach(function (c) { c.classList.remove("is-active"); });
-        chip.classList.add("is-active");
-        cards.forEach(function (card) {
-          var tags = card.getAttribute("data-tags") || "";
-          var show = filter === "all" || tags.split(/\s+/).indexOf(filter) !== -1;
-          card.classList.toggle("is-hidden", !show);
-        });
+        applyFilter(chip.getAttribute("data-filter"));
+      });
+    });
+  }
+
+  /* ----- Nav links that filter + scroll to the demo grid ----- */
+  function initScrollFilters() {
+    var demos = document.getElementById("demos");
+    document.querySelectorAll("a[data-scroll-filter]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        applyFilter(link.getAttribute("data-scroll-filter"));
+        if (demos) {
+          demos.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
+        }
       });
     });
   }

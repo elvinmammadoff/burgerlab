@@ -29,7 +29,7 @@
       <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
       <ul class="bl-nav__menu">
         <li class="bl-nav__item">
-          <a href="#demos">Demos</a>
+          <a href="#demos" data-scroll-filter="home">Demos</a>
           <ul class="bl-nav__dropdown">
             <li><a href="../index.html" data-demo-link>Home 01 — Cinematic <span>video</span></a></li>
             <li><a href="../index-2.html" data-demo-link>Home 02 — Slider <span>carousel</span></a></li>
@@ -39,8 +39,38 @@
             <li><a href="../index-6.html" data-demo-link>Home 06 — Bento <span>grid</span></a></li>
           </ul>
         </li>
-        <li><a href="#layouts">Layouts</a></li>
-        <li><a href="#pages">Pages</a></li>
+        <li class="bl-nav__item">
+          <a href="#demos" data-scroll-filter="layouts">Layouts</a>
+          <ul class="bl-nav__dropdown">
+            <li><a href="../headers.html" data-demo-link>10 Header Layouts <span>nav</span></a></li>
+            <li><a href="../footers.html" data-demo-link>10 Footer Layouts <span>footer</span></a></li>
+          </ul>
+        </li>
+        <li class="bl-nav__item">
+          <a href="#demos" data-scroll-filter="pages">Pages</a>
+          <ul class="bl-nav__dropdown bl-nav__dropdown--wide">
+            <li><a href="../menu.html" data-demo-link>Menu</a></li>
+            <li><a href="../menu-category.html" data-demo-link>Menu — By Category</a></li>
+            <li><a href="../menu-inside.html" data-demo-link>Inside The Lab Burger</a></li>
+            <li><a href="../single-product.html" data-demo-link>Single Product</a></li>
+            <li><a href="../shopping-cart.html" data-demo-link>Shopping Cart</a></li>
+            <li><a href="../checkout.html" data-demo-link>Checkout</a></li>
+            <li><a href="../about.html" data-demo-link>About</a></li>
+            <li><a href="../chef.html" data-demo-link>The Lab Crew</a></li>
+            <li><a href="../services.html" data-demo-link>Services</a></li>
+            <li><a href="../service-detail.html" data-demo-link>Service Detail</a></li>
+            <li><a href="../gallery.html" data-demo-link>Gallery</a></li>
+            <li><a href="../blog.html" data-demo-link>Journal</a></li>
+            <li><a href="../blog-single.html" data-demo-link>Article</a></li>
+            <li><a href="../reservation.html" data-demo-link>Reservation</a></li>
+            <li><a href="../contact.html" data-demo-link>Contact</a></li>
+            <li><a href="../faq.html" data-demo-link>FAQ</a></li>
+            <li><a href="../404.html" data-demo-link>404</a></li>
+            <li><a href="../coming-soon.html" data-demo-link>Coming Soon</a></li>
+            <li><a href="../privacy-policy.html" data-demo-link>Privacy Policy</a></li>
+            <li><a href="../terms.html" data-demo-link>Terms &amp; Conditions</a></li>
+          </ul>
+        </li>
         <li><a href="#features">Features</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="../documentation/index.html">Docs</a></li>
@@ -59,9 +89,9 @@
 <div class="bl-mobile-menu" id="bl-mobile-menu">
   <button class="bl-mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
   <nav class="bl-mobile-menu__list" aria-label="Mobile">
-    <a href="#demos">Demos</a>
-    <a href="#layouts">Layouts</a>
-    <a href="#pages">Pages</a>
+    <a href="#demos" data-scroll-filter="home">Demos</a>
+    <a href="#demos" data-scroll-filter="layouts">Layouts</a>
+    <a href="#demos" data-scroll-filter="pages">Pages</a>
     <a href="#features">Features</a>
     <a href="#reviews">Reviews</a>
     <a href="../documentation/index.html">Docs</a>
@@ -77,31 +107,82 @@
   <section class="bl-lp-hero">
     <div class="bl-container bl-container--wide">
       <div class="bl-lp-hero__inner">
-        <span class="bl-eyebrow">Premium Burger &amp; Restaurant HTML Template</span>
-        <h1 class="bl-lp-hero__wordmark">Burger<em>Lab</em></h1>
-        <p class="bl-lp-hero__lede">Six unique homepages, 10 header and 10 footer layouts, 30+ inner pages, GSAP motion, custom date &amp; time pickers and Web3Forms — engineered for modern burger joints and restaurants.</p>
-        <div class="bl-lp-hero__actions">
-          <a href="https://themeforest.net/user/alissio" class="bl-btn bl-btn--primary bl-btn--lg" target="_blank" rel="noopener">Buy Now</a>
-          <a href="#demos" class="bl-btn bl-btn--ghost bl-btn--lg">Explore Demos</a>
+        <div class="bl-lp-hero__copy">
+          <span class="bl-eyebrow">Premium Burger &amp; Restaurant HTML Template</span>
+          <h1 class="bl-lp-hero__wordmark">Burger<em>Lab</em></h1>
+          <p class="bl-lp-hero__lede">Six unique homepages, 10 header and 10 footer layouts, 30+ inner pages, GSAP motion, custom date &amp; time pickers and Web3Forms — engineered for modern burger joints and restaurants.</p>
+          <div class="bl-lp-hero__actions">
+            <a href="https://themeforest.net/user/alissio" class="bl-btn bl-btn--primary bl-btn--lg" target="_blank" rel="noopener">Buy Now</a>
+            <a href="#demos" class="bl-btn bl-btn--ghost bl-btn--lg">Explore Demos</a>
+          </div>
+
+          <div class="bl-trustbar">
+            <p class="bl-trustbar__cap"><span aria-hidden="true">★</span> Alissio — a trusted Envato author</p>
+            <div class="bl-trustbar__stats">
+              <div class="bl-trust">
+                <div class="bl-trust__num">347</div>
+                <div class="bl-trust__label">Author Sales</div>
+              </div>
+              <div class="bl-trust">
+                <div class="bl-trust__num">5.0<span>★</span></div>
+                <div class="bl-trust__label">8 Author Ratings</div>
+              </div>
+              <div class="bl-trust">
+                <div class="bl-trust__num">2017</div>
+                <div class="bl-trust__label">Author Since</div>
+              </div>
+              <div class="bl-trust">
+                <div class="bl-trust__num">11</div>
+                <div class="bl-trust__label">ThemeForest Items</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="bl-trustbar">
-          <div class="bl-trust">
-            <div class="bl-trust__num">347</div>
-            <div class="bl-trust__label">Sales</div>
+        <div class="bl-lp-hero__showcase" aria-hidden="true">
+          <div class="bl-lp-marquee">
+            <div class="bl-lp-marquee__col bl-lp-marquee__col--up">
+              <img src="screens/home-1.webp" alt="" width="1440" height="900">
+              <img src="screens/home-2.webp" alt="" width="1440" height="900">
+              <img src="screens/home-3.webp" alt="" width="1440" height="900">
+              <img src="screens/home-1.webp" alt="" width="1440" height="900">
+              <img src="screens/home-2.webp" alt="" width="1440" height="900">
+              <img src="screens/home-3.webp" alt="" width="1440" height="900">
+            </div>
+            <div class="bl-lp-marquee__col bl-lp-marquee__col--down">
+              <img src="screens/home-4.webp" alt="" width="1440" height="900">
+              <img src="screens/home-5.webp" alt="" width="1440" height="900">
+              <img src="screens/home-6.webp" alt="" width="1440" height="900">
+              <img src="screens/home-4.webp" alt="" width="1440" height="900">
+              <img src="screens/home-5.webp" alt="" width="1440" height="900">
+              <img src="screens/home-6.webp" alt="" width="1440" height="900">
+            </div>
           </div>
-          <div class="bl-trust">
-            <div class="bl-trust__num">5.0<span>★</span></div>
-            <div class="bl-trust__label">8 Ratings</div>
-          </div>
-          <div class="bl-trust">
-            <div class="bl-trust__num">2017</div>
-            <div class="bl-trust__label">Author Since</div>
-          </div>
-          <div class="bl-trust">
-            <div class="bl-trust__num">11</div>
-            <div class="bl-trust__label">ThemeForest Items</div>
-          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Author badges ===== -->
+  <section class="bl-section bl-section--tight bl-lp-badges">
+    <div class="bl-container bl-container--wide">
+      <h2 class="bl-visually-hidden">Envato author achievements</h2>
+      <div class="bl-author-badges">
+        <div class="bl-author-badge">
+          <img src="exclusive-author.svg" alt="" loading="lazy" width="64" height="64">
+          <span>Exclusive Author</span>
+        </div>
+        <div class="bl-author-badge">
+          <img src="trendsetter-product.svg" alt="" loading="lazy" width="64" height="64">
+          <span>Trendsetter Products</span>
+        </div>
+        <div class="bl-author-badge">
+          <img src="milestone-member.svg" alt="" loading="lazy" width="64" height="64">
+          <span>Milestone Member</span>
+        </div>
+        <div class="bl-author-badge">
+          <img src="freebie-products.svg" alt="" loading="lazy" width="64" height="64">
+          <span>Freebie Products</span>
         </div>
       </div>
     </div>
@@ -416,6 +497,166 @@
           </div>
         </article>
 
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../chef.html" data-demo-link aria-label="Open The Lab Crew page">
+            <img class="bl-demo-card__img" src="screens/chef.webp" alt="The Lab Crew team page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span><span class="bl-tag bl-tag--accent">Team</span></div>
+            <h3 class="bl-demo-card__title"><a href="../chef.html" data-demo-link>The Lab Crew</a></h3>
+            <p class="bl-demo-card__desc">Meet the team — chef portraits, bios and a stats band in a clean grid layout.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../chef.html" data-demo-link aria-label="Open The Lab Crew"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../services.html" data-demo-link aria-label="Open Services page">
+            <img class="bl-demo-card__img" src="screens/services.webp" alt="Services overview page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span></div>
+            <h3 class="bl-demo-card__title"><a href="../services.html" data-demo-link>Services</a></h3>
+            <p class="bl-demo-card__desc">Services overview — six service cards linking through to a detailed booking page.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../services.html" data-demo-link aria-label="Open Services"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../service-detail.html" data-demo-link aria-label="Open Service Detail page">
+            <img class="bl-demo-card__img" src="screens/service-detail.webp" alt="Service detail page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span><span class="bl-tag bl-tag--accent">Forms</span></div>
+            <h3 class="bl-demo-card__title"><a href="../service-detail.html" data-demo-link>Service Detail</a></h3>
+            <p class="bl-demo-card__desc">Private Events &amp; Buyouts detail page with pricing tiers and a Web3Forms quote request.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../service-detail.html" data-demo-link aria-label="Open Service Detail"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../menu-category.html" data-demo-link aria-label="Open Menu by Category page">
+            <img class="bl-demo-card__img" src="screens/menu-category.webp" alt="Menu by category page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span><span class="bl-tag bl-tag--accent">Menu</span></div>
+            <h3 class="bl-demo-card__title"><a href="../menu-category.html" data-demo-link>Menu — By Category</a></h3>
+            <p class="bl-demo-card__desc">Sidebar-navigation menu layout split into Burgers, Sides, Drinks and Desserts.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../menu-category.html" data-demo-link aria-label="Open Menu by Category"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../menu-inside.html" data-demo-link aria-label="Open Inside The Lab Burger page">
+            <img class="bl-demo-card__img" src="screens/menu-inside.webp" alt="Inside The Lab Burger spotlight page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span><span class="bl-tag bl-tag--accent">Menu</span></div>
+            <h3 class="bl-demo-card__title"><a href="../menu-inside.html" data-demo-link>Inside The Lab Burger</a></h3>
+            <p class="bl-demo-card__desc">An exploded-layer spotlight page that breaks down the signature build, ingredient by ingredient.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../menu-inside.html" data-demo-link aria-label="Open Inside The Lab Burger"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../shopping-cart.html" data-demo-link aria-label="Open Shopping Cart page">
+            <img class="bl-demo-card__img" src="screens/shopping-cart.webp" alt="Shopping cart page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span></div>
+            <h3 class="bl-demo-card__title"><a href="../shopping-cart.html" data-demo-link>Shopping Cart</a></h3>
+            <p class="bl-demo-card__desc">Cart page with quantity controls, a promo code field and a running order summary.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../shopping-cart.html" data-demo-link aria-label="Open Shopping Cart"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../checkout.html" data-demo-link aria-label="Open Checkout page">
+            <img class="bl-demo-card__img" src="screens/checkout.webp" alt="Checkout page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span><span class="bl-tag bl-tag--accent">Forms</span></div>
+            <h3 class="bl-demo-card__title"><a href="../checkout.html" data-demo-link>Checkout</a></h3>
+            <p class="bl-demo-card__desc">Contact, delivery and payment details alongside an itemized order recap and totals.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../checkout.html" data-demo-link aria-label="Open Checkout"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../faq.html" data-demo-link aria-label="Open FAQ page">
+            <img class="bl-demo-card__img" src="screens/faq.webp" alt="FAQ page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span><span class="bl-tag bl-tag--accent">Accordion</span></div>
+            <h3 class="bl-demo-card__title"><a href="../faq.html" data-demo-link>FAQ</a></h3>
+            <p class="bl-demo-card__desc">Grouped FAQ accordions built with native <code>&lt;details&gt;</code> — zero JS required.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../faq.html" data-demo-link aria-label="Open FAQ"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../404.html" data-demo-link aria-label="Open 404 page">
+            <img class="bl-demo-card__img" src="screens/404.webp" alt="404 error page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span></div>
+            <h3 class="bl-demo-card__title"><a href="../404.html" data-demo-link>404 — Not Found</a></h3>
+            <p class="bl-demo-card__desc">A friendly error page with quick links back into the menu, gallery and contact pages.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../404.html" data-demo-link aria-label="Open 404"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bl-demo-card" data-tags="pages">
+          <a class="bl-demo-card__frame" href="../coming-soon.html" data-demo-link aria-label="Open Coming Soon page">
+            <img class="bl-demo-card__img" src="screens/coming-soon.webp" alt="Coming soon page preview" loading="lazy" width="1440" height="900">
+            <span class="bl-demo-card__overlay"><span class="bl-demo-card__view">View demo</span></span>
+          </a>
+          <div class="bl-demo-card__body">
+            <div class="bl-demo-card__tags"><span class="bl-tag">Pages</span><span class="bl-tag bl-tag--accent">Countdown</span></div>
+            <h3 class="bl-demo-card__title"><a href="../coming-soon.html" data-demo-link>Coming Soon</a></h3>
+            <p class="bl-demo-card__desc">Standalone teaser page with a live countdown timer and a Web3Forms email signup.</p>
+            <div class="bl-demo-card__meta">
+              <span class="bl-demo-card__kind">Page</span>
+              <a class="bl-demo-card__arrow" href="../coming-soon.html" data-demo-link aria-label="Open Coming Soon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 9.5 2.5M9.5 2.5H4M9.5 2.5V8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -467,7 +708,7 @@
       <div class="bl-feature-list">
         <div class="bl-feature"><span class="bl-feature__num">01</span><div><h3 class="bl-feature__title">6 Unique Homepages</h3><p class="bl-feature__desc">Cinematic, Slider, App, Split, Statement and Bento — each a separate file with its own hero and section flow.</p></div></div>
         <div class="bl-feature"><span class="bl-feature__num">02</span><div><h3 class="bl-feature__title">10 Headers + 10 Footers</h3><p class="bl-feature__desc">Swap one modifier class to restyle navigation or the footer site-wide. Showcase pages included.</p></div></div>
-        <div class="bl-feature"><span class="bl-feature__num">03</span><div><h3 class="bl-feature__title">30+ Inner Pages</h3><p class="bl-feature__desc">Menu, about, gallery, journal, article, contact, reservation, product and legal pages — all designed.</p></div></div>
+        <div class="bl-feature"><span class="bl-feature__num">03</span><div><h3 class="bl-feature__title">30+ Inner Pages</h3><p class="bl-feature__desc">Menu, about, the team, services, gallery, journal, cart, checkout, FAQ, 404, coming soon and more — all designed.</p></div></div>
         <div class="bl-feature"><span class="bl-feature__num">04</span><div><h3 class="bl-feature__title">GSAP Motion</h3><p class="bl-feature__desc">Scroll reveals, hero animations and counters — with a graceful prefers-reduced-motion fallback.</p></div></div>
         <div class="bl-feature"><span class="bl-feature__num">05</span><div><h3 class="bl-feature__title">Custom Date &amp; Time Pickers</h3><p class="bl-feature__desc">Brand-themed calendar and analog-clock pickers built in vanilla JS — no jQuery, no plugins.</p></div></div>
         <div class="bl-feature"><span class="bl-feature__num">06</span><div><h3 class="bl-feature__title">Web3Forms Ready</h3><p class="bl-feature__desc">Serverless contact &amp; booking forms with validation. Drop in your access key and ship.</p></div></div>
