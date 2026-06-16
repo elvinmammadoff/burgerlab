@@ -586,3 +586,33 @@
   font-size: 0.74rem;
   color: var(--bl-muted);
 }
+
+/* Light mode hero overrides.
+   Rule: the chip bg is always rgba(32,32,29,0.6) — hardcoded dark — so chip TEXT
+   must stay cream on EVERY hero variant, regardless of the hero bg colour.
+   Only cinematic (default) and slider heroes have a dark full-bleed bg, so only
+   those need their titles, lede, scroll indicator and ghost button forced cream. */
+body[data-theme="light"] {
+  // Chip text — applies to ALL hero variants (chip bg is always dark)
+  .bl-hero .bl-chip { color: #F8F4EA; }
+
+  // Home 01 cinematic (dark video bg): force cream on titles, actions, scroll
+  .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) {
+    .bl-hero__title, .bl-hero__lede { color: #F8F4EA; }
+    .bl-hero__scroll, .bl-hero__scroll-label { color: #F8F4EA; }
+    .bl-btn--ghost { color: #F8F4EA; border-color: rgba(248,244,234,0.3); }
+    .bl-btn--ghost:hover { color: var(--bl-accent); border-color: var(--bl-accent); }
+  }
+
+  // Home 02 slider (dark image bg): force cream on titles, actions, arrows
+  .bl-hero--slider {
+    .bl-hero__title, .bl-hero__lede { color: #F8F4EA; }
+    .bl-btn--ghost { color: #F8F4EA; border-color: rgba(248,244,234,0.3); }
+    .bl-btn--ghost:hover { color: var(--bl-accent); border-color: var(--bl-accent); }
+    // Prev/next arrows — bg is dark (rgba hardcoded), text uses var(--bl-text) so override
+    .bl-hero-slider__arrow {
+      color: #F8F4EA;
+      border-color: rgba(248,244,234,0.3);
+    }
+  }
+}

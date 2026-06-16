@@ -62,3 +62,15 @@ $bp-xxl:  1440px;
   --bl-radius-lg: #{$bl-radius-lg};
   --bl-container: #{$bl-container};
 }
+
+// ---- Light mode theme override ----
+body[data-theme="light"] {
+  --bl-bg: #F8F6F1;
+  --bl-bg-2: #F0EBE5;
+  --bl-surface: #FFFFFF;
+  --bl-surface-2: #F5F0E8;
+  --bl-surface-soft: rgba(245, 240, 232, 0.76);
+  --bl-text: #1A1815;
+  --bl-muted: #78705F;
+  --bl-line: #E8DFD5;
+}

@@ -31,6 +31,7 @@
   };
 
   ready(function () {
+    initTheme();
     initPreloader();
     initNav();
     initCartDrop();
@@ -897,6 +898,45 @@
         nextEl: ".bl-hero-slider__arrow--next",
         prevEl: ".bl-hero-slider__arrow--prev",
       },
+    });
+  }
+
+  /* ----- Theme toggle (light/dark mode) ----- */
+  function initTheme() {
+    var stored = localStorage.getItem("bl-theme");
+    var theme = stored || "dark";
+    document.body.setAttribute("data-theme", theme);
+
+    var switchTheme = function (newTheme) {
+      document.body.setAttribute("data-theme", newTheme);
+      localStorage.setItem("bl-theme", newTheme);
+    };
+
+    var toggle = document.querySelector(".bl-theme-toggle");
+    if (toggle) {
+      var updateState = function () {
+        var current = document.body.getAttribute("data-theme");
+        toggle.setAttribute("aria-pressed", current === "light" ? "true" : "false");
+      };
+      updateState();
+      toggle.addEventListener("click", function () {
+        var current = document.body.getAttribute("data-theme");
+        var next = current === "dark" ? "light" : "dark";
+        switchTheme(next);
+      });
+    }
+
+    document.querySelectorAll(".bl-mode-btn-page").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var theme = btn.getAttribute("data-theme");
+        switchTheme(theme);
+      });
+    });
+
+    document.addEventListener("theme:switch", function (e) {
+      if (e.detail && e.detail.theme) {
+        switchTheme(e.detail.theme);
+      }
     });
   }
 })();

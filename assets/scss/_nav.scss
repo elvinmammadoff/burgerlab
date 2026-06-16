@@ -97,6 +97,62 @@
 .bl-burger.is-active span:nth-child(2) { opacity: 0; }
 .bl-burger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Theme toggle */
+.bl-theme-toggle {
+  width: 46px; height: 46px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--bl-line);
+  border-radius: 50%;
+  color: var(--bl-text);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.3s $bl-ease, color 0.3s $bl-ease;
+}
+.bl-theme-toggle:hover { border-color: var(--bl-accent); }
+.bl-theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s $bl-ease, transform 0.25s $bl-ease;
+  pointer-events: none;
+}
+// Moon starts hidden at -90deg so it enters rotating to natural 0deg position
+.bl-theme-toggle__icon--moon { opacity: 0; transform: rotate(-90deg); }
+.bl-theme-toggle__icon--sun { opacity: 1; }
+body[data-theme="light"] .bl-theme-toggle__icon--sun { opacity: 0; transform: rotate(90deg); }
+body[data-theme="light"] .bl-theme-toggle__icon--moon { opacity: 1; transform: rotate(0deg); }
+
+/* Light mode — header background */
+body[data-theme="light"] {
+  .bl-header.is-scrolled {
+    background: rgba(248, 246, 241, 0.92);
+  }
+  .bl-header--solid {
+    background: rgba(248, 246, 241, 0.96);
+    border-bottom-color: var(--bl-line);
+  }
+  // Dropdown links always use dark text on their white panel
+  .bl-dropdown a, .bl-nav__dropdown a { color: var(--bl-muted) !important; }
+  .bl-dropdown a:hover, .bl-nav__dropdown a:hover { color: var(--bl-text) !important; }
+  // Transparent header over dark hero: scope to TOP-LEVEL links only (not dropdown items)
+  .bl-header:not(.is-scrolled):not(.bl-header--solid) {
+    .bl-logo, .bl-nav__menu > li > a, .bl-nav__phone { color: #F8F4EA; }
+    .bl-logo:hover, .bl-nav__menu > li > a:hover { color: #F8F4EA; }
+    .bl-nav__menu > li > a::after { background: #F5B31A; }
+    .bl-burger span { background: #F8F4EA; }
+    .bl-burger { border-color: rgba(248,244,234,0.3); }
+    .bl-theme-toggle { color: #F8F4EA; border-color: rgba(248,244,234,0.3); }
+    // Cart icon stays light over dark hero
+    .bl-cart-btn { color: #F8F4EA; border-color: rgba(248,244,234,0.3); }
+    .bl-cart-btn:hover { border-color: var(--bl-accent); color: var(--bl-accent); }
+  }
+}
+
 /* Mobile drawer */
 .bl-mobile-menu {
   position: fixed;

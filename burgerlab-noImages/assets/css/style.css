@@ -29,6 +29,17 @@
   --bl-container: 1240px;
 }
 
+body[data-theme=light] {
+  --bl-bg: #F8F6F1;
+  --bl-bg-2: #F0EBE5;
+  --bl-surface: #FFFFFF;
+  --bl-surface-2: #F5F0E8;
+  --bl-surface-soft: rgba(245, 240, 232, 0.76);
+  --bl-text: #1A1815;
+  --bl-muted: #78705F;
+  --bl-line: #E8DFD5;
+}
+
 /* ==========================================================================
    Base — reset, typography, helpers
    ========================================================================== */
@@ -534,6 +545,97 @@ button {
 
 .bl-burger.is-active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Theme toggle */
+.bl-theme-toggle {
+  width: 46px;
+  height: 46px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--bl-line);
+  border-radius: 50%;
+  color: var(--bl-text);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-theme-toggle:hover {
+  border-color: var(--bl-accent);
+}
+
+.bl-theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.bl-theme-toggle__icon--moon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.bl-theme-toggle__icon--sun {
+  opacity: 1;
+}
+
+body[data-theme=light] .bl-theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+body[data-theme=light] .bl-theme-toggle__icon--moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Light mode — header background */
+body[data-theme=light] .bl-header.is-scrolled {
+  background: rgba(248, 246, 241, 0.92);
+}
+body[data-theme=light] .bl-header--solid {
+  background: rgba(248, 246, 241, 0.96);
+  border-bottom-color: var(--bl-line);
+}
+body[data-theme=light] .bl-dropdown a, body[data-theme=light] .bl-nav__dropdown a {
+  color: var(--bl-muted) !important;
+}
+body[data-theme=light] .bl-dropdown a:hover, body[data-theme=light] .bl-nav__dropdown a:hover {
+  color: var(--bl-text) !important;
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-logo, body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-nav__menu > li > a, body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-nav__phone {
+  color: #F8F4EA;
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-logo:hover, body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-nav__menu > li > a:hover {
+  color: #F8F4EA;
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-nav__menu > li > a::after {
+  background: #F5B31A;
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-burger span {
+  background: #F8F4EA;
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-burger {
+  border-color: rgba(248, 244, 234, 0.3);
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-theme-toggle {
+  color: #F8F4EA;
+  border-color: rgba(248, 244, 234, 0.3);
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-cart-btn {
+  color: #F8F4EA;
+  border-color: rgba(248, 244, 234, 0.3);
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-cart-btn:hover {
+  border-color: var(--bl-accent);
+  color: var(--bl-accent);
 }
 
 /* Mobile drawer */
@@ -2524,6 +2626,44 @@ button {
   font-family: var(--bl-font-mono);
   font-size: 0.74rem;
   color: var(--bl-muted);
+}
+
+/* Light mode hero overrides.
+   Rule: the chip bg is always rgba(32,32,29,0.6) — hardcoded dark — so chip TEXT
+   must stay cream on EVERY hero variant, regardless of the hero bg colour.
+   Only cinematic (default) and slider heroes have a dark full-bleed bg, so only
+   those need their titles, lede, scroll indicator and ghost button forced cream. */
+body[data-theme=light] .bl-hero .bl-chip {
+  color: #F8F4EA;
+}
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__title, body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__lede {
+  color: #F8F4EA;
+}
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__scroll, body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__scroll-label {
+  color: #F8F4EA;
+}
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-btn--ghost {
+  color: #F8F4EA;
+  border-color: rgba(248, 244, 234, 0.3);
+}
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-btn--ghost:hover {
+  color: var(--bl-accent);
+  border-color: var(--bl-accent);
+}
+body[data-theme=light] .bl-hero--slider .bl-hero__title, body[data-theme=light] .bl-hero--slider .bl-hero__lede {
+  color: #F8F4EA;
+}
+body[data-theme=light] .bl-hero--slider .bl-btn--ghost {
+  color: #F8F4EA;
+  border-color: rgba(248, 244, 234, 0.3);
+}
+body[data-theme=light] .bl-hero--slider .bl-btn--ghost:hover {
+  color: var(--bl-accent);
+  border-color: var(--bl-accent);
+}
+body[data-theme=light] .bl-hero--slider .bl-hero-slider__arrow {
+  color: #F8F4EA;
+  border-color: rgba(248, 244, 234, 0.3);
 }
 
 /* ==========================================================================
@@ -4885,6 +5025,32 @@ button {
   max-width: 50ch;
   margin: 0 auto 2rem;
   font-size: 1.05rem;
+}
+
+.bl-error__modes {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.bl-mode-btn-page {
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--bl-line);
+  border-radius: 14px;
+  background: transparent;
+  font-family: var(--bl-font-head);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--bl-muted);
+  cursor: pointer;
+  transition: background 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-mode-btn-page:hover {
+  background: var(--bl-surface-2);
+  color: var(--bl-text);
+  border-color: var(--bl-accent);
 }
 
 .bl-coming {

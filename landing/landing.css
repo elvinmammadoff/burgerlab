@@ -560,6 +560,37 @@
 }
 .bl-trans-mark span { color: var(--bl-accent); }
 
+/* ----- Demo card overlay — two mode buttons replace "View demo" on hover ----- */
+.bl-demo-card__overlay {
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.bl-demo-card__view { display: none !important; }
+.bl-demo-card__modes-overlay {
+  display: flex;
+  gap: 0.7rem;
+}
+.bl-mode-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-family: var(--bl-font-head);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s var(--bl-ease), transform 0.15s var(--bl-ease);
+}
+.bl-mode-btn:hover { opacity: 0.88; transform: scale(1.04); }
+.bl-mode-btn--light {
+  background: #F5B31A;
+  color: #1a1300;
+}
+.bl-mode-btn--dark {
+  background: #1a1300;
+  color: #F5B31A;
+  border: 1px solid rgba(245,179,26,0.4);
+}
+
 /* ----- Hero / badges responsive ----- */
 @media (max-width: 980px) {
   .bl-lp-hero__inner { grid-template-columns: 1fr; }

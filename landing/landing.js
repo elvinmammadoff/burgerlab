@@ -17,6 +17,7 @@
     initFilters();
     initScrollFilters();
     initTransitions();
+    initModeButtons();
   });
 
   /* ----- Apply a demo filter (shared by chips + nav links) ----- */
@@ -95,6 +96,47 @@
         var go = function () { if (done) return; done = true; window.location.href = href; };
         overlay.addEventListener("transitionend", go, { once: true });
         setTimeout(go, 700); // failsafe
+      });
+    });
+  }
+
+  /* ----- Mode buttons on demo card overlays — navigate to demo in chosen theme ----- */
+  function initModeButtons() {
+    document.querySelectorAll(".bl-mode-btn[data-theme]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var theme = btn.getAttribute("data-theme");
+        // Persist theme so the demo page picks it up on load
+        localStorage.setItem("bl-theme", theme);
+
+        // Find the closest demo card frame anchor to get the href
+        var card = btn.closest(".bl-demo-card");
+        if (!card) return;
+        var link = card.querySelector("a[data-demo-link]");
+        if (!link) return;
+        var href = link.getAttribute("href");
+        if (!href) return;
+
+        if (prefersReduced) {
+          window.location.href = href;
+          return;
+        }
+
+        // Re-use the page-transition overlay
+        var overlay = document.getElementById("bl-transition");
+        if (!overlay) { window.location.href = href; return; }
+        var mark = overlay.querySelector(".bl-trans-mark");
+        overlay.classList.add("is-active");
+        overlay.style.transition = "transform .5s cubic-bezier(.76,0,.24,1)";
+        overlay.style.transformOrigin = "bottom";
+        overlay.style.transform = "scaleY(1)";
+        if (mark) { mark.style.transition = "opacity .35s ease .15s"; mark.style.opacity = "1"; }
+        var done = false;
+        var go = function () { if (done) return; done = true; window.location.href = href; };
+        overlay.addEventListener("transitionend", go, { once: true });
+        setTimeout(go, 700);
       });
     });
   }

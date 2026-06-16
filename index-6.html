@@ -45,7 +45,17 @@
     <nav class="bl-nav" aria-label="Primary">
       <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
       <ul class="bl-nav__menu">
-        <li><a href="index.html" class="is-active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home</a></li>
+        <li class="bl-has-dropdown">
+          <a href="index.html" class="is-active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home <svg class="bl-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" width="12" height="12"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="bl-dropdown">
+            <li><a href="index.html">Home 01 — Cinematic</a></li>
+            <li><a href="index-2.html">Home 02 — Slider</a></li>
+            <li><a href="index-3.html">Home 03 — App</a></li>
+            <li><a href="index-4.html">Home 04 — Split</a></li>
+            <li><a href="index-5.html">Home 05 — Statement</a></li>
+            <li><a href="index-6.html" class="is-active">Home 06 — Bento</a></li>
+          </ul>
+        </li>
         <li><a href="menu.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Menu</a></li>
         <li><a href="about.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>About</a></li>
         <li><a href="gallery.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Gallery</a></li>
@@ -53,6 +63,10 @@
         <li><a href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a></li>
       </ul>
       <div class="bl-nav__actions">
+        <button class="bl-theme-toggle" type="button" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+          <svg class="bl-theme-toggle__icon bl-theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="bl-theme-toggle__icon bl-theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
         <div class="bl-cart-wrap">
           <button class="bl-cart-btn" type="button" aria-label="View cart (3 items)" aria-expanded="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L21 7H6"/></svg>
