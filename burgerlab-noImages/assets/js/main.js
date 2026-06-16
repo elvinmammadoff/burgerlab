@@ -33,6 +33,9 @@
   ready(function () {
     initPreloader();
     initNav();
+    initCartDrop();
+    initOrderTabs();
+    initExpChips();
     initHeroVideo();
     initMarquee();
     initReveals();
@@ -140,6 +143,25 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") close();
       });
+
+      // Mobile accordion (Home / Pages expandable groups)
+      var mobileToggles = menu.querySelectorAll(".bl-mobile-menu__toggle");
+      mobileToggles.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var sub = btn.nextElementSibling;
+          var isOpen = btn.getAttribute("aria-expanded") === "true";
+          mobileToggles.forEach(function (b) {
+            b.setAttribute("aria-expanded", "false");
+            var s = b.nextElementSibling;
+            if (s) s.hidden = true;
+          });
+          if (!isOpen) {
+            btn.setAttribute("aria-expanded", "true");
+            if (sub) sub.hidden = false;
+          }
+        });
+      });
+
       // If the viewport grows to desktop while the drawer is open, close it
       // and release the body scroll-lock (the drawer is mobile-only).
       var mqDesktop = window.matchMedia("(min-width: 1024px)");
@@ -416,6 +438,128 @@
           .finally(function () {
             if (btn) { btn.disabled = false; btn.textContent = btnText; }
           });
+      });
+    });
+  }
+
+  /* ----- Checkout order category filter tabs ----- */
+  function initOrderTabs() {
+    var cards = document.querySelectorAll(".bl-order-card");
+    cards.forEach(function (card) {
+      var tabs = card.querySelectorAll(".bl-order-tab");
+      var rows = card.querySelectorAll(".bl-order-row[data-category]");
+      var countEl = card.querySelector(".bl-order-count");
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            t.classList.remove("is-active");
+            t.setAttribute("aria-selected", "false");
+          });
+          tab.classList.add("is-active");
+          tab.setAttribute("aria-selected", "true");
+
+          var filter = tab.getAttribute("data-filter");
+          var visible = 0;
+
+          rows.forEach(function (row) {
+            var match = filter === "all" || row.getAttribute("data-category") === filter;
+            row.classList.toggle("is-filtered", !match);
+            if (match) visible++;
+          });
+
+          if (countEl) {
+            countEl.textContent = filter === "all" ? rows.length : visible;
+          }
+        });
+      });
+    });
+  }
+
+  /* ----- Experience section category filter chips ----- */
+  function initExpChips() {
+    var panels = document.querySelectorAll(".bl-exp__panel--feature");
+    panels.forEach(function (panel) {
+      var chips = panel.querySelectorAll(".bl-exp__chips button[data-filter]");
+      var rows  = panel.querySelectorAll(".bl-exp__summary-row[data-category]");
+      var countEl = panel.querySelector(".bl-order-count");
+      var thumb   = panel.querySelector(".bl-order-card__thumb");
+      var nameEl  = panel.querySelector(".bl-order-card__name");
+
+      if (!chips.length) return;
+
+      function applyFilter(chip) {
+        var filter = chip.getAttribute("data-filter");
+        var visible = 0;
+
+        rows.forEach(function (row) {
+          var match = row.getAttribute("data-category") === filter;
+          row.classList.toggle("is-filtered", !match);
+          if (match) visible++;
+        });
+
+        if (countEl) {
+          countEl.textContent = visible;
+          countEl.nextSibling.textContent = visible === 1 ? " item · BurgerLab SoHo" : " items · BurgerLab SoHo";
+        }
+
+        var img = chip.getAttribute("data-img");
+        var label = chip.getAttribute("data-label");
+        if (thumb && img) {
+          thumb.style.opacity = "0";
+          thumb.style.transform = "scale(0.92)";
+          setTimeout(function () {
+            thumb.src = img;
+            thumb.alt = label || "";
+            thumb.style.opacity = "1";
+            thumb.style.transform = "scale(1)";
+          }, 160);
+        }
+        if (nameEl && label) nameEl.textContent = label;
+      }
+
+      chips.forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          chips.forEach(function (c) {
+            c.classList.remove("is-active");
+            c.setAttribute("aria-selected", "false");
+          });
+          chip.classList.add("is-active");
+          chip.setAttribute("aria-selected", "true");
+          applyFilter(chip);
+        });
+      });
+
+      var activeChip = panel.querySelector(".bl-exp__chips button.is-active[data-filter]");
+      if (activeChip) applyFilter(activeChip);
+    });
+  }
+
+  /* ----- Mini cart dropdown ----- */
+  function initCartDrop() {
+    var wraps = document.querySelectorAll(".bl-cart-wrap");
+    wraps.forEach(function (wrap) {
+      var btn = wrap.querySelector(".bl-cart-btn");
+      var drop = wrap.querySelector(".bl-cart-drop");
+      if (!btn || !drop) return;
+
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var isOpen = drop.classList.contains("is-open");
+        drop.classList.toggle("is-open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+
+      document.addEventListener("click", function () {
+        drop.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          drop.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        }
       });
     });
   }

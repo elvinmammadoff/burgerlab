@@ -143,6 +143,7 @@
   border-radius: 14px;
   object-fit: cover;
   flex: 0 0 auto;
+  transition: opacity 0.16s $bl-ease, transform 0.16s $bl-ease;
 }
 .bl-order-card__name { font-family: var(--bl-font-head); font-weight: 600; font-size: 1.05rem; }
 .bl-order-card__meta { font-family: var(--bl-font-mono); font-size: 0.74rem; color: var(--bl-muted); }

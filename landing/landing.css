@@ -8,12 +8,12 @@
 :root { --bl-ease: cubic-bezier(0.22, 1, 0.36, 1); }
 
 /* ----- Nav: Demos dropdown (landing-only) ----- */
-.bl-nav__item { position: relative; }
+.bl-nav__item { position: relative; padding: 14px 0; }
 .bl-nav__dropdown {
   position: absolute;
-  top: calc(100% + 14px);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(8px);
+  transform: translateX(-50%) translateY(6px);
   min-width: 230px;
   padding: 0.5rem;
   background: var(--bl-surface);

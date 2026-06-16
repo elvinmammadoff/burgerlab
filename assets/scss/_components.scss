@@ -259,6 +259,18 @@
   font-family: var(--bl-font-mono);
   font-size: 0.84rem;
   color: var(--bl-muted);
+  overflow: hidden;
+  max-height: 56px;
+  opacity: 1;
+  transition: max-height 0.28s $bl-ease, opacity 0.2s $bl-ease, padding 0.28s $bl-ease, border-color 0.2s $bl-ease;
+  &.is-filtered {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent;
+    pointer-events: none;
+  }
 }
 .bl-exp__summary-row strong { color: var(--bl-text); }
 .bl-exp__total {

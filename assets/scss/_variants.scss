@@ -42,7 +42,7 @@
   position: relative;
   border: 1px solid var(--bl-line);
   border-radius: $bl-radius-lg;
-  overflow: hidden;
+  overflow: visible;
   background: var(--bl-bg-2);
   min-height: 110px;
 }
@@ -214,10 +214,11 @@
    ========================================================================== */
 @media (min-width: $bp-lg) {
   .bl-header--tabs .bl-nav { gap: 3rem; }
-  .bl-header--tabs .bl-nav__menu { flex: 1; justify-content: space-between; gap: 0; }
+  .bl-header--tabs .bl-nav__menu { flex: 1; justify-content: center; gap: 2.5rem; }
+  .bl-header--tabs .bl-has-dropdown { padding: 0; }
   .bl-header--tabs .bl-nav__menu a {
-    height: 84px;
-    display: inline-flex;
+    height: 40px;
+    display: flex;
     align-items: center;
     border-bottom: 2px solid transparent;
     padding: 0;
@@ -352,6 +353,14 @@
 }
 .bl-footer__minimal-links a { color: var(--bl-muted); }
 .bl-footer__minimal-links a:hover { color: var(--bl-text); }
+@media (min-width: $bp-md) {
+  .bl-footer--minimal .bl-footer__bottom {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+  }
+}
 
 /* ==========================================================================
    FOOTER VARIANT 4 — CTA Banner

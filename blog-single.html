@@ -22,15 +22,102 @@
     <nav class="bl-nav" aria-label="Primary">
       <a href="index.html" class="bl-logo">Burger<span>Lab</span></a>
       <ul class="bl-nav__menu">
-        <li><a href="index.html">Home</a></li>
+        <li class="bl-has-dropdown">
+          <a href="index.html">Home <svg class="bl-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" width="12" height="12"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="bl-dropdown">
+            <li><a href="index.html">Home 01 — Cinematic</a></li>
+            <li><a href="index-2.html">Home 02 — Slider</a></li>
+            <li><a href="index-3.html">Home 03 — App</a></li>
+            <li><a href="index-4.html">Home 04 — Split</a></li>
+            <li><a href="index-5.html">Home 05 — Statement</a></li>
+            <li><a href="index-6.html">Home 06 — Bento</a></li>
+          </ul>
+        </li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html" class="is-active">Journal</a></li>
+        <li class="bl-has-dropdown">
+          <a href="#" class="is-active">Pages <svg class="bl-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" width="12" height="12"><path d="M6 9l6 6 6-6"/></svg></a>
+          <div class="bl-dropdown bl-dropdown--wide">
+            <div class="bl-dropdown__col">
+              <div class="bl-dropdown__group">
+                <span class="bl-dropdown__label">Restaurant</span>
+              <a href="about.html">About</a>
+              <a href="chef.html">The Lab Crew</a>
+              <a href="services.html">Services</a>
+              <a href="service-detail.html">Service Detail</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="reservation.html">Reservation</a>
+              </div>
+              <div class="bl-dropdown__group">
+                <span class="bl-dropdown__label">Journal</span>
+              <a href="blog.html">Journal</a>
+              <a href="blog-single.html" class="is-active">Journal Single</a>
+              <a href="faq.html">FAQ</a>
+              </div>
+            </div>
+            <div class="bl-dropdown__col">
+              <div class="bl-dropdown__group">
+                <span class="bl-dropdown__label">Shop</span>
+              <a href="menu-category.html">Menu by Category</a>
+              <a href="menu-inside.html">Inside The Lab Burger</a>
+              <a href="shopping-cart.html">Shopping Cart</a>
+              <a href="single-product.html">Single Product</a>
+              <a href="checkout.html">Checkout</a>
+              </div>
+              <div class="bl-dropdown__group">
+                <span class="bl-dropdown__label">Utility</span>
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="terms.html">Terms &amp; Conditions</a>
+              <a href="404.html">404</a>
+              <a href="coming-soon.html">Coming Soon</a>
+              <a href="headers.html">Header Layouts</a>
+              <a href="footers.html">Footer Layouts</a>
+              </div>
+            </div>
+          </div>
+        </li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="bl-nav__actions">
         <span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+        <div class="bl-cart-wrap">
+          <button class="bl-cart-btn" type="button" aria-label="View cart (3 items)" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+            <span class="bl-cart-btn__count" aria-hidden="true">3</span>
+          </button>
+          <div class="bl-cart-drop" role="dialog" aria-label="Mini cart">
+            <div class="bl-cart-drop__items">
+              <div class="bl-cart-drop__item">
+                <img src="assets/images/catalog-classic-stack.jpg" alt="The Lab Burger" width="50" height="50">
+                <div class="bl-cart-drop__info">
+                  <div class="bl-cart-drop__name">The Lab Burger</div>
+                  <div class="bl-cart-drop__price"><span>×2</span>$28.00</div>
+                </div>
+              </div>
+              <div class="bl-cart-drop__item">
+                <img src="assets/images/dish-loaded-fries.jpg" alt="Loaded Fries" width="50" height="50">
+                <div class="bl-cart-drop__info">
+                  <div class="bl-cart-drop__name">Loaded Fries</div>
+                  <div class="bl-cart-drop__price"><span>×1</span>$7.00</div>
+                </div>
+              </div>
+              <div class="bl-cart-drop__item">
+                <img src="assets/images/dish-craft-cola.jpg" alt="Craft Cola" width="50" height="50">
+                <div class="bl-cart-drop__info">
+                  <div class="bl-cart-drop__name">Craft Cola</div>
+                  <div class="bl-cart-drop__price"><span>×1</span>$4.50</div>
+                </div>
+              </div>
+            </div>
+            <div class="bl-cart-drop__foot">
+              <div class="bl-cart-drop__total">
+                <span>Total</span>
+                <strong>$39.50</strong>
+              </div>
+              <a href="shopping-cart.html" class="bl-btn bl-btn--primary bl-btn--sm">View Cart</a>
+              <a href="checkout.html" class="bl-btn bl-btn--ghost bl-btn--sm">Checkout</a>
+            </div>
+          </div>
+        </div>
         <a href="reservation.html" class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta">Order Now</a>
         <button class="bl-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="bl-mobile-menu">
           <span></span><span></span><span></span>
@@ -44,11 +131,43 @@
 <div class="bl-mobile-menu" id="bl-mobile-menu">
   <button class="bl-mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
   <nav class="bl-mobile-menu__list" aria-label="Mobile">
-    <a href="index.html">Home</a>
+    <div class="bl-mobile-menu__group">
+      <button class="bl-mobile-menu__toggle" type="button" aria-expanded="false">Home <svg class="bl-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="bl-mobile-menu__sub" hidden>
+        <a href="index.html">Home 01 — Cinematic</a>
+        <a href="index-2.html">Home 02 — Slider</a>
+        <a href="index-3.html">Home 03 — App</a>
+        <a href="index-4.html">Home 04 — Split</a>
+        <a href="index-5.html">Home 05 — Statement</a>
+        <a href="index-6.html">Home 06 — Bento</a>
+      </div>
+    </div>
     <a href="menu.html">Menu</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="blog.html">Journal</a>
+    <div class="bl-mobile-menu__group">
+      <button class="bl-mobile-menu__toggle" type="button" aria-expanded="false">Pages <svg class="bl-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="bl-mobile-menu__sub" hidden>
+        <a href="about.html">About</a>
+        <a href="chef.html">The Lab Crew</a>
+        <a href="services.html">Services</a>
+        <a href="service-detail.html">Service Detail</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Journal</a>
+        <a href="blog-single.html">Journal Single</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="faq.html">FAQ</a>
+        <a href="menu-category.html">Menu by Category</a>
+        <a href="menu-inside.html">Inside The Lab Burger</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="shopping-cart.html">Shopping Cart</a>
+        <a href="single-product.html">Single Product</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="404.html">404</a>
+        <a href="coming-soon.html">Coming Soon</a>
+        <a href="headers.html">Header Layouts</a>
+        <a href="footers.html">Footer Layouts</a>
+      </div>
+    </div>
     <a href="contact.html">Contact</a>
   </nav>
   <div class="bl-mobile-menu__foot">
@@ -60,7 +179,7 @@
 <main id="main">
 
   <!-- ===== Page hero ===== -->
-  <section class="bl-page-hero">
+  <section class="bl-page-hero bl-page-hero--photo" style="background-image: url('assets/images/hero-blog.jpg')">
     <div class="bl-container bl-container--wide">
       <span class="bl-page-hero__eyebrow">Craft · May 28, 2026</span>
       <h1 class="bl-page-hero__title">The anatomy of a <em>perfect</em> smash burger</h1>
