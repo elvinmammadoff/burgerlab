@@ -2628,6 +2628,441 @@ body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-c
   color: var(--bl-muted);
 }
 
+/* ==========================================================================
+   Home v7 — Classic photo-bg hero with inline booking bar
+   ========================================================================== */
+.bl-hero--classic {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: var(--bl-bg);
+  overflow: hidden;
+}
+
+.bl-hero--classic .bl-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bl-hero--classic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg, rgba(10, 10, 8, 0.35) 0%, rgba(10, 10, 8, 0.65) 60%, rgba(10, 10, 8, 0.82) 100%);
+}
+
+.bl-hero__classic-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+
+.bl-hero__classic-eyebrow {
+  font-family: var(--bl-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bl-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.bl-hero__classic-eyebrow::before,
+.bl-hero__classic-eyebrow::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--bl-accent);
+  opacity: 0.7;
+}
+
+.bl-hero__classic-title {
+  font-family: var(--bl-font-head);
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: #F8F4EA;
+  margin-bottom: 1rem;
+}
+
+.bl-hero__classic-title em {
+  color: var(--bl-accent);
+  font-style: normal;
+}
+
+.bl-hero__classic-sub {
+  color: rgba(248, 244, 234, 0.72);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 0 auto 2.6rem;
+}
+
+/* ----- Booking bar ----- */
+.bl-booking-bar {
+  display: flex;
+  align-items: stretch;
+  background: rgba(14, 14, 12, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(248, 244, 234, 0.14);
+  border-radius: 24px;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.bl-booking-bar__field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.3rem;
+  border-right: 1px solid rgba(248, 244, 234, 0.1);
+  min-width: 0;
+  text-align: left;
+}
+
+.bl-booking-bar__label {
+  font-family: var(--bl-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(248, 244, 234, 0.48);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.bl-booking-bar__select {
+  font-family: var(--bl-font-head);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #F8F4EA;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+}
+
+.bl-booking-bar__select option {
+  background: #1A1815;
+  color: #F8F4EA;
+}
+
+.bl-booking-bar__btn {
+  flex-shrink: 0;
+  padding: 0 2rem;
+  background: var(--bl-accent);
+  color: #1A1305;
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bl-booking-bar__btn:hover {
+  opacity: 0.88;
+  color: #1A1305;
+}
+
+@media (max-width: 640px) {
+  .bl-booking-bar {
+    flex-direction: column;
+    border-radius: 14px;
+  }
+  .bl-booking-bar__field {
+    border-right: none;
+    border-bottom: 1px solid rgba(248, 244, 234, 0.1);
+  }
+  .bl-booking-bar__btn {
+    padding: 1.1rem;
+    text-align: center;
+  }
+}
+
+/* ----- Booking-bar picker truncation fix ----- */
+.bl-booking-bar__field .bl-picker {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.bl-booking-bar__field input.bl-booking-bar__select {
+  padding-right: 1.6rem;
+  min-width: 0;
+}
+.bl-booking-bar__field .bl-picker__icon {
+  color: rgba(248, 244, 234, 0.48);
+  right: 0;
+  width: 15px;
+  height: 15px;
+}
+
+/* ----- Hero classic v7 – two-column layout ----- */
+.bl-hero--classic-v7 {
+  overflow: visible;
+}
+.bl-hero--classic-v7 .bl-container {
+  position: relative;
+  z-index: 2;
+}
+.bl-hero--classic-v7 .bl-hero__classic-inner {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  align-items: center;
+  gap: 3rem;
+  padding: 10rem 0 6rem;
+}
+.bl-hero--classic-v7 .bl-hero__classic-eyebrow {
+  justify-content: flex-start;
+}
+.bl-hero--classic-v7 .bl-hero__classic-sub {
+  margin-left: 0;
+}
+
+/* ----- Booking card ----- */
+.bl-booking-card {
+  background: rgba(14, 14, 12, 0.70);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(248, 244, 234, 0.12);
+  border-top: 2px solid var(--bl-accent);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+}
+.bl-booking-card__eyebrow {
+  font-family: var(--bl-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bl-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+.bl-booking-card__eyebrow::before,
+.bl-booking-card__eyebrow::after {
+  content: "✦";
+  font-size: 0.48rem;
+  opacity: 0.8;
+}
+.bl-booking-card__title {
+  font-family: var(--bl-font-head);
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  color: #F8F4EA;
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+}
+.bl-booking-card__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.1rem;
+}
+.bl-booking-card__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.bl-booking-card__label {
+  font-family: var(--bl-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(248, 244, 234, 0.45);
+}
+.bl-booking-card__select-wrap {
+  position: relative;
+}
+.bl-booking-card__select-wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.85rem;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid rgba(248, 244, 234, 0.45);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.bl-booking-card__select {
+  width: 100%;
+  background: rgba(248, 244, 234, 0.07);
+  border: 1px solid rgba(248, 244, 234, 0.14);
+  border-radius: 10px;
+  padding: 0.65rem 2.2rem 0.65rem 0.85rem;
+  color: #F8F4EA;
+  font-family: var(--bl-font-head);
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.bl-booking-card__select option {
+  background: #1A1815;
+  color: #F8F4EA;
+}
+.bl-booking-card .bl-booking-card__picker input {
+  width: 100%;
+  background: rgba(248, 244, 234, 0.07);
+  border: 1px solid rgba(248, 244, 234, 0.14);
+  border-radius: 10px;
+  padding: 0.65rem 2.4rem 0.65rem 0.85rem;
+  color: #F8F4EA;
+  font-family: var(--bl-font-head);
+  font-size: 0.9rem;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+}
+.bl-booking-card .bl-booking-card__picker input::placeholder {
+  color: rgba(248, 244, 234, 0.38);
+}
+.bl-booking-card .bl-picker__icon {
+  color: rgba(248, 244, 234, 0.45);
+  right: 0.75rem;
+  width: 16px;
+  height: 16px;
+}
+.bl-booking-card__btn {
+  width: 100%;
+  background: var(--bl-accent);
+  color: #1A1305;
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.bl-booking-card__btn:hover {
+  opacity: 0.88;
+}
+@media (max-width: 900px) {
+  .bl-hero--classic-v7 .bl-hero__classic-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 8rem 0 4rem;
+  }
+  .bl-hero--classic-v7 .bl-hero__classic-eyebrow {
+    justify-content: center;
+  }
+  .bl-booking-card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* ----- Info bar ----- */
+.bl-info-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--bl-line);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .bl-info-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.bl-info-bar__cell {
+  padding: 2rem 2.4rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--bl-line);
+}
+
+.bl-info-bar__cell:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {
+  .bl-info-bar__cell {
+    border-bottom: none;
+    border-right: 1px solid var(--bl-line);
+  }
+  .bl-info-bar__cell:last-child {
+    border-right: none;
+  }
+}
+.bl-info-bar__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 50%;
+  color: var(--bl-accent);
+}
+
+.bl-info-bar__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.bl-info-bar__title {
+  font-family: var(--bl-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bl-muted);
+  margin-bottom: 0.45rem;
+}
+
+.bl-info-bar__text {
+  font-size: 0.95rem;
+  color: var(--bl-text);
+  line-height: 1.7;
+}
+
+.bl-info-bar__text a {
+  color: var(--bl-text);
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bl-info-bar__text a:hover {
+  color: var(--bl-accent);
+}
+
 /* Light mode hero overrides.
    Rule: the chip bg is always rgba(32,32,29,0.6) — hardcoded dark — so chip TEXT
    must stay cream on EVERY hero variant, regardless of the hero bg colour.
@@ -2636,17 +3071,17 @@ body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-c
 body[data-theme=light] .bl-hero .bl-chip {
   color: #F8F4EA;
 }
-body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__title, body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__lede {
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-hero__title, body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-hero__lede {
   color: #F8F4EA;
 }
-body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__scroll, body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-hero__scroll-label {
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-hero__scroll, body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-hero__scroll-label {
   color: #F8F4EA;
 }
-body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-btn--ghost {
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-btn--ghost {
   color: #F8F4EA;
   border-color: rgba(248, 244, 234, 0.3);
 }
-body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento) .bl-btn--ghost:hover {
+body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-btn--ghost:hover {
   color: var(--bl-accent);
   border-color: var(--bl-accent);
 }
@@ -4121,6 +4556,14 @@ body[data-theme=light] .bl-hero--slider .bl-hero-slider__arrow {
 .bl-page-hero--photo > * {
   position: relative;
   z-index: 1;
+}
+
+body[data-theme=light] .bl-page-hero--photo .bl-page-hero__title,
+body[data-theme=light] .bl-page-hero--photo .bl-page-hero__lede,
+body[data-theme=light] .bl-page-hero--photo .bl-page-hero__eyebrow,
+body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb,
+body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb a {
+  color: #ffffff;
 }
 
 .bl-page-hero__eyebrow {

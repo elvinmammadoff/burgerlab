@@ -675,13 +675,15 @@
       input.setAttribute("aria-haspopup", "dialog");
       input.setAttribute("aria-expanded", "false");
       input.classList.add("bl-input--picker");
-      input.addEventListener("click", doOpen);
-      input.addEventListener("focus", doOpen);
+      input.addEventListener("click", function () {
+        if (open && open.input === input) { closeOpen(); return; }
+        doOpen();
+      });
       input.addEventListener("keydown", function (e) {
         if (e.key === "Tab") return;
         e.preventDefault();
         if (e.key === "Escape") { closeOpen(); return; }
-        doOpen();
+        if (!open || open.input !== input) doOpen();
       });
     }
 
