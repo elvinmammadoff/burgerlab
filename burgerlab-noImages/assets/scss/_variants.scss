@@ -42,7 +42,7 @@
   position: relative;
   border: 1px solid var(--bl-line);
   border-radius: $bl-radius-lg;
-  overflow: hidden;
+  overflow: visible;
   background: var(--bl-bg-2);
   min-height: 110px;
 }
@@ -170,6 +170,24 @@
   .bl-header--floating { padding-top: 22px; }
   .bl-header--floating .bl-nav { padding: 0 2.2rem; }
 }
+body[data-theme=light] .bl-header--floating .bl-nav {
+  background: rgba(248, 246, 241, 0.90);
+  border-color: rgba(26, 23, 20, 0.10);
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-logo,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__phone {
+  color: var(--bl-text) !important;
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a:hover { color: var(--bl-text) !important; }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a::after { background: var(--bl-accent); }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-burger span { background: var(--bl-text); }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-burger { border-color: var(--bl-line); }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-theme-toggle,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-cart-btn {
+  color: var(--bl-text) !important;
+  border-color: var(--bl-line) !important;
+}
 
 /* ==========================================================================
    HEADER VARIANT 6 — Boxed Nav Items
@@ -214,10 +232,11 @@
    ========================================================================== */
 @media (min-width: $bp-lg) {
   .bl-header--tabs .bl-nav { gap: 3rem; }
-  .bl-header--tabs .bl-nav__menu { flex: 1; justify-content: space-between; gap: 0; }
+  .bl-header--tabs .bl-nav__menu { flex: 1; justify-content: center; gap: 2.5rem; }
+  .bl-header--tabs .bl-has-dropdown { padding: 0; }
   .bl-header--tabs .bl-nav__menu a {
-    height: 84px;
-    display: inline-flex;
+    height: 40px;
+    display: flex;
     align-items: center;
     border-bottom: 2px solid transparent;
     padding: 0;
@@ -352,6 +371,14 @@
 }
 .bl-footer__minimal-links a { color: var(--bl-muted); }
 .bl-footer__minimal-links a:hover { color: var(--bl-text); }
+@media (min-width: $bp-md) {
+  .bl-footer--minimal .bl-footer__bottom {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+  }
+}
 
 /* ==========================================================================
    FOOTER VARIANT 4 — CTA Banner

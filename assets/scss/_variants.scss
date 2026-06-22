@@ -170,6 +170,24 @@
   .bl-header--floating { padding-top: 22px; }
   .bl-header--floating .bl-nav { padding: 0 2.2rem; }
 }
+body[data-theme=light] .bl-header--floating .bl-nav {
+  background: rgba(248, 246, 241, 0.90);
+  border-color: rgba(26, 23, 20, 0.10);
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-logo,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__phone {
+  color: var(--bl-text) !important;
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a:hover { color: var(--bl-text) !important; }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a::after { background: var(--bl-accent); }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-burger span { background: var(--bl-text); }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-burger { border-color: var(--bl-line); }
+body[data-theme=light] .bl-header--floating .bl-nav .bl-theme-toggle,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-cart-btn {
+  color: var(--bl-text) !important;
+  border-color: var(--bl-line) !important;
+}
 
 /* ==========================================================================
    HEADER VARIANT 6 — Boxed Nav Items

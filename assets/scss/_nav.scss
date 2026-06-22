@@ -37,6 +37,17 @@
 }
 .bl-logo span { color: var(--bl-accent); }
 .bl-logo:hover { color: var(--bl-text); }
+.bl-logo__mark {
+  flex-shrink: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+.bl-logo__mark--light { display: none; }
+body[data-theme=light] .bl-logo__mark--dark { display: none; }
+body[data-theme=light] .bl-logo__mark--light { display: block; }
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid):not(.bl-header--floating) .bl-logo__mark--dark { display: block; }
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid):not(.bl-header--floating) .bl-logo__mark--light { display: none; }
 
 .bl-nav__menu {
   display: none;

@@ -37,6 +37,17 @@
 }
 .bl-logo span { color: var(--bl-accent); }
 .bl-logo:hover { color: var(--bl-text); }
+.bl-logo__mark {
+  flex-shrink: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+.bl-logo__mark--light { display: none; }
+body[data-theme=light] .bl-logo__mark--dark { display: none; }
+body[data-theme=light] .bl-logo__mark--light { display: block; }
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid):not(.bl-header--floating) .bl-logo__mark--dark { display: block; }
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid):not(.bl-header--floating) .bl-logo__mark--light { display: none; }
 
 .bl-nav__menu {
   display: none;
@@ -97,6 +108,62 @@
 .bl-burger.is-active span:nth-child(2) { opacity: 0; }
 .bl-burger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Theme toggle */
+.bl-theme-toggle {
+  width: 46px; height: 46px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--bl-line);
+  border-radius: 50%;
+  color: var(--bl-text);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.3s $bl-ease, color 0.3s $bl-ease;
+}
+.bl-theme-toggle:hover { border-color: var(--bl-accent); }
+.bl-theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s $bl-ease, transform 0.25s $bl-ease;
+  pointer-events: none;
+}
+// Moon starts hidden at -90deg so it enters rotating to natural 0deg position
+.bl-theme-toggle__icon--moon { opacity: 0; transform: rotate(-90deg); }
+.bl-theme-toggle__icon--sun { opacity: 1; }
+body[data-theme="light"] .bl-theme-toggle__icon--sun { opacity: 0; transform: rotate(90deg); }
+body[data-theme="light"] .bl-theme-toggle__icon--moon { opacity: 1; transform: rotate(0deg); }
+
+/* Light mode — header background */
+body[data-theme="light"] {
+  .bl-header.is-scrolled {
+    background: rgba(248, 246, 241, 0.92);
+  }
+  .bl-header--solid {
+    background: rgba(248, 246, 241, 0.96);
+    border-bottom-color: var(--bl-line);
+  }
+  // Dropdown links always use dark text on their white panel
+  .bl-dropdown a, .bl-nav__dropdown a { color: var(--bl-muted) !important; }
+  .bl-dropdown a:hover, .bl-nav__dropdown a:hover { color: var(--bl-text) !important; }
+  // Transparent header over dark hero: scope to TOP-LEVEL links only (not dropdown items)
+  .bl-header:not(.is-scrolled):not(.bl-header--solid) {
+    .bl-logo, .bl-nav__menu > li > a, .bl-nav__phone { color: #F8F4EA; }
+    .bl-logo:hover, .bl-nav__menu > li > a:hover { color: #F8F4EA; }
+    .bl-nav__menu > li > a::after { background: #F5B31A; }
+    .bl-burger span { background: #F8F4EA; }
+    .bl-burger { border-color: rgba(248,244,234,0.3); }
+    .bl-theme-toggle { color: #F8F4EA; border-color: rgba(248,244,234,0.3); }
+    // Cart icon stays light over dark hero
+    .bl-cart-btn { color: #F8F4EA; border-color: rgba(248,244,234,0.3); }
+    .bl-cart-btn:hover { border-color: var(--bl-accent); color: var(--bl-accent); }
+  }
+}
+
 /* Mobile drawer */
 .bl-mobile-menu {
   position: fixed;
@@ -138,10 +205,274 @@
 }
 .bl-mobile-menu__foot .bl-nav__phone { display: block; font-size: 1rem; }
 
+/* ----- Desktop dropdown ----- */
+/* The 14px vertical padding extends the hoverable area of the trigger down
+   to where the panel begins, so the cursor never crosses a dead zone on its
+   way from the link to the dropdown (which would otherwise close it). */
+.bl-has-dropdown { position: relative; padding: 14px 0; }
+.bl-has-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.bl-dropdown-chevron {
+  transition: transform 0.25s $bl-ease;
+  flex-shrink: 0;
+}
+.bl-has-dropdown:hover .bl-dropdown-chevron,
+.bl-has-dropdown:focus-within .bl-dropdown-chevron {
+  transform: rotate(180deg);
+}
+.bl-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s $bl-ease, visibility 0.2s $bl-ease,
+    transform 0.2s $bl-ease;
+  z-index: 200;
+}
+.bl-has-dropdown:hover .bl-dropdown,
+.bl-has-dropdown:focus-within .bl-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.bl-dropdown li { list-style: none; }
+.bl-dropdown a {
+  display: block;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--bl-muted);
+  white-space: nowrap;
+  font-family: var(--bl-font-head);
+  font-weight: 500;
+}
+.bl-dropdown a::after { display: none !important; }
+.bl-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--bl-text);
+}
+.bl-dropdown a.is-active {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--bl-accent);
+}
+
+/* Wide 2-column grouped dropdown for Pages */
+.bl-dropdown--wide {
+  display: flex;
+  gap: 0.25rem;
+  min-width: 420px;
+  left: 0;
+  right: auto;
+  transform: translateY(6px);
+}
+.bl-has-dropdown:hover .bl-dropdown--wide,
+.bl-has-dropdown:focus-within .bl-dropdown--wide {
+  transform: translateY(0);
+}
+.bl-dropdown__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.bl-dropdown__group { display: flex; flex-direction: column; }
+.bl-dropdown__label {
+  font-family: var(--bl-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bl-accent);
+  padding: 0.5rem 0.85rem 0.15rem;
+  display: block;
+}
+.bl-dropdown__group a { white-space: normal; }
+
+/* ----- Cart icon + mini-cart dropdown ----- */
+.bl-cart-wrap {
+  position: relative;
+  display: none;
+}
+.bl-cart-btn {
+  position: relative;
+  width: 40px; height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--bl-line);
+  border-radius: 50%;
+  color: var(--bl-text);
+  cursor: pointer;
+  transition: border-color 0.2s $bl-ease, color 0.2s $bl-ease;
+  flex-shrink: 0;
+}
+.bl-cart-btn:hover { border-color: var(--bl-accent); color: var(--bl-accent); }
+.bl-cart-btn svg { width: 16px; height: 16px; }
+.bl-cart-btn__count {
+  position: absolute;
+  top: -4px; right: -4px;
+  width: 17px; height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bl-accent);
+  color: #000;
+  font-size: 0.62rem;
+  font-weight: 700;
+  border-radius: 50%;
+  font-family: var(--bl-font-mono);
+  pointer-events: none;
+}
+.bl-cart-drop {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 300px;
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-line);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 0.2s $bl-ease, visibility 0.2s $bl-ease, transform 0.2s $bl-ease;
+  z-index: 300;
+}
+.bl-cart-drop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.bl-cart-drop__items {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.9rem;
+}
+.bl-cart-drop__item {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--bl-line);
+  &:first-child { padding-top: 0; }
+  &:last-child { border-bottom: none; padding-bottom: 0; }
+}
+.bl-cart-drop__item img {
+  width: 50px; height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.bl-cart-drop__info { flex: 1; min-width: 0; }
+.bl-cart-drop__name {
+  font-family: var(--bl-font-head);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--bl-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bl-cart-drop__price {
+  font-size: 0.8rem;
+  color: var(--bl-muted);
+  margin-top: 0.1rem;
+}
+.bl-cart-drop__price span {
+  font-family: var(--bl-font-mono);
+  font-size: 0.7rem;
+  margin-right: 0.25rem;
+  opacity: 0.7;
+}
+.bl-cart-drop__foot {
+  border-top: 1px solid var(--bl-line);
+  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.bl-cart-drop__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--bl-font-head);
+  font-size: 0.88rem;
+  color: var(--bl-muted);
+  margin-bottom: 0.2rem;
+}
+.bl-cart-drop__total strong {
+  font-weight: 700;
+  color: var(--bl-accent);
+  font-size: 1rem;
+}
+
+/* ----- Mobile accordion sub-menu ----- */
+.bl-mobile-menu__group { border-bottom: 1px solid var(--bl-line); }
+.bl-mobile-menu__toggle {
+  font-family: var(--bl-font-head);
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  color: var(--bl-text);
+  cursor: pointer;
+  line-height: 1.2;
+}
+.bl-mobile-menu__toggle .bl-dropdown-chevron {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s $bl-ease;
+}
+.bl-mobile-menu__toggle[aria-expanded="true"] .bl-dropdown-chevron {
+  transform: rotate(180deg);
+}
+.bl-mobile-menu__sub {
+  padding: 0.1rem 0 0.8rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+.bl-mobile-menu__sub[hidden] { display: none; }
+.bl-mobile-menu__sub a {
+  font-family: var(--bl-font-head);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--bl-muted);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border-bottom: none !important;
+  display: block;
+}
+.bl-mobile-menu__sub a:hover { color: var(--bl-accent); }
+
 @media (min-width: $bp-lg) {
   .bl-nav__menu { display: flex; }
   .bl-nav__phone { display: block; }
   .bl-nav__cta { display: inline-flex; }
+  .bl-cart-wrap { display: block; }
   .bl-burger { display: none; }
   /* The drawer is mobile-only — never let it linger on desktop widths
      (e.g. if it was left open and the window is widened). */

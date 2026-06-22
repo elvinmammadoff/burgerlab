@@ -465,6 +465,29 @@ button {
   color: var(--bl-text);
 }
 
+.bl-logo__mark {
+  flex-shrink: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+.bl-logo__mark--light {
+  display: none;
+}
+body[data-theme=light] .bl-logo__mark--dark {
+  display: none;
+}
+body[data-theme=light] .bl-logo__mark--light {
+  display: block;
+}
+/* Transparent header over dark hero — restore white flask in light mode */
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid):not(.bl-header--floating) .bl-logo__mark--dark {
+  display: block;
+}
+body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid):not(.bl-header--floating) .bl-logo__mark--light {
+  display: none;
+}
+
 .bl-nav__menu {
   display: none;
   align-items: center;
@@ -636,6 +659,34 @@ body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-c
 body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-cart-btn:hover {
   border-color: var(--bl-accent);
   color: var(--bl-accent);
+}
+
+/* Light mode — floating header pill */
+body[data-theme=light] .bl-header--floating .bl-nav {
+  background: rgba(248, 246, 241, 0.90);
+  border-color: rgba(26, 23, 20, 0.10);
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-logo,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__phone {
+  color: var(--bl-text) !important;
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a:hover {
+  color: var(--bl-text) !important;
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-nav__menu > li > a::after {
+  background: var(--bl-accent);
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-burger span {
+  background: var(--bl-text);
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-burger {
+  border-color: var(--bl-line);
+}
+body[data-theme=light] .bl-header--floating .bl-nav .bl-theme-toggle,
+body[data-theme=light] .bl-header--floating .bl-nav .bl-cart-btn {
+  color: var(--bl-text) !important;
+  border-color: var(--bl-line) !important;
 }
 
 /* Mobile drawer */
@@ -1076,6 +1127,25 @@ body[data-theme=light] .bl-header:not(.is-scrolled):not(.bl-header--solid) .bl-c
   font-weight: 700;
   font-size: 1.9rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bl-footer__brand-mark {
+  flex-shrink: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.bl-footer__brand-mark--light {
+  display: none;
+}
+body[data-theme=light] .bl-footer__brand-mark--dark {
+  display: none;
+}
+body[data-theme=light] .bl-footer__brand-mark--light {
+  display: block;
 }
 
 .bl-footer__brand-name span {
@@ -3122,6 +3192,25 @@ body[data-theme=light] .bl-hero--slider .bl-hero-slider__arrow {
   font-weight: 700;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bl-preloader__icon {
+  flex-shrink: 0;
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+.bl-preloader__icon--light {
+  display: none;
+}
+body[data-theme=light] .bl-preloader__icon--dark {
+  display: none;
+}
+body[data-theme=light] .bl-preloader__icon--light {
+  display: block;
 }
 
 .bl-preloader__mark span {

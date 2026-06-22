@@ -19,7 +19,14 @@
   font-weight: 700;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
+.bl-preloader__icon { flex-shrink: 0; display: block; width: 36px; height: 36px; }
+.bl-preloader__icon--light { display: none; }
+body[data-theme=light] .bl-preloader__icon--dark { display: none; }
+body[data-theme=light] .bl-preloader__icon--light { display: block; }
 .bl-preloader__mark span { color: var(--bl-accent); }
 .bl-preloader__bar {
   width: min(260px, 60vw);

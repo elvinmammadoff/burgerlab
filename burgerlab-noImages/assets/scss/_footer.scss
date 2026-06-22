@@ -20,7 +20,14 @@
   font-weight: 700;
   font-size: 1.9rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
 }
+.bl-footer__brand-mark { flex-shrink: 0; display: block; width: 32px; height: 32px; }
+.bl-footer__brand-mark--light { display: none; }
+body[data-theme=light] .bl-footer__brand-mark--dark { display: none; }
+body[data-theme=light] .bl-footer__brand-mark--light { display: block; }
 .bl-footer__brand-name span { color: var(--bl-accent); }
 .bl-footer__about {
   color: var(--bl-muted);
