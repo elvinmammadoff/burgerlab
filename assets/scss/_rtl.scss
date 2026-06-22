@@ -1,6 +1,12 @@
 /* ==========================================================================
-   RTL helpers (full RTL stylesheet shipped separately as css/rtl.css in Phase 6)
-   This partial only holds direction-agnostic safeguards.
+   RTL — this partial is intentionally minimal.
+   Full RTL overrides live in assets/css/rtl.css (standalone stylesheet).
+   To enable RTL on any page:
+     1. Add dir="rtl" to the <html> element
+     2. Link rtl.css AFTER style.css
+   A live demo is provided in index-rtl.html.
    ========================================================================== */
 
-[dir="rtl"] .bl-eyebrow::before { margin-left: 0; }
+/* Direction-agnostic safeguards only — full rules in rtl.css */
+[dir="rtl"] .bl-eyebrow::before { margin-left: 0; margin-right: 0.5rem; }
+[dir="rtl"] .bl-eyebrow::after  { margin-right: 0; margin-left: 0.5rem; }

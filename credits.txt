@@ -20,10 +20,10 @@ JavaScript libraries (assets/js/vendors/)
   License: MIT
   Used for hero/testimonial/gallery sliders.
 
-- Fancybox 5
-  Source: https://fancyapps.com/fancybox/
-  License: Commercial license required for production use — see
-  https://fancyapps.com/license/. Used for the gallery lightbox.
+- PhotoSwipe 5
+  Source: https://photoswipe.com
+  License: MIT
+  Used for the gallery lightbox.
 
 Third-party services
 ---------------------

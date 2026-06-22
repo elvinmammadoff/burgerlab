@@ -101,7 +101,7 @@
       <!-- Introduction -->
       <section class="docs-section" id="introduction" style="border-top:0;margin-top:clamp(8px,2vw,16px)">
         <h2 class="docs-section__title">Introduction</h2>
-        <p>BurgerLab is a static HTML5/CSS3/JavaScript template — no build server or database required. It ships with <strong>6 homepages</strong>, <strong>10 header</strong> and <strong>10 footer</strong> layouts, <strong>30+ inner pages</strong>, a complete SCSS design-token system, GSAP-powered motion, custom date &amp; time pickers, and serverless forms via Web3Forms.</p>
+        <p>BurgerLab is a static HTML5/CSS3/JavaScript template — no build server or database required. It ships with <strong>7 homepages</strong>, <strong>10 header</strong> and <strong>10 footer</strong> layouts, <strong>30+ inner pages</strong>, a complete SCSS design-token system, GSAP-powered motion, custom date &amp; time pickers, and serverless forms via Web3Forms.</p>
         <p>You can use it exactly as-is (just edit the HTML and images), or recompile the SCSS for deeper theming. Both workflows are documented below.</p>
         <div class="docs-callout">
           <span class="docs-callout__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span>
@@ -113,12 +113,12 @@
       <section class="docs-section" id="whats-included">
         <h2 class="docs-section__title">What's included</h2>
         <ul>
-          <li><strong>6 home variants</strong> — Cinematic, Slider, App, Split, Statement and Bento (<code>index.html</code> … <code>index-6.html</code>).</li>
+          <li><strong>7 home variants</strong> — Cinematic, Slider, App, Split, Statement, Bento and Classic (<code>index.html</code> … <code>index-7.html</code>).</li>
           <li><strong>10 header layouts</strong> and <strong>10 footer layouts</strong>, each a single modifier class (showcased in <code>headers.html</code> / <code>footers.html</code>).</li>
-          <li><strong>20 inner pages</strong> — menu, menu by category, inside-the-burger spotlight, about, the team, services + service detail, gallery, journal + article, shopping cart, checkout, contact, reservation, single product, FAQ, 404 and coming soon, plus privacy policy and terms.</li>
+          <li><strong>30+ inner pages</strong> — menu, menu by category, dish spotlight, about, the team, services + service detail, gallery, events + event detail, pricing, careers, testimonials, order tracking, loyalty, gift cards, press, journal + article, shopping cart, checkout, contact, reservation, single product, FAQ, sitemap, 404, coming soon, privacy policy and terms.</li>
           <li><strong>Landing/demo page</strong> (<code>landing/</code>) and this <strong>documentation</strong>.</li>
           <li><strong>Source SCSS</strong> with a full design-token system, plus the compiled <code>style.css</code>.</li>
-          <li><strong>Vendor libraries</strong> — GSAP + ScrollTrigger, Swiper, Fancybox (self-hosted in <code>assets/js/vendors/</code>).</li>
+          <li><strong>Vendor libraries</strong> — GSAP + ScrollTrigger, Swiper, PhotoSwipe 5 (self-hosted in <code>assets/js/vendors/</code>).</li>
           <li><strong>Custom date &amp; time pickers</strong> and <strong>Web3Forms</strong> integration — no jQuery, no backend.</li>
         </ul>
       </section>
@@ -164,7 +164,7 @@ php -S localhost:8000              # PHP</code></pre>
     │   ├── _pickers.scss     Calendar + clock pickers
     │   └── style.scss        Imports all partials
     ├── js/main.js           Template scripts (vanilla)
-    ├── js/vendors/          GSAP, Swiper, Fancybox …
+    ├── js/vendors/          GSAP, Swiper, PhotoSwipe …
     └── images/              Photography &amp; favicon</code></pre>
       </section>
 
@@ -310,7 +310,7 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
             <tr><td><code>chef.html</code></td><td>The Lab Crew</td><td>Team portraits, bios and stats</td></tr>
             <tr><td><code>services.html</code></td><td>Services</td><td>Six service cards → service detail</td></tr>
             <tr><td><code>service-detail.html</code></td><td>Service Detail</td><td>Private Events &amp; Buyouts, pricing tiers, Web3Forms quote</td></tr>
-            <tr><td><code>gallery.html</code></td><td>Gallery</td><td>Masonry grid with Fancybox lightbox</td></tr>
+            <tr><td><code>gallery.html</code></td><td>Gallery</td><td>Masonry grid with PhotoSwipe 5 lightbox</td></tr>
             <tr><td><code>blog.html</code></td><td>Journal</td><td>Post grid with category tags</td></tr>
             <tr><td><code>blog-single.html</code></td><td>Article</td><td>Long-form prose layout with related posts</td></tr>
             <tr><td><code>shopping-cart.html</code></td><td>Shopping Cart</td><td>Qty controls, promo field, order summary</td></tr>
@@ -378,8 +378,9 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
       <!-- Sliders -->
       <section class="docs-section" id="sliders">
         <h2 class="docs-section__title">Sliders &amp; lightbox</h2>
-        <p><strong>Swiper</strong> powers the home-v2 hero carousel and the reviews slider; <strong>Fancybox</strong> powers the gallery lightbox. Both are self-hosted in <code>assets/js/vendors/</code> and initialized in <code>main.js</code> (<code>initHeroSlider</code>, <code>initReviewsSlider</code>, <code>initFancybox</code>). Add a lightbox to any image with:</p>
-        <pre><code>&lt;a data-fancybox="gallery" href="assets/images/your-photo.jpg"&gt;
+        <p><strong>Swiper</strong> powers the home-v2 hero carousel and the reviews slider; <strong>PhotoSwipe 5</strong> (MIT licensed) powers the gallery lightbox — self-hosted in <code>assets/js/vendors/</code>. Add a lightbox item with:</p>
+        <pre><code>&lt;a class="bl-gallery__item" href="assets/images/your-photo.jpg"
+   data-pswp-width="2000" data-pswp-height="1333"&gt;
   &lt;img src="assets/images/your-photo.jpg" alt="…"&gt;
 &lt;/a&gt;</code></pre>
       </section>
@@ -399,8 +400,12 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
       <!-- RTL -->
       <section class="docs-section" id="rtl">
         <h2 class="docs-section__title">RTL support</h2>
-        <p>A right-to-left stylesheet (<code>_rtl.scss</code>) is compiled into the main CSS. Enable it by setting the document direction:</p>
-        <pre><code>&lt;html lang="ar" dir="rtl"&gt;</code></pre>
+        <p>A dedicated RTL stylesheet (<code>assets/css/rtl.css</code>) handles all layout flips. A live RTL demo is available at <code>index-rtl.html</code>. Enable RTL on any page:</p>
+        <pre><code>&lt;!-- 1. Add dir attribute to html element --&gt;
+&lt;html lang="ar" dir="rtl"&gt;
+
+&lt;!-- 2. Link rtl.css AFTER style.css --&gt;
+&lt;link rel="stylesheet" href="assets/css/rtl.css"&gt;</code></pre>
         <p>Layout, spacing and nav mirror automatically for Arabic, Hebrew and Persian content.</p>
       </section>
 
@@ -429,7 +434,7 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
           <li><strong>Fonts:</strong> Space Grotesk, Inter, JetBrains Mono — Google Fonts (Open Font License).</li>
           <li><strong>GSAP + ScrollTrigger</strong> — greensock.com (standard "no charge" license for this use).</li>
           <li><strong>Swiper</strong> — swiperjs.com (MIT).</li>
-          <li><strong>Fancybox</strong> — fancyapps.com (check license for commercial use).</li>
+          <li><strong>PhotoSwipe 5</strong> — photoswipe.com (MIT license — free for commercial use).</li>
           <li><strong>Map embed:</strong> OpenStreetMap (no API key required).</li>
         </ul>
         <div class="docs-callout">

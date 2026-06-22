@@ -1,0 +1,176 @@
+/*
+ * BurgerLab — RTL (Right-to-Left) stylesheet
+ * Apply by adding dir="rtl" to the <html> element AND
+ * linking this file AFTER style.css:
+ *   <link rel="stylesheet" href="assets/css/rtl.css">
+ * =========================================================
+ */
+
+/* ── Base direction ─────────────────────────────────────── */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ── Skip link ──────────────────────────────────────────── */
+[dir="rtl"] .bl-skip-link { left: auto; right: 1rem; }
+
+/* ── Navigation ─────────────────────────────────────────── */
+[dir="rtl"] .bl-nav { flex-direction: row-reverse; }
+[dir="rtl"] .bl-nav__menu { flex-direction: row-reverse; }
+[dir="rtl"] .bl-nav__actions { flex-direction: row-reverse; }
+[dir="rtl"] .bl-nav__menu a::after { left: auto; right: 0; }
+
+/* Centered nav */
+[dir="rtl"] .bl-nav--centered .bl-nav__menu--left { justify-content: flex-end; }
+[dir="rtl"] .bl-nav--centered .bl-nav__right { justify-content: flex-start; }
+
+/* Floating pill header */
+[dir="rtl"] .bl-header--floating .bl-nav { flex-direction: row-reverse; }
+
+/* Topbar */
+[dir="rtl"] .bl-topbar__inner { flex-direction: row-reverse; }
+[dir="rtl"] .bl-topbar__items { flex-direction: row-reverse; }
+[dir="rtl"] .bl-topbar__social { flex-direction: row-reverse; }
+
+/* Dropdown — open from right */
+[dir="rtl"] .bl-dropdown {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) translateY(6px);
+}
+[dir="rtl"] .bl-has-dropdown:hover .bl-dropdown,
+[dir="rtl"] .bl-has-dropdown:focus-within .bl-dropdown {
+  transform: translateX(50%) translateY(0);
+}
+[dir="rtl"] .bl-dropdown--wide { left: auto; right: 0; transform: none; }
+[dir="rtl"] .bl-has-dropdown:hover .bl-dropdown--wide,
+[dir="rtl"] .bl-has-dropdown:focus-within .bl-dropdown--wide { transform: none; }
+
+/* Mobile menu */
+[dir="rtl"] .bl-mobile-menu { transform: translateX(-100%); left: 0; right: auto; }
+[dir="rtl"] .bl-mobile-menu.is-open { transform: translateX(0); }
+[dir="rtl"] .bl-mobile-menu__close { left: 28px; right: auto; }
+
+/* Cart dropdown */
+[dir="rtl"] .bl-cart-drop { right: auto; left: 0; }
+
+/* ── Logo ───────────────────────────────────────────────── */
+[dir="rtl"] .bl-logo { flex-direction: row-reverse; }
+
+/* ── Preloader ──────────────────────────────────────────── */
+[dir="rtl"] .bl-preloader__mark { flex-direction: row-reverse; }
+
+/* ── Breadcrumb ─────────────────────────────────────────── */
+[dir="rtl"] .bl-breadcrumb { flex-direction: row-reverse; }
+[dir="rtl"] .bl-breadcrumb__sep { transform: scaleX(-1); }
+
+/* ── Sections & titles ──────────────────────────────────── */
+[dir="rtl"] .bl-section-title,
+[dir="rtl"] .bl-section-lede,
+[dir="rtl"] .bl-section-eyebrow { text-align: center; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+[dir="rtl"] .bl-btn svg { transform: scaleX(-1); }
+
+/* ── Ticker / Marquee ───────────────────────────────────── */
+[dir="rtl"] .bl-ticker { direction: rtl; }
+[dir="rtl"] .bl-ticker__track { animation-direction: reverse; }
+
+/* ── Info bar ────────────────────────────────────────────── */
+[dir="rtl"] .bl-info-bar-item { flex-direction: row-reverse; }
+
+/* ── Chips ───────────────────────────────────────────────── */
+[dir="rtl"] .bl-chip { flex-direction: row-reverse; }
+
+/* ── Cards ───────────────────────────────────────────────── */
+[dir="rtl"] .bl-card__meta { flex-direction: row-reverse; }
+
+/* ── Blog / Article ─────────────────────────────────────── */
+[dir="rtl"] .bl-blog-card__meta { flex-direction: row-reverse; }
+[dir="rtl"] .bl-article-meta { flex-direction: row-reverse; }
+[dir="rtl"] .bl-post__tags { flex-direction: row-reverse; }
+
+/* ── Menu ────────────────────────────────────────────────── */
+[dir="rtl"] .bl-menu-item { flex-direction: row-reverse; }
+[dir="rtl"] .bl-menu-item__price { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .bl-menu-cat-nav { text-align: right; }
+
+/* ── Gallery ─────────────────────────────────────────────── */
+[dir="rtl"] .bl-gallery { direction: rtl; }
+
+/* ── Team / Chef ─────────────────────────────────────────── */
+[dir="rtl"] .bl-chef-card__socials { flex-direction: row-reverse; }
+
+/* ── Stats / Counter ─────────────────────────────────────── */
+[dir="rtl"] .bl-stat { text-align: center; }
+
+/* ── FAQ accordion ───────────────────────────────────────── */
+[dir="rtl"] .bl-faq__trigger { flex-direction: row-reverse; }
+[dir="rtl"] .bl-faq__trigger svg { margin-left: 0; margin-right: auto; }
+
+/* ── Forms ───────────────────────────────────────────────── */
+[dir="rtl"] .bl-input,
+[dir="rtl"] .bl-select,
+[dir="rtl"] .bl-textarea { text-align: right; }
+[dir="rtl"] .bl-field label { text-align: right; }
+[dir="rtl"] .bl-picker__icon { right: auto; left: 0.95rem; }
+[dir="rtl"] .bl-input--picker { padding-right: 1rem; padding-left: 2.7rem; }
+
+/* ── Booking bar (hero inline form) ─────────────────────── */
+[dir="rtl"] .bl-booking-bar { flex-direction: row-reverse; }
+[dir="rtl"] .bl-booking-bar__field {
+  border-right: none;
+  border-left: 1px solid rgba(248, 244, 234, 0.1);
+}
+[dir="rtl"] .bl-booking-bar__field:last-of-type { border-left: none; }
+
+/* ── Booking card (home-v7) ─────────────────────────────── */
+[dir="rtl"] .bl-booking-card__eyebrow { flex-direction: row-reverse; }
+[dir="rtl"] .bl-booking-card__select-wrap::after {
+  right: auto;
+  left: 0.85rem;
+}
+[dir="rtl"] .bl-booking-card__select { padding: 0.65rem 0.85rem 0.65rem 2.2rem; }
+[dir="rtl"] .bl-booking-card .bl-picker__icon { right: auto; left: 0.75rem; }
+[dir="rtl"] .bl-booking-card .bl-booking-card__picker input {
+  padding: 0.65rem 0.85rem 0.65rem 2.4rem;
+}
+
+/* ── Hero v7 two-column ──────────────────────────────────── */
+[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-inner { direction: rtl; }
+[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-eyebrow { justify-content: flex-end; }
+[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-sub { margin-left: auto; margin-right: 0; }
+
+/* ── Page hero ───────────────────────────────────────────── */
+[dir="rtl"] .bl-page-hero__eyebrow { text-align: center; }
+
+/* ── Footer ──────────────────────────────────────────────── */
+[dir="rtl"] .bl-footer__brand-name { flex-direction: row-reverse; }
+[dir="rtl"] .bl-footer__social { flex-direction: row-reverse; }
+[dir="rtl"] .bl-footer__hours > div { flex-direction: row-reverse; }
+[dir="rtl"] .bl-footer__bottom { flex-direction: row-reverse; }
+[dir="rtl"] .bl-footer__minimal-links { flex-direction: row-reverse; }
+
+/* ── Cart ─────────────────────────────────────────────────── */
+[dir="rtl"] .bl-cart-item { flex-direction: row-reverse; }
+[dir="rtl"] .bl-cart-item__remove { left: 0; right: auto; }
+
+/* ── Checkout ─────────────────────────────────────────────── */
+[dir="rtl"] .bl-order-summary__row { flex-direction: row-reverse; }
+
+/* ── Scroll-to-top ───────────────────────────────────────── */
+[dir="rtl"] .bl-totop { left: 1.5rem; right: auto; }
+
+/* ── Home switcher ───────────────────────────────────────── */
+[dir="rtl"] .bl-home-switcher { left: 1.5rem; right: auto; }
+[dir="rtl"] .bl-home-switcher__btn { flex-direction: row-reverse; }
+
+/* ── Swiper / Slider ─────────────────────────────────────── */
+[dir="rtl"] .swiper { direction: rtl; }
+
+/* ── Responsive adjustments ──────────────────────────────── */
+@media (max-width: 900px) {
+  [dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-eyebrow { justify-content: center; }
+  [dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-sub { margin-right: auto; }
+}
