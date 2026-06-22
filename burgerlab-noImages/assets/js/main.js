@@ -45,7 +45,6 @@
     initExpChips();
     initFavButtons();
     initMenuFilter();
-    initFancybox();
     initForms();
     initToTop();
     initYear();
@@ -399,15 +398,41 @@
     });
   }
 
-  /* ----- Fancybox lightbox (gallery pages) ----- */
-  function initFancybox() {
-    if (!window.Fancybox) return;
-    window.Fancybox.bind('[data-fancybox]', {
-      Hash: false,
-      compact: false,
-      Thumbs: { type: "classic" }
-    });
-  }
+  /* ----- RTL URL-param support (?rtl=1 activates right-to-left layout) -----
+     Running early (before DOMContentLoaded) so dir attr is set before first paint.
+     Persists choice in localStorage so internal navigation keeps RTL mode. */
+  (function initRTL() {
+    var params = new URLSearchParams(location.search);
+    var active = params.get("rtl") === "1" || localStorage.getItem("bl-dir") === "rtl";
+    if (!active) return;
+
+    var html = document.documentElement;
+    html.setAttribute("dir", "rtl");
+    if (!html.lang || html.lang === "en") html.lang = "ar";
+    localStorage.setItem("bl-dir", "rtl");
+
+    // Dynamically inject rtl.css after the main stylesheet
+    if (!document.querySelector('link[href*="rtl.css"]')) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "assets/css/rtl.css";
+      document.head.appendChild(link);
+    }
+
+    // After DOM is ready: append ?rtl=1 to all internal .html links
+    // so every navigated page also loads in RTL mode.
+    var appendRTL = function () {
+      document.querySelectorAll("a[href]").forEach(function (a) {
+        var href = a.getAttribute("href");
+        if (!href || href.charAt(0) === "#" || href.indexOf("http") === 0) return;
+        if (href.indexOf(".html") === -1) return;
+        if (href.indexOf("rtl=1") !== -1) return;
+        a.setAttribute("href", href + (href.indexOf("?") === -1 ? "?rtl=1" : "&rtl=1"));
+      });
+    };
+    if (document.readyState !== "loading") appendRTL();
+    else document.addEventListener("DOMContentLoaded", appendRTL);
+  })();
 
   /* ----- Forms (Web3Forms AJAX submit) ----- */
   function initForms() {
@@ -615,6 +640,19 @@
     var el = document.querySelector("[data-home-switcher]");
     if (!el) return;
     var btn = el.querySelector(".bl-home-switcher__btn");
+    var panel = el.querySelector(".bl-home-switcher__panel");
+    var isRTL = localStorage.getItem("bl-dir") === "rtl";
+
+    // If RTL mode is active, append ?rtl=1 to all switcher links
+    if (isRTL && panel) {
+      panel.querySelectorAll("a[href]").forEach(function (a) {
+        var href = a.getAttribute("href");
+        if (href && href.indexOf("rtl=1") === -1) {
+          a.setAttribute("href", href + (href.indexOf("?") === -1 ? "?rtl=1" : "&rtl=1"));
+        }
+      });
+    }
+
     var close = function () {
       el.classList.remove("is-open");
       btn.setAttribute("aria-expanded", "false");

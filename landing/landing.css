@@ -345,6 +345,45 @@
 .bl-demo-card__arrow:hover { background: var(--bl-accent); border-color: var(--bl-accent); color: #1a1300; }
 .bl-demo-card__arrow svg { width: 14px; height: 14px; }
 
+/* DEFAULT DEMO / RTL DEMO button pair */
+.bl-demo-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--bl-line);
+}
+.bl-demo-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.52rem 0.75rem;
+  border-radius: 999px;
+  font-family: var(--bl-font-head);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.bl-demo-btn:hover { opacity: 0.88; transform: scale(1.03); }
+.bl-demo-btn span { font-weight: 400; opacity: 0.6; }
+.bl-demo-btn--default {
+  background: var(--bl-surface-2, var(--bl-bg-2));
+  color: var(--bl-text);
+  border: 1px solid var(--bl-line);
+}
+.bl-demo-btn--rtl {
+  background: var(--bl-accent);
+  color: #1A1305;
+  border: none;
+}
+.bl-demo-btn--rtl span { color: rgba(26, 19, 5, 0.55); }
+
 /* ----- Features (numbered list) ----- */
 .bl-feature-list { display: grid; grid-template-columns: 1fr; gap: 0; }
 @media (min-width: 768px) { .bl-feature-list { grid-template-columns: repeat(2, 1fr); column-gap: clamp(32px, 5vw, 72px); } }
