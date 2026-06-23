@@ -90,24 +90,80 @@
 [dir="rtl"] .bl-blog-card__meta { flex-direction: row-reverse; }
 [dir="rtl"] .bl-article-meta { flex-direction: row-reverse; }
 [dir="rtl"] .bl-post__tags { flex-direction: row-reverse; }
+[dir="rtl"] .bl-post__meta { flex-direction: row-reverse; }
 
 /* ── Menu ────────────────────────────────────────────────── */
 [dir="rtl"] .bl-menu-item { flex-direction: row-reverse; }
 [dir="rtl"] .bl-menu-item__price { margin-left: 0; margin-right: auto; }
 [dir="rtl"] .bl-menu-cat-nav { text-align: right; }
+/* Menu sidebar layout */
+[dir="rtl"] .bl-menu-layout { flex-direction: row-reverse; }
+[dir="rtl"] .bl-menu-nav a::before { right: 0; left: auto; }
 
 /* ── Gallery ─────────────────────────────────────────────── */
 [dir="rtl"] .bl-gallery { direction: rtl; }
 
 /* ── Team / Chef ─────────────────────────────────────────── */
 [dir="rtl"] .bl-chef-card__socials { flex-direction: row-reverse; }
+[dir="rtl"] .bl-team-card__social { flex-direction: row-reverse; }
 
 /* ── Stats / Counter ─────────────────────────────────────── */
 [dir="rtl"] .bl-stat { text-align: center; }
+[dir="rtl"] .bl-stats { direction: rtl; }
+
+/* ── Ingredient / Feature cards ──────────────────────────── */
+[dir="rtl"] .bl-ing-card__no { flex-direction: row-reverse; }
+
+/* ── Filter / Tabs bar ───────────────────────────────────── */
+[dir="rtl"] .bl-filter { flex-direction: row-reverse; }
+
+/* ── Pagination ──────────────────────────────────────────── */
+[dir="rtl"] .bl-pagination { flex-direction: row-reverse; }
 
 /* ── FAQ accordion ───────────────────────────────────────── */
 [dir="rtl"] .bl-faq__trigger { flex-direction: row-reverse; }
 [dir="rtl"] .bl-faq__trigger svg { margin-left: 0; margin-right: auto; }
+/* Careers animated accordion */
+[dir="rtl"] .bl-faq__item summary { flex-direction: row-reverse; }
+[dir="rtl"] .bl-faq__summary-inner { flex-direction: row-reverse; }
+[dir="rtl"] .bl-faq__item summary::after { margin-left: 0; margin-right: auto; }
+
+/* ── Services ────────────────────────────────────────────── */
+[dir="rtl"] .bl-service-card__meta { flex-direction: row-reverse; }
+[dir="rtl"] .bl-service-card__icon { margin-left: 0; margin-right: auto; }
+
+/* ── Testimonials ────────────────────────────────────────── */
+[dir="rtl"] .bl-review__header { flex-direction: row-reverse; }
+[dir="rtl"] .bl-review__stars { flex-direction: row-reverse; }
+
+/* ── Order tracking ──────────────────────────────────────── */
+[dir="rtl"] .bl-steps { flex-direction: row-reverse; }
+[dir="rtl"] .bl-step { flex-direction: row-reverse; }
+[dir="rtl"] .bl-order-track__step { flex-direction: row-reverse; }
+
+/* ── Pricing ─────────────────────────────────────────────── */
+[dir="rtl"] .bl-pricing-card__features { text-align: right; }
+[dir="rtl"] .bl-pricing-card__feature { flex-direction: row-reverse; }
+
+/* ── Loyalty / Rewards ───────────────────────────────────── */
+[dir="rtl"] .bl-reward-card { flex-direction: row-reverse; }
+[dir="rtl"] .bl-loyalty-tier { text-align: center; }
+
+/* ── Search results ──────────────────────────────────────── */
+[dir="rtl"] .bl-search-result { flex-direction: row-reverse; }
+[dir="rtl"] .bl-search-result svg { margin-left: 0; margin-right: auto; }
+
+/* ── Press / Media ───────────────────────────────────────── */
+[dir="rtl"] .bl-press-item { flex-direction: row-reverse; }
+
+/* ── Event cards ─────────────────────────────────────────── */
+[dir="rtl"] .bl-event-card__meta { flex-direction: row-reverse; }
+
+/* ── CTA section ─────────────────────────────────────────── */
+[dir="rtl"] .bl-cta__actions { flex-direction: row-reverse; }
+
+/* ── Footer column lists ─────────────────────────────────── */
+[dir="rtl"] .bl-footer__col ul { text-align: right; }
 
 /* ── Forms ───────────────────────────────────────────────── */
 [dir="rtl"] .bl-input,

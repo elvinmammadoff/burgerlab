@@ -10,3 +10,27 @@
 /* Direction-agnostic safeguards only — full rules in rtl.css */
 [dir="rtl"] .bl-eyebrow::before { margin-left: 0; margin-right: 0.5rem; }
 [dir="rtl"] .bl-eyebrow::after  { margin-right: 0; margin-left: 0.5rem; }
+
+/*
+ * Inner-page component additions (v1.3.0):
+ * Full rules live in rtl.css. This comment tracks what was added:
+ *
+ * Blog:          .bl-post__meta
+ * Menu:          .bl-menu-layout, .bl-menu-nav a::before
+ * Team:          .bl-team-card__social
+ * Stats:         .bl-stats direction
+ * Ingredients:   .bl-ing-card__no
+ * Filter bar:    .bl-filter
+ * Pagination:    .bl-pagination
+ * FAQ careers:   .bl-faq__item summary, .bl-faq__summary-inner
+ * Services:      .bl-service-card__meta, .bl-service-card__icon
+ * Testimonials:  .bl-review__header, .bl-review__stars
+ * Order track:   .bl-steps, .bl-step, .bl-order-track__step
+ * Pricing:       .bl-pricing-card__features, .bl-pricing-card__feature
+ * Loyalty:       .bl-reward-card
+ * Search:        .bl-search-result
+ * Press:         .bl-press-item
+ * Events:        .bl-event-card__meta
+ * CTA:           .bl-cta__actions
+ * Footer lists:  .bl-footer__col ul
+ */
