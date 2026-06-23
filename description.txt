@@ -1,5 +1,5 @@
 <div class="user-html user-html__with-lazy-load"><h3 id="item-description__burgerlab-burger-and-restaurant-html-template"><strong>BurgerLab – Burger &amp; Restaurant HTML Template</strong></h3>
-<p><strong>BurgerLab</strong> is a clean, premium and modern HTML5 &amp; CSS3 template for burger joints, fast-food brands, cafés and modern restaurants. It ships with <strong>7 distinct homepages</strong> — Cinematic, Slider, App, Split, Statement, Bento and Classic — powered by GSAP + ScrollTrigger, plus <strong>10 header layouts</strong>, <strong>10 footer layouts</strong> and <strong>30+ inner pages</strong>, all built on a single shared design-token system.
+<p><strong>BurgerLab</strong> is a clean, premium and modern HTML5 &amp; CSS3 template for burger joints, fast-food brands, cafés and modern restaurants. It ships with <strong>7 distinct homepages</strong> — Cinematic, Slider, App, Split, Statement, Bento and Classic — powered by GSAP + ScrollTrigger, plus <strong>10 header layouts</strong>, <strong>10 footer layouts</strong> and <strong>35+ inner pages</strong>, all built on a single shared design-token system.
 <br><br>Looks great on all screen sizes and devices. Fully responsive, fast loading, and easy to customize without deep coding knowledge.</p>
 
 <p><a href="https://burgerlab-studio.vercel.app/landing/" rel="nofollow" target="_blank">View Live Demo</a> · <a href="https://burgerlab-studio.vercel.app/documentation/" rel="nofollow" target="_blank">Documentation</a> · <a href="https://themeforest.net/user/alissio/follow" target="_blank">Follow the Author</a></p>
@@ -16,8 +16,8 @@ Web3Forms-powered Contact &amp; Reservation forms — no backend required</li>
 <h3 id="item-description__why-choose-burgerlab">Why choose BurgerLab?</h3>
 <ul>
 <li>
-<strong>6 Homepage Demo Variations</strong>
-<p>Cinematic, Slider, App, Split, Statement, Bento and Classic — six distinct concepts sharing one cohesive <code>bl-</code> design system.</p>
+<strong>7 Homepage Demo Variations</strong>
+<p>Cinematic, Slider, App, Split, Statement, Bento and Classic — seven distinct concepts sharing one cohesive <code>bl-</code> design system.</p>
 </li>
 <li>
 <strong>10 Header &amp; 10 Footer Layouts</strong>
@@ -55,8 +55,8 @@ Web3Forms-powered Contact &amp; Reservation forms — no backend required</li>
 
 <h3 id="item-description__other-features">Other Features</h3>
 <ul>
-<li><strong>6 Homepage</strong> Demos plus a landing overview page. <a href="https://burgerlab-studio.vercel.app/landing/" rel="nofollow">Click to View Demo</a></li>
-<li>30+ inner pages: Menu, Menu by Category, Inside The Lab Burger, About, The Lab Crew, Services, Service Detail, Gallery, Blog, Blog Single, Shopping Cart, Checkout, Contact, Reservation, Single Product, FAQ, 404, Coming Soon, Privacy Policy &amp; Terms</li>
+<li><strong>7 Homepage</strong> Demos plus a landing overview page. <a href="https://burgerlab-studio.vercel.app/landing/" rel="nofollow">Click to View Demo</a></li>
+<li>35+ inner pages: Menu, Menu by Category, Menu Item Detail, Inside The Lab Burger, About, The Lab Crew, Our Team, Team Member, Services, Service Detail, Gallery, Events, Event Detail, Pricing, Careers, Testimonials, Press &amp; Media, Blog, Blog Single, Shopping Cart, Checkout, Order Tracking, Loyalty, Gift Cards, Contact, Reservation, Single Product, FAQ, Search Results, Sitemap, Maintenance, 404, Coming Soon, Privacy Policy &amp; Terms</li>
 <li>10 header layouts &amp; 10 footer layouts, mix-and-match via a single modifier class</li>
 <li>GSAP + ScrollTrigger motion — scroll-scrubbed hero video, reveals, marquee</li>
 <li>Full RTL (right-to-left) support with live demo
@@ -82,7 +82,7 @@ Web3Forms-powered Contact &amp; Reservation forms — success messages auto-hide
 
 <h3 id="item-description__files-included">Files Included</h3>
 <ul>
-<li>HTML Files (7 homepages, headers/footers layout pages, 30+ inner pages, landing demo, documentation — 30 pages total)</li>
+<li>HTML Files (7 homepages, headers/footers layout pages, 35+ inner pages, landing demo, documentation — 50+ pages total)</li>
 <li>SCSS source files</li>
 <li>Compiled CSS files</li>
 <li>JavaScript files (main.js + vendor bundles)</li>
@@ -120,12 +120,41 @@ Web3Forms-powered Contact &amp; Reservation forms — success messages auto-hide
 </ul>
 
 <h3 id="item-description__change-log">Change Log:</h3>
-<pre>June 15, 2026: BurgerLab v1.0.0
+<pre>June 23, 2026: BurgerLab v1.2.0
+-----------------------------
+- Nav restructured: Blog and Shop promoted to top-level header items;
+  Pages dropdown now contains only Restaurant and Utility groups
+- "Journal" renamed to "Blog" throughout all pages
+- 5 new pages: Our Team, Team Member, Menu Item Detail, Search Results,
+  Maintenance (+ noImages twins for each)
+- Careers accordion: GSAP-animated open/close, exclusive single-open
+- event.html rebuilt with correct CSS grid classes
+- RTL localStorage fix: visiting RTL demo no longer contaminates
+  default pages
+- PhotoSwipe popup dimensions corrected to match actual image pixels
+- Light-mode chip fix (dark surface no longer appears on white cards)
+- Breadcrumb current-page fix on photo heroes in light mode
+- 10 new landing page cards + all 37 screenshots retaken (Chrome
+  headless) so hero background images are visible in card previews
+- Description updated: all page counts corrected to 35+
+
+June 22, 2026: BurgerLab v1.1.0
+-----------------------------
+- Home 07 Classic added: full-screen photo hero, glassmorphism booking card
+- +10 inner pages: Events, Event Detail, Pricing, Careers, Testimonials,
+  Order Tracking, Loyalty, Gift Cards, Press & Media, Sitemap
+- PhotoSwipe 5 (MIT) replaces Fancybox 5 — no extra license needed
+- Full RTL support: rtl.css + live Arabic demo (index-rtl.html)
+- SVG logo marks (dark/light) added across all 80+ pages
+- Light-mode fixes: floating header, transparent hero header, footer
+- Date/time picker click-to-close fixed on all variants
+
+June 15, 2026: BurgerLab v1.0.0
 -----------------------------
 - Initial release
-  - 7 homepage variants: Cinematic, Slider, App, Split, Statement, Bento
+  - 7 homepage variants: Cinematic, Slider, App, Split, Statement, Bento, Classic
   - 10 header layouts and 10 footer layouts (headers.html / footers.html)
-  - 30+ inner pages: Menu, Menu by Category, Inside The Lab Burger, About,
+  - 20 inner pages: Menu, Menu by Category, Inside The Lab Burger, About,
     The Lab Crew, Services, Service Detail, Gallery, Blog, Blog Single,
     Shopping Cart, Checkout, Contact, Reservation, Single Product, FAQ,
     404, Coming Soon, Privacy Policy, Terms & Conditions
@@ -140,5 +169,4 @@ Web3Forms-powered Contact &amp; Reservation forms — success messages auto-hide
   - burgerlab-noImages package with placehold.co placeholders
 </pre>
 
-<p>If you love our product, don't forget to rate it 5 stars and leave a review. Thank you!</p>
 <p><strong>– Alissio –</strong></p></div>

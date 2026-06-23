@@ -92,6 +92,7 @@
         <nav class="docs-nav-group">
           <p class="docs-nav-group__title">Going live</p>
           <ul class="docs-nav">
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
             <li><a href="#deployment">Deployment</a></li>
             <li><a href="#browser-support">Browser support</a></li>
             <li><a href="#credits">Credits</a></li>
@@ -852,6 +853,67 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
 &lt;!-- 2. Link rtl.css AFTER style.css --&gt;
 &lt;link rel="stylesheet" href="assets/css/rtl.css"&gt;</code></pre>
           <p>Layout, spacing and nav mirror automatically for Arabic, Hebrew and Persian content.</p>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="docs-section" id="troubleshooting">
+          <h2 class="docs-section__title">Troubleshooting</h2>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">The page looks unstyled / CSS is not loading</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>Open the page with a local server — not by double-clicking the <code>.html</code> file in Finder. Browsers block some resources when using <code>file://</code> URLs. Run <code>python3 -m http.server 8000</code> in the template folder and open <code>http://localhost:8000</code>.</p>
+            </div>
+          </details>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">The hero video on Home 01 is not playing</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>The demo references a placeholder video path. Replace <code>src="assets/videos/hero.mp4"</code> inside <code>index.html</code> with your own video file. Keep the <code>muted autoplay playsinline loop</code> attributes for autoplay to work in all browsers.</p>
+            </div>
+          </details>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">The contact / reservation form isn't sending emails</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>Create a free account at <a href="https://web3forms.com" target="_blank" rel="noopener">web3forms.com</a>, copy your Access Key, and replace <code>YOUR-ACCESS-KEY-HERE</code> in both <code>contact.html</code> and <code>reservation.html</code>. Emails go to the address tied to that key — no backend needed.</p>
+            </div>
+          </details>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">Animations are not triggering on scroll</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>Make sure <code>gsap.min.js</code> and <code>ScrollTrigger.min.js</code> are loaded before <code>main.js</code> — the order matters. If you removed the vendor scripts, re-add them from <code>assets/js/vendors/</code>. Also check the browser console for any <code>ReferenceError: gsap is not defined</code> message.</p>
+            </div>
+          </details>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">How do I change the accent colour?</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>Open <code>assets/scss/_tokens.scss</code> and change <code>$bl-accent</code>. Recompile with <code>npx sass assets/scss/style.scss assets/css/style.css --style=expanded</code>. If you're editing CSS directly without SCSS, find <code>--bl-accent: #F5B31A</code> at the top of <code>style.css</code> and update it there.</p>
+            </div>
+          </details>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">How do I add a new inner page?</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>Duplicate any existing inner page (e.g. <code>about.html</code>) as a starting point — it has the correct header, footer, and script tags already wired. Update the <code>&lt;title&gt;</code>, meta description, page hero content, and add your sections between <code>&lt;main id="main"&gt;</code> and <code>&lt;/main&gt;</code>. All <code>bl-</code> component classes are documented in the Components section above.</p>
+            </div>
+          </details>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">The date / time picker is not opening</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>The pickers are initialized in <code>main.js</code> via <code>initPickers()</code>. Ensure the input's parent <code>&lt;div&gt;</code> has either <code>data-datepicker</code> or <code>data-timepicker</code> attribute, and that <code>main.js</code> is included at the bottom of the page. The picker requires a <code>text</code>-type input — not <code>date</code> or <code>time</code>.</p>
+            </div>
+          </details>
+
+          <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
+            <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">Dark/light mode toggle is not working</summary>
+            <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
+              <p>The toggle is handled by <code>initTheme()</code> in <code>main.js</code> — it sets <code>data-theme="light"</code> on <code>&lt;body&gt;</code> and saves the preference in <code>localStorage</code>. If the toggle button is present but does nothing, check the browser console for errors and confirm <code>main.js</code> is loading correctly.</p>
+            </div>
+          </details>
         </section>
 
         <!-- Deployment -->

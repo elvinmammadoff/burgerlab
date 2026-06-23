@@ -246,12 +246,12 @@
 
       <h2 class="bl-visually-hidden">Full menu</h2>
 
-      <div class="bl-filter" role="tablist" aria-label="Filter menu">
-        <button class="bl-filter__btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
-        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="burgers">Burgers</button>
-        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="sides">Sides</button>
-        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="drinks">Drinks</button>
-        <button class="bl-filter__btn" type="button" role="tab" aria-selected="false" data-filter="desserts">Desserts</button>
+      <div class="bl-filter" role="group" aria-label="Filter menu">
+        <button class="bl-filter__btn is-active" type="button" aria-pressed="true" data-filter="all">All</button>
+        <button class="bl-filter__btn" type="button" aria-pressed="false" data-filter="burgers">Burgers</button>
+        <button class="bl-filter__btn" type="button" aria-pressed="false" data-filter="sides">Sides</button>
+        <button class="bl-filter__btn" type="button" aria-pressed="false" data-filter="drinks">Drinks</button>
+        <button class="bl-filter__btn" type="button" aria-pressed="false" data-filter="desserts">Desserts</button>
       </div>
 
       <div class="bl-cat-grid" data-stagger>

@@ -4,8 +4,9 @@
     {
       "name": "burgerlab",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "5173", "."],
-      "port": 5173
+      "runtimeArgs": ["serve", "-l", "5501", "."],
+      "port": 5501,
+      "autoPort": false
     }
   ]
 }
