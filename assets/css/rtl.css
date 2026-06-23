@@ -12,6 +12,37 @@
   text-align: right;
 }
 
+/*
+ * English prose in RTL context — keep LTR character order so that English
+ * punctuation (periods, commas) stays at the correct visual end of the sentence.
+ * The container still aligns right; only the internal character run is LTR.
+ */
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] .bl-section-lede,
+[dir="rtl"] .bl-page-hero__lede,
+[dir="rtl"] .bl-team-card__bio,
+[dir="rtl"] .bl-ing-card__text,
+[dir="rtl"] .bl-post__excerpt,
+[dir="rtl"] .bl-review__text,
+[dir="rtl"] .bl-service-card__text,
+[dir="rtl"] .bl-cta__lede,
+[dir="rtl"] .bl-footer__about {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
+/* Search result description text (uses inline styles, no class) */
+[dir="rtl"] .bl-search-result > div > div:last-child {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
+/* Flip the arrow SVGs inside search result rows (→ → ←) */
+[dir="rtl"] .bl-search-result > svg { transform: scaleX(-1); }
+
 /* ── Skip link ──────────────────────────────────────────── */
 [dir="rtl"] .bl-skip-link { left: auto; right: 1rem; }
 
