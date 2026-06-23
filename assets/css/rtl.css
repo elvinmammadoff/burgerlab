@@ -90,9 +90,23 @@
 [dir="rtl"] .bl-breadcrumb__sep { transform: scaleX(-1); }
 
 /* ── Sections & titles ──────────────────────────────────── */
+/* English headings need LTR direction so periods stay at the right end */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .bl-hero__title,
+[dir="rtl"] .bl-page-hero__title,
+[dir="rtl"] .bl-cta__title,
+[dir="rtl"] .bl-post__title a {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
 [dir="rtl"] .bl-section-title,
 [dir="rtl"] .bl-section-lede,
 [dir="rtl"] .bl-section-eyebrow { text-align: center; }
+[dir="rtl"] .bl-section-title { direction: ltr; unicode-bidi: embed; }
 
 /* ── Buttons ─────────────────────────────────────────────── */
 [dir="rtl"] .bl-btn svg { transform: scaleX(-1); }

@@ -371,7 +371,7 @@
   transition: opacity 0.2s, transform 0.2s;
 }
 .bl-demo-btn:hover { opacity: 0.88; transform: scale(1.03); }
-.bl-demo-btn span { font-weight: 400; opacity: 0.6; }
+.bl-demo-btn span { font-weight: 400; opacity: 0.75; }
 .bl-demo-btn--default {
   background: var(--bl-surface-2, var(--bl-bg-2));
   color: var(--bl-text);
