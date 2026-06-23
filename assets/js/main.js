@@ -403,7 +403,13 @@
      Persists choice in localStorage so internal navigation keeps RTL mode. */
   (function initRTL() {
     var params = new URLSearchParams(location.search);
-    var active = params.get("rtl") === "1" || localStorage.getItem("bl-dir") === "rtl";
+    var hasParam = params.get("rtl") === "1";
+    // Only honour localStorage when the current URL also carries ?rtl=1.
+    // Without this guard, visiting the RTL demo stores "rtl" in localStorage
+    // and every subsequent page on the same origin renders in RTL even without
+    // the param — the "half-RTL default demo" bug.
+    if (!hasParam) { localStorage.removeItem("bl-dir"); }
+    var active = hasParam;
     if (!active) return;
 
     var html = document.documentElement;

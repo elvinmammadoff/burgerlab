@@ -3138,7 +3138,16 @@ body[data-theme=light] .bl-footer__brand-mark--light {
    must stay cream on EVERY hero variant, regardless of the hero bg colour.
    Only cinematic (default) and slider heroes have a dark full-bleed bg, so only
    those need their titles, lede, scroll indicator and ghost button forced cream. */
-body[data-theme=light] .bl-hero .bl-chip {
+/* Chips default to a dark surface (designed for dark-mode). In light mode swap to
+   a soft translucent tint so they read naturally on cream/white cards and sections. */
+body[data-theme=light] .bl-chip {
+  background: rgba(32, 32, 29, 0.09);
+  color: var(--bl-text);
+}
+/* Restore dark-surface chip on contexts that stay dark even in light mode */
+body[data-theme=light] .bl-hero .bl-chip,
+body[data-theme=light] .bl-page-hero--photo .bl-chip {
+  background: rgba(32, 32, 29, 0.6);
   color: #F8F4EA;
 }
 body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-hero__title, body[data-theme=light] .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) .bl-hero__lede {
@@ -4651,7 +4660,8 @@ body[data-theme=light] .bl-page-hero--photo .bl-page-hero__title,
 body[data-theme=light] .bl-page-hero--photo .bl-page-hero__lede,
 body[data-theme=light] .bl-page-hero--photo .bl-page-hero__eyebrow,
 body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb,
-body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb a {
+body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb a,
+body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb [aria-current=page] {
   color: #ffffff;
 }
 
@@ -4846,7 +4856,7 @@ body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb a {
     top: 96px;
   }
 }
-/* ----- Blog / journal ----- */
+/* ----- Blog ----- */
 .bl-blog-grid {
   display: grid;
   gap: clamp(24px, 3vw, 36px);
@@ -5671,6 +5681,32 @@ body[data-theme=light] .bl-page-hero--photo .bl-breadcrumb a {
 
 .bl-faq__item summary::-webkit-details-marker {
   display: none;
+}
+
+/* Summary inner wrapper keeps title+badge grouped on the left */
+.bl-faq__summary-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Compact job-type label — distinct from the generic chip */
+.bl-job-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--bl-font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--bl-line);
+  color: var(--bl-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .bl-faq__item summary::after {

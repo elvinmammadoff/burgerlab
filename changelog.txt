@@ -1,6 +1,29 @@
 BurgerLab — Changelog
 =======================
 
+= 1.2.0 - 2026-06-23 =
+* +5 new inner pages (total now 35): Our Team (team.html),
+  Team Member (team-single.html), Menu Item Detail (menu-single.html),
+  Search Results (search-results.html), Maintenance (maintenance.html)
+* Careers accordion: GSAP-animated open/close (height:'auto' tween),
+  exclusive single-open behavior, job-type labels redesigned as
+  bl-job-tag pills grouped with title via bl-faq__summary-inner
+* event.html rebuilt: non-existent bl-menu-grid/bl-card classes replaced
+  with existing bl-blog-grid/bl-post pattern — page now renders correctly
+* Light-mode chip fix: .bl-chip was dark-on-dark in light mode;
+  soft tint on page content, dark surface restored only on heroes
+* Breadcrumb [aria-current=page] fix: current page was invisible
+  on photo heroes in light mode (dark text on dark overlay)
+* RTL localStorage fix: visiting RTL demo no longer leaks RTL state
+  into default pages; initRTL() clears localStorage without ?rtl=1
+* PhotoSwipe dimensions corrected: data-pswp-width/height now matches
+  actual image pixels (1200x1200 for square, 1200x669 for Truffle Melt)
+* Documentation updated: 35+ pages table with categorised rows,
+  changelog section, author profile card, corrected code snippets
+* Nav updated across all pages: all 5 new pages linked in desktop
+  dropdown (under correct groups) and mobile menu
+* burgerlab-noImages twins created for all 5 new pages
+
 = 1.1.0 - 2026-06-22 =
 * Home 07 — Classic: full-screen photo hero with two-column layout,
   dark glassmorphism booking card (Guests / Date / Time pickers),
@@ -26,7 +49,7 @@ BurgerLab — Changelog
   - 6 homepage variants: Cinematic, Slider, App, Split, Statement, Bento
   - 10 header layouts and 10 footer layouts (headers.html / footers.html)
   - 20 inner pages: Menu, Menu by Category, Inside The Lab Burger, About,
-    The Lab Crew, Services, Service Detail, Gallery, Journal, Article,
+    The Lab Crew, Services, Service Detail, Gallery, Blog, Blog Single,
     Shopping Cart, Checkout, Contact, Reservation, Single Product, FAQ,
     404, Coming Soon, Privacy Policy, Terms & Conditions
   - Landing/demo overview page with live filtering

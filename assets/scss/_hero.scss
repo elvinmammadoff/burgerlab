@@ -997,8 +997,11 @@
    Only cinematic (default) and slider heroes have a dark full-bleed bg, so only
    those need their titles, lede, scroll indicator and ghost button forced cream. */
 body[data-theme="light"] {
-  // Chip text — applies to ALL hero variants (chip bg is always dark)
-  .bl-hero .bl-chip { color: #F8F4EA; }
+  // Chips: swap dark surface to a soft tint on light page backgrounds
+  .bl-chip { background: rgba(32, 32, 29, 0.09); color: var(--bl-text); }
+  // Restore dark-surface chip on contexts that are still dark in light mode
+  .bl-hero .bl-chip,
+  .bl-page-hero--photo .bl-chip { background: rgba(32, 32, 29, 0.6); color: #F8F4EA; }
 
   // Home 01 cinematic (dark video bg): force cream on titles, actions, scroll
   .bl-hero:not(.bl-hero--app):not(.bl-hero--split):not(.bl-hero--statement):not(.bl-hero--bento):not(.bl-hero--classic) {

@@ -382,7 +382,8 @@
   color: #1A1305;
   border: none;
 }
-.bl-demo-btn--rtl span { color: rgba(26, 19, 5, 0.55); }
+/* Override the shared span opacity rule — on the amber button the label must be fully legible */
+.bl-demo-btn--rtl span { color: #1A1305; opacity: 1; }
 
 /* ----- Features (numbered list) ----- */
 .bl-feature-list { display: grid; grid-template-columns: 1fr; gap: 0; }

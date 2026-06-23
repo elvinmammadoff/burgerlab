@@ -403,7 +403,9 @@
      Persists choice in localStorage so internal navigation keeps RTL mode. */
   (function initRTL() {
     var params = new URLSearchParams(location.search);
-    var active = params.get("rtl") === "1" || localStorage.getItem("bl-dir") === "rtl";
+    var hasParam = params.get("rtl") === "1";
+    if (!hasParam) { localStorage.removeItem("bl-dir"); }
+    var active = hasParam;
     if (!active) return;
 
     var html = document.documentElement;
