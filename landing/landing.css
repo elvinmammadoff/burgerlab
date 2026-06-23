@@ -242,6 +242,9 @@
   border-color: var(--bl-accent);
   color: #1a1300;
 }
+/* Active chip on hover: keep dark text — var(--bl-text) is light in dark mode
+   which would make it invisible on the amber background */
+.bl-chip.is-active:hover { color: #1a1300; }
 
 /* ----- Demo grid + cards ----- */
 .bl-demo-grid {

@@ -13,10 +13,17 @@
 }
 
 /*
- * English prose in RTL context — keep LTR character order so that English
- * punctuation (periods, commas) stays at the correct visual end of the sentence.
- * The container still aligns right; only the internal character run is LTR.
+ * English prose & headings in RTL context — keep LTR character order so that
+ * English punctuation (periods, commas) stays at the correct visual end of
+ * the sentence/heading. Containers align right; character run is LTR.
+ * NOTE: .bl-section-title keeps text-align:center from its own rule below.
  */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
 [dir="rtl"] p,
 [dir="rtl"] li,
 [dir="rtl"] .bl-section-lede,
@@ -173,6 +180,9 @@
 
 /* ── Footer column lists ─────────────────────────────────── */
 [dir="rtl"] .bl-footer__col ul { text-align: right; }
+/* Some footer <li> elements contain multiple inline <a> links.
+   Making them block prevents inline overflow beyond the container edge. */
+[dir="rtl"] .bl-footer__col ul a { display: block; }
 
 /* ── Forms ───────────────────────────────────────────────── */
 [dir="rtl"] .bl-input,
