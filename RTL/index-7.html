@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<title>BurgerLab — Home 07 · Classic</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="BurgerLab" name="author"/>
+<meta content="BurgerLab Home 07 — a premium dark-luxury burger &amp; restaurant home page with a classic full-screen photo hero, inline table-reservation bar, info band, team section and blog teaser." name="description"/>
+<meta content="burger template, restaurant html template, dark restaurant template, food delivery, GSAP, scroll animation, premium burger, smash burger, BurgerLab" name="keywords"/>
+<!-- Open Graph -->
+<meta content="website" property="og:type"/>
+<meta content="BurgerLab — Home 07 · Classic" property="og:title"/>
+<meta content="Classic photo hero with inline reservation bar, team section and blog teaser." property="og:description"/>
+<meta content="../assets/images/hero-poster.jpg" property="og:image"/>
+<!-- Favicon -->
+<link href="../assets/images/favicon.png" rel="icon" type="image/png"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Vendor CSS -->
+<link href="../assets/css/vendors/swiper-bundle.min.css" rel="stylesheet"/>
+<!-- Template CSS -->
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<link href="../assets/css/rtl.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- ===== Preloader ===== -->
+<div aria-hidden="true" class="bl-preloader">
+<div class="bl-preloader__mark"><img alt="" aria-hidden="true" class="bl-preloader__icon bl-preloader__icon--dark" height="36" src="../assets/images/logo-dark.svg" width="36"/><img alt="" aria-hidden="true" class="bl-preloader__icon bl-preloader__icon--light" height="36" src="../assets/images/logo-light.svg" width="36"/>Burger<span>Lab</span></div>
+<div class="bl-preloader__bar"><span></span></div>
+<div class="bl-preloader__count">000 / 100</div>
+</div>
+<!-- ===== Header (transparent → solid on scroll) ===== -->
+<header class="bl-header">
+<div class="bl-container bl-container--wide">
+<nav aria-label="Primary" class="bl-nav">
+<a class="bl-logo" href="index.html"><img alt="" aria-hidden="true" class="bl-logo__mark bl-logo__mark--dark" height="28" src="../assets/images/logo-dark.svg" width="28"/><img alt="" aria-hidden="true" class="bl-logo__mark bl-logo__mark--light" height="28" src="../assets/images/logo-light.svg" width="28"/>Burger<span>Lab</span></a>
+<ul class="bl-nav__menu">
+<li class="bl-has-dropdown">
+<a class="is-active" href="index.html">Home <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12">
+<path d="M6 9l6 6 6-6"></path>
+</svg></a>
+<ul class="bl-dropdown">
+<li><a href="index.html">Home 01 — Cinematic</a></li>
+<li><a href="index-2.html">Home 02 — Slider</a></li>
+<li><a href="index-3.html">Home 03 — App</a></li>
+<li><a href="index-4.html">Home 04 — Split</a></li>
+<li><a href="index-5.html">Home 05 — Statement</a></li>
+<li><a href="index-6.html">Home 06 — Bento</a></li>
+<li><a class="is-active" href="index-7.html">Home 07 — Classic</a></li>
+</ul>
+</li>
+<li><a href="menu.html">Menu</a></li>
+<li class="bl-has-dropdown">
+<a href="blog.html">Blog <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M6 9l6 6 6-6"></path></svg></a>
+<ul class="bl-dropdown">
+<li><a href="blog.html">Blog</a></li>
+<li><a href="blog-single.html">Blog Single</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</li>
+<li class="bl-has-dropdown">
+<a href="#">Shop <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M6 9l6 6 6-6"></path></svg></a>
+<ul class="bl-dropdown">
+<li><a href="menu-category.html">Menu by Category</a></li>
+<li><a href="menu-inside.html">Inside The Lab Burger</a></li>
+<li><a href="menu-single.html">Menu Item Detail</a></li>
+<li><a href="shopping-cart.html">Shopping Cart</a></li>
+<li><a href="single-product.html">Single Product</a></li>
+<li><a href="checkout.html">Checkout</a></li>
+<li><a href="order-tracking.html">Order Tracking</a></li>
+<li><a href="loyalty.html">Loyalty</a></li>
+<li><a href="gift-cards.html">Gift Cards</a></li>
+</ul>
+</li>
+<li class="bl-has-dropdown">
+<a href="#">Pages <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M6 9l6 6 6-6"></path></svg></a>
+<div class="bl-dropdown bl-dropdown--wide">
+<div class="bl-dropdown__col">
+<div class="bl-dropdown__group">
+<span class="bl-dropdown__label">Restaurant</span>
+<a href="about.html">About</a>
+<a href="chef.html">The Lab Crew</a>
+<a href="team.html">Our Team</a>
+<a href="team-single.html">Team Member</a>
+<a href="services.html">Services</a>
+<a href="service-detail.html">Service Detail</a>
+<a href="gallery.html">Gallery</a>
+<a href="event.html">Events</a>
+<a href="event-detail.html">Event Detail</a>
+<a href="pricing.html">Pricing</a>
+<a href="reservation.html">Reservation</a>
+</div>
+</div>
+<div class="bl-dropdown__col">
+<div class="bl-dropdown__group">
+<span class="bl-dropdown__label">Utility</span>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms.html">Terms &amp; Conditions</a>
+<a href="404.html">404</a>
+<a href="coming-soon.html">Coming Soon</a>
+<a href="careers.html">Careers</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="press.html">Press &amp; Media</a>
+<a href="sitemap.html">Sitemap</a>
+<a href="search-results.html">Search Results</a>
+<a href="maintenance.html">Maintenance</a>
+<a href="headers.html">Header Layouts</a>
+<a href="footers.html">Footer Layouts</a>
+</div>
+</div>
+</div>
+</li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<div class="bl-nav__actions">
+<span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+<button aria-label="Toggle dark/light mode" class="bl-theme-toggle" title="Toggle dark/light mode" type="button">
+<svg aria-hidden="true" class="bl-theme-toggle__icon bl-theme-toggle__icon--sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+<svg aria-hidden="true" class="bl-theme-toggle__icon bl-theme-toggle__icon--moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+</button>
+<div class="bl-cart-wrap">
+<button aria-expanded="false" aria-label="View cart (3 items)" class="bl-cart-btn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+<circle cx="9" cy="20" r="1.4"></circle>
+<circle cx="18" cy="20" r="1.4"></circle>
+<path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L21 7H6"></path>
+</svg>
+<span aria-hidden="true" class="bl-cart-btn__count">3</span>
+</button>
+<div aria-label="Mini cart" class="bl-cart-drop" role="dialog">
+<div class="bl-cart-drop__items">
+<div class="bl-cart-drop__item">
+<img alt="The Lab Burger" height="50" src="../assets/images/catalog-classic-stack.jpg" width="50"/>
+<div class="bl-cart-drop__info">
+<div class="bl-cart-drop__name">The Lab Burger</div>
+<div class="bl-cart-drop__price"><span>×2</span>$28.00</div>
+</div>
+</div>
+<div class="bl-cart-drop__item">
+<img alt="Loaded Fries" height="50" src="../assets/images/dish-loaded-fries.jpg" width="50"/>
+<div class="bl-cart-drop__info">
+<div class="bl-cart-drop__name">Loaded Fries</div>
+<div class="bl-cart-drop__price"><span>×1</span>$7.00</div>
+</div>
+</div>
+<div class="bl-cart-drop__item">
+<img alt="Craft Cola" height="50" src="../assets/images/dish-craft-cola.jpg" width="50"/>
+<div class="bl-cart-drop__info">
+<div class="bl-cart-drop__name">Craft Cola</div>
+<div class="bl-cart-drop__price"><span>×1</span>$4.50</div>
+</div>
+</div>
+</div>
+<div class="bl-cart-drop__foot">
+<div class="bl-cart-drop__total">
+<span>Total</span>
+<strong>$39.50</strong>
+</div>
+<a class="bl-btn bl-btn--primary bl-btn--sm" href="shopping-cart.html">View Cart</a>
+<a class="bl-btn bl-btn--ghost bl-btn--sm" href="checkout.html">Checkout</a>
+</div>
+</div>
+</div>
+<a class="bl-btn bl-btn--primary bl-btn--sm bl-nav__cta" href="reservation.html">Reserve a Table</a>
+<button aria-controls="bl-mobile-menu" aria-expanded="false" aria-label="Open menu" class="bl-burger" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<!-- ===== Mobile menu ===== -->
+<div class="bl-mobile-menu" id="bl-mobile-menu">
+<button aria-label="Close menu" class="bl-mobile-menu__close" type="button">×</button>
+<nav aria-label="Mobile" class="bl-mobile-menu__list">
+<div class="bl-mobile-menu__group">
+<button aria-expanded="false" class="bl-mobile-menu__toggle" type="button">Home <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M6 9l6 6 6-6"></path>
+</svg></button>
+<div class="bl-mobile-menu__sub" hidden="">
+<a href="index.html">Home 01 — Cinematic</a>
+<a href="index-2.html">Home 02 — Slider</a>
+<a href="index-3.html">Home 03 — App</a>
+<a href="index-4.html">Home 04 — Split</a>
+<a href="index-5.html">Home 05 — Statement</a>
+<a href="index-6.html">Home 06 — Bento</a>
+<a href="index-7.html">Home 07 — Classic</a>
+</div>
+</div>
+<a href="menu.html">Menu</a>
+<div class="bl-mobile-menu__group">
+<button aria-expanded="false" class="bl-mobile-menu__toggle" type="button">Blog <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div class="bl-mobile-menu__sub" hidden="">
+<a href="blog.html">Blog</a>
+<a href="blog-single.html">Blog Single</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+<div class="bl-mobile-menu__group">
+<button aria-expanded="false" class="bl-mobile-menu__toggle" type="button">Shop <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div class="bl-mobile-menu__sub" hidden="">
+<a href="menu-category.html">Menu by Category</a>
+<a href="menu-inside.html">Inside The Lab Burger</a>
+<a href="menu-single.html">Menu Item Detail</a>
+<a href="shopping-cart.html">Shopping Cart</a>
+<a href="single-product.html">Single Product</a>
+<a href="checkout.html">Checkout</a>
+<a href="order-tracking.html">Order Tracking</a>
+<a href="loyalty.html">Loyalty</a>
+<a href="gift-cards.html">Gift Cards</a>
+</div>
+</div>
+<div class="bl-mobile-menu__group">
+<button aria-expanded="false" class="bl-mobile-menu__toggle" type="button">Pages <svg aria-hidden="true" class="bl-dropdown-chevron" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="12"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div class="bl-mobile-menu__sub" hidden="">
+<a href="about.html">About</a>
+<a href="chef.html">The Lab Crew</a>
+<a href="team.html">Our Team</a>
+<a href="team-single.html">Team Member</a>
+<a href="services.html">Services</a>
+<a href="service-detail.html">Service Detail</a>
+<a href="gallery.html">Gallery</a>
+<a href="event.html">Events</a>
+<a href="event-detail.html">Event Detail</a>
+<a href="pricing.html">Pricing</a>
+<a href="reservation.html">Reservation</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms.html">Terms &amp; Conditions</a>
+<a href="404.html">404</a>
+<a href="coming-soon.html">Coming Soon</a>
+<a href="careers.html">Careers</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="press.html">Press &amp; Media</a>
+<a href="sitemap.html">Sitemap</a>
+<a href="search-results.html">Search Results</a>
+<a href="maintenance.html">Maintenance</a>
+<a href="headers.html">Header Layouts</a>
+<a href="footers.html">Footer Layouts</a>
+</div>
+</div>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="bl-mobile-menu__foot">
+<span class="bl-nav__phone">+1 (212) 555 — 0148</span>
+<a class="bl-btn bl-btn--primary" href="reservation.html">Reserve a Table</a>
+</div>
+</div>
+<main id="main">
+<!-- ===== Hero (Classic photo + booking bar) ===== -->
+<section class="bl-hero bl-hero--classic bl-hero--classic-v7" id="home">
+<div aria-label="A perfectly grilled burger stacked high on a dark slate surface" class="bl-hero__bg" role="img" style="background-image: url('../assets/images/hero-poster.jpg');"></div>
+<div class="bl-container">
+<div class="bl-hero__classic-inner">
+<!-- Left: hero text -->
+<div class="bl-hero__classic-text">
+<p class="bl-hero__classic-eyebrow">Est. 2016 · New York City</p>
+<h1 class="bl-hero__classic-title">
+              Crafted With <em>Passion</em>,<br/>Grilled to Perfection
+            </h1>
+<p class="bl-hero__classic-sub">Hand-pressed patties, flame-grilled over fire and stacked with house sauce
+              on toasted brioche. Reserve your table or order for delivery tonight.</p>
+</div>
+<!-- Right: booking card -->
+<div class="bl-booking-card">
+<p class="bl-booking-card__eyebrow">Reserve</p>
+<h2 class="bl-booking-card__title">Book Your Table</h2>
+<form action="reservation.html" aria-label="Table reservation" class="bl-booking-card__form" method="get">
+<div class="bl-booking-card__fields">
+<div class="bl-booking-card__field">
+<label class="bl-booking-card__label" for="bcard-guests">Guests</label>
+<div class="bl-booking-card__select-wrap">
+<select class="bl-booking-card__select" id="bcard-guests" name="guests">
+<option>1 guest</option>
+<option selected="">2 guests</option>
+<option>3 guests</option>
+<option>4 guests</option>
+<option>5 guests</option>
+<option>6 guests</option>
+<option>7+ guests</option>
+</select>
+</div>
+</div>
+<div class="bl-booking-card__field">
+<label class="bl-booking-card__label" for="bcard-date">Date</label>
+<div class="bl-picker bl-booking-card__picker" data-datepicker="">
+<input autocomplete="off" id="bcard-date" name="date" placeholder="Select a date" readonly="" type="text"/>
+<span aria-hidden="true" class="bl-picker__icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><rect height="16" rx="2.5" width="18" x="3" y="4.5"></rect><path d="M3 9h18M8 2.5v4M16 2.5v4"></path></svg></span>
+</div>
+</div>
+<div class="bl-booking-card__field">
+<label class="bl-booking-card__label" for="bcard-time">Time</label>
+<div class="bl-picker bl-booking-card__picker" data-timepicker="">
+<input autocomplete="off" id="bcard-time" name="time" placeholder="Select a time" readonly="" type="text"/>
+<span aria-hidden="true" class="bl-picker__icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></span>
+</div>
+</div>
+</div>
+<button class="bl-booking-card__btn" type="submit">Book a Table</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== Ticker ===== -->
+<div aria-hidden="true" class="bl-ticker">
+<div class="bl-ticker__track">
+<span class="bl-ticker__item">Flame-Grilled</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Table Service</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">30-Min Delivery</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Never Frozen</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Fine Dining Flavour</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Open Daily</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">House Sauce</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Toasted Brioche</span><span class="bl-ticker__dot">✦</span>
+<!-- duplicate for seamless loop -->
+<span class="bl-ticker__item">Flame-Grilled</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Table Service</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">30-Min Delivery</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Never Frozen</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Fine Dining Flavour</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Open Daily</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">House Sauce</span><span class="bl-ticker__dot">✦</span>
+<span class="bl-ticker__item">Toasted Brioche</span><span class="bl-ticker__dot">✦</span>
+</div>
+</div>
+<!-- ===== Our story / split ===== -->
+<section class="bl-section" id="story">
+<div class="bl-container bl-container--wide">
+<div class="bl-split__grid">
+<div class="bl-split__media bl-reveal-fade">
+<img alt="Close-up of fresh BurgerLab ingredients — lettuce, tomato and the house sauce" loading="lazy" src="../assets/images/ingredients-detail.jpg"/>
+<div class="bl-split__badge">
+<span>Since 2016 — New York City</span>
+</div>
+</div>
+<div class="bl-reveal-up">
+<span class="bl-eyebrow">Our story</span>
+<h2 class="bl-section-title">Obsessed with <em>the perfect bite</em> since day one.</h2>
+<p class="bl-section-lede">BurgerLab started as a single flat-top in SoHo. We set one rule: every patty
+              gets hand-pressed, every bun gets toasted, no shortcuts. Eight years and nine locations later, the rule
+              hasn't changed.</p>
+<p class="bl-hero-sub">
+              We source our beef blend fresh every morning, cut the brioche buns in-house and blend the house sauce in
+              small weekly batches. The quality isn't marketing — it's what we do at 6am before the first order drops.
+            </p>
+<div class="bl-hero-actions">
+<a class="bl-btn bl-btn--primary" href="about.html">Our full story</a>
+<a class="bl-btn bl-btn--ghost" href="gallery.html">See the kitchen</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== Weekly specials ===== -->
+<section class="bl-section bl-section--bg2" id="specials">
+<div class="bl-container bl-container--wide">
+<div class="bl-section-head bl-section-head--center bl-reveal-up">
+<span class="bl-eyebrow">On the menu</span>
+<h2 class="bl-section-title">This week's <em>specials</em></h2>
+<p class="bl-section-lede">Four builds from the lab. Every one grilled to order, stacked to spec and ready in
+            under 30 minutes.</p>
+</div>
+<div class="bl-cat-grid" data-stagger="">
+<!-- Classic Stack -->
+<article class="bl-product" data-stagger-item="">
+<div class="bl-product__media">
+<img alt="Classic Stack burger" loading="lazy" src="../assets/images/catalog-classic-stack.jpg"/>
+<button aria-label="Save Classic Stack" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
+</svg>
+</button>
+<span class="bl-product__rating">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path>
+</svg>4.8</span>
+</div>
+<div class="bl-product__body">
+<div class="bl-product__head">
+<h3 class="bl-product__name">Classic Stack</h3>
+<span class="bl-product__price">$12.90</span>
+</div>
+<p class="bl-product__desc">Double cheddar, pickles, onion, BurgerLab sauce.</p>
+<div class="bl-product__meta">
+<span>25 min</span>
+<span>Mild</span>
+</div>
+<div class="bl-product__foot">
+<a class="bl-btn bl-btn--ghost bl-btn--sm" href="single-product.html">Details</a>
+<a class="bl-btn bl-btn--primary bl-btn--sm" href="reservation.html">Add to order</a>
+</div>
+</div>
+</article>
+<!-- Smoky Bacon Lab -->
+<article class="bl-product" data-stagger-item="">
+<div class="bl-product__media">
+<img alt="Smoky Bacon Lab burger" loading="lazy" src="../assets/images/catalog-smoky-bacon.jpg"/>
+<button aria-label="Save Smoky Bacon Lab" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
+</svg>
+</button>
+<span class="bl-product__rating">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path>
+</svg>4.9</span>
+</div>
+<div class="bl-product__body">
+<div class="bl-product__head">
+<h3 class="bl-product__name">Smoky Bacon Lab</h3>
+<span class="bl-product__price">$14.90</span>
+</div>
+<p class="bl-product__desc">Crispy bacon, smoked sauce, grilled onion, cheddar.</p>
+<div class="bl-product__meta">
+<span>30 min</span>
+<span>Medium</span>
+</div>
+<div class="bl-product__foot">
+<a class="bl-btn bl-btn--ghost bl-btn--sm" href="single-product.html">Details</a>
+<a class="bl-btn bl-btn--primary bl-btn--sm" href="reservation.html">Add to order</a>
+</div>
+</div>
+</article>
+<!-- Spicy Lab -->
+<article class="bl-product" data-stagger-item="">
+<div class="bl-product__media">
+<img alt="Spicy Lab burger" loading="lazy" src="../assets/images/catalog-spicy-lab.jpg"/>
+<button aria-label="Save Spicy Lab" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
+</svg>
+</button>
+<span class="bl-product__rating">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path>
+</svg>4.7</span>
+</div>
+<div class="bl-product__body">
+<div class="bl-product__head">
+<h3 class="bl-product__name">Spicy Lab</h3>
+<span class="bl-product__price">$13.90</span>
+</div>
+<p class="bl-product__desc">Jalapeño, chili glaze, pepper jack, flame-grilled patty.</p>
+<div class="bl-product__meta">
+<span>28 min</span>
+<span>Hot</span>
+</div>
+<div class="bl-product__foot">
+<a class="bl-btn bl-btn--ghost bl-btn--sm" href="single-product.html">Details</a>
+<a class="bl-btn bl-btn--primary bl-btn--sm" href="reservation.html">Add to order</a>
+</div>
+</div>
+</article>
+<!-- Truffle Melt -->
+<article class="bl-product" data-stagger-item="">
+<div class="bl-product__media">
+<img alt="Truffle Melt burger" loading="lazy" src="../assets/images/catalog-truffle-melt.jpg"/>
+<button aria-label="Save Truffle Melt" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
+</svg>
+</button>
+<span class="bl-product__rating">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path>
+</svg>4.9</span>
+</div>
+<div class="bl-product__body">
+<div class="bl-product__head">
+<h3 class="bl-product__name">Truffle Melt</h3>
+<span class="bl-product__price">$16.90</span>
+</div>
+<p class="bl-product__desc">Mushroom, truffle-style cream, Swiss melt, soft brioche.</p>
+<div class="bl-product__meta">
+<span>32 min</span>
+<span>Mild</span>
+</div>
+<div class="bl-product__foot">
+<a class="bl-btn bl-btn--ghost bl-btn--sm" href="single-product.html">Details</a>
+<a class="bl-btn bl-btn--primary bl-btn--sm" href="reservation.html">Add to order</a>
+</div>
+</div>
+</article>
+</div>
+<div class="bl-reveal-up bl-section-cta">
+<a class="bl-btn bl-btn--ghost bl-btn--lg" href="menu.html">View the full menu
+            <svg aria-hidden="true" class="bl-btn__icon" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- ===== Info bar (Hours / Location / Contact) ===== -->
+<section class="bl-section bl-section--tight" id="info">
+<div class="bl-container bl-container--wide">
+<div class="bl-info-bar bl-reveal-up">
+<div class="bl-info-bar__cell">
+<div aria-hidden="true" class="bl-info-bar__icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 3.5"></path></svg>
+</div>
+<div>
+<p class="bl-info-bar__title">Opening Hours</p>
+<p class="bl-info-bar__text">Mon–Fri: 11:00 — 23:00<br/>Sat–Sun: 10:00 — 00:00</p>
+</div>
+</div>
+<div class="bl-info-bar__cell">
+<div aria-hidden="true" class="bl-info-bar__icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+</div>
+<div>
+<p class="bl-info-bar__title">Find Us</p>
+<p class="bl-info-bar__text">148 Spring Street, SoHo<br/>New York, NY 10012<br/>
+<a href="contact.html">Get directions →</a>
+</p>
+</div>
+</div>
+<div class="bl-info-bar__cell">
+<div aria-hidden="true" class="bl-info-bar__icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-1.14a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16"></path></svg>
+</div>
+<div>
+<p class="bl-info-bar__title">Get in Touch</p>
+<p class="bl-info-bar__text">
+<a href="tel:+12125550148">+1 (212) 555 — 0148</a><br/>
+<a href="mailto:hello@burgerlab.com">hello@burgerlab.com</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== Stats ===== -->
+<section class="bl-section bl-section--tight" id="stats">
+<div class="bl-container bl-container--wide">
+<div class="bl-stats" data-stagger="">
+<div data-stagger-item="">
+<div class="bl-stat__num" data-count="12" data-suffix="k+">12k+</div>
+<div class="bl-stat__label">Happy guests</div>
+</div>
+<div data-stagger-item="">
+<div class="bl-stat__num" data-count="48">48</div>
+<div class="bl-stat__label">Signature builds</div>
+</div>
+<div data-stagger-item="">
+<div class="bl-stat__num" data-count="9">9</div>
+<div class="bl-stat__label">City locations</div>
+</div>
+<div data-stagger-item="">
+<div class="bl-stat__num" data-count="4.9">4.9</div>
+<div class="bl-stat__label">Average rating</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== Chefs ===== -->
+<section class="bl-section bl-section--bg2" id="team">
+<div class="bl-container bl-container--wide">
+<div class="bl-section-head bl-section-head--center bl-reveal-up">
+<span class="bl-eyebrow">The lab crew</span>
+<h2 class="bl-section-title">Meet the people behind <em>the food</em></h2>
+<p class="bl-section-lede">Three chefs, one obsession — the perfect burger. They press, season and grill
+            every build before the first order hits the board.</p>
+</div>
+<div class="bl-team-grid" data-stagger="">
+<article class="bl-team-card" data-stagger-item="">
+<div class="bl-team-card__media">
+<img alt="Marcus Reyes, Executive Chef at BurgerLab, in the kitchen" loading="lazy" src="../assets/images/chef_team_1.jpg"/>
+</div>
+<div class="bl-team-card__body">
+<span class="bl-team-card__role">Executive chef</span>
+<h3 class="bl-team-card__name">Marcus Reyes</h3>
+<p class="bl-team-card__bio">Built the original Lab Burger recipe and still presses every test patty by
+                hand. Ten years on flat-tops before that.</p>
+<div class="bl-team-card__social">
+<a aria-label="Marcus Reyes on Instagram" href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+</a>
+<a aria-label="Contact Marcus Reyes" href="contact.html">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
+</a>
+</div>
+</div>
+</article>
+<article class="bl-team-card" data-stagger-item="">
+<div class="bl-team-card__media">
+<img alt="Walter Briggs, Grill Master at BurgerLab, standing by the flat-top" loading="lazy" src="../assets/images/chef_team_2.jpg"/>
+</div>
+<div class="bl-team-card__body">
+<span class="bl-team-card__role">Grill master</span>
+<h3 class="bl-team-card__name">Walter Briggs</h3>
+<p class="bl-team-card__bio">Thirty years of sears behind him — sets the temperature, the timing, and
+                the standard nobody's allowed to drop.</p>
+<div class="bl-team-card__social">
+<a aria-label="Walter Briggs on Instagram" href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+</a>
+<a aria-label="Contact Walter Briggs" href="contact.html">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
+</a>
+</div>
+</div>
+</article>
+<article class="bl-team-card" data-stagger-item="">
+<div class="bl-team-card__media">
+<img alt="Elena Torres, Pastry &amp; Bakes Lead at BurgerLab, in the kitchen" loading="lazy" src="../assets/images/chef_team_3.jpg"/>
+</div>
+<div class="bl-team-card__body">
+<span class="bl-team-card__role">Pastry &amp; bakes lead</span>
+<h3 class="bl-team-card__name">Elena Torres</h3>
+<p class="bl-team-card__bio">Bakes the brioche every morning before sunrise and runs dessert R&amp;D
+                — the lava cookie was her call.</p>
+<div class="bl-team-card__social">
+<a aria-label="Elena Torres on Instagram" href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+</a>
+<a aria-label="Contact Elena Torres" href="contact.html">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
+</a>
+</div>
+</div>
+</article>
+<article class="bl-team-card" data-stagger-item="">
+<div class="bl-team-card__media">
+<img alt="Kenji Watanabe, Sauce &amp; Flavor Lab Lead at BurgerLab, in the kitchen" loading="lazy" src="../assets/images/chef_team_4.jpg"/>
+</div>
+<div class="bl-team-card__body">
+<span class="bl-team-card__role">Sauce &amp; flavor lab</span>
+<h3 class="bl-team-card__name">Kenji Watanabe</h3>
+<p class="bl-team-card__bio">Guards the house sauce recipe and tastes every batch twice. Trained in
+                fermentation labs before joining the line.</p>
+<div class="bl-team-card__social">
+<a aria-label="Kenji Watanabe on Instagram" href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+</a>
+<a aria-label="Contact Kenji Watanabe" href="contact.html">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
+</a>
+</div>
+</div>
+</article>
+</div>
+<div class="bl-reveal-up bl-section-cta">
+<a class="bl-btn bl-btn--ghost bl-btn--lg" href="chef.html">Meet the full crew →</a>
+</div>
+</div>
+</section>
+<!-- ===== Reviews ===== -->
+<section class="bl-section bl-reviews" id="reviews">
+<div class="bl-container">
+<h2 class="bl-visually-hidden">What our guests say</h2>
+<div class="bl-reviews__slider swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<figure class="bl-review">
+<div aria-label="5 out of 5 stars" class="bl-review__stars" role="img">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+</div>
+<blockquote class="bl-review__quote">"The Lab Burger is the best smash burger I've had in the city —
+                  that charred crust is unreal and it arrived hot in 22 minutes."</blockquote>
+<figcaption class="bl-review__author">Mara D. — Verified order</figcaption>
+</figure>
+</div>
+<div class="swiper-slide">
+<figure class="bl-review">
+<div aria-label="5 out of 5 stars" class="bl-review__stars" role="img">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+</div>
+<blockquote class="bl-review__quote">"The Truffle Melt tastes like a fine-dining burger at a delivery
+                  price. BurgerLab has completely ruined every other burger for me."</blockquote>
+<figcaption class="bl-review__author">Devon K. — Verified order</figcaption>
+</figure>
+</div>
+<div class="swiper-slide">
+<figure class="bl-review">
+<div aria-label="5 out of 5 stars" class="bl-review__stars" role="img">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+</div>
+<blockquote class="bl-review__quote">"Booked a table for six on a Saturday — the team was brilliant,
+                  the food came out fast and every burger was exactly right."</blockquote>
+<figcaption class="bl-review__author">James T. — Table reservation</figcaption>
+</figure>
+</div>
+<div class="swiper-slide">
+<figure class="bl-review">
+<div aria-label="5 out of 5 stars" class="bl-review__stars" role="img">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"></path></svg>
+</div>
+<blockquote class="bl-review__quote">"Late-night order, tracked it the whole way, still piping hot.
+                  The app experience is as premium as the food."</blockquote>
+<figcaption class="bl-review__author">Priya S. — Verified order</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="bl-reviews__pagination"></div>
+</div>
+</section>
+<!-- ===== Blog teaser ===== -->
+<section class="bl-section" id="blog">
+<div class="bl-container bl-container--wide">
+<div class="bl-section-head bl-reveal-up bl-section-header">
+<div>
+<span class="bl-eyebrow">The blog</span>
+<h2 class="bl-section-title bl-mb-0">From the lab</h2>
+</div>
+<a class="bl-btn bl-btn--ghost bl-btn--sm bl-flex-no-shrink" href="blog.html">All articles →</a>
+</div>
+<div class="bl-blog-grid" data-stagger="">
+<article class="bl-post" data-stagger-item="">
+<a class="bl-post__media" href="blog-single.html">
+<img alt="The anatomy of a smash burger" loading="lazy" src="../assets/images/exploded-burger-reference.jpg"/>
+</a>
+<div class="bl-post__body">
+<div class="bl-post__meta"><span class="bl-post__tag">Craft</span><span>May 28, 2026</span></div>
+<h3 class="bl-post__title"><a href="blog-single.html">The anatomy of a perfect smash burger</a></h3>
+<p class="bl-post__excerpt">Why pressure, timing and a screaming-hot flat-top matter more than any
+                secret ingredient.</p>
+<a class="bl-post__more" href="blog-single.html">Read more →</a>
+</div>
+</article>
+<article class="bl-post" data-stagger-item="">
+<a class="bl-post__media" href="blog-single.html">
+<img alt="Sourcing fresh produce" loading="lazy" src="../assets/images/ingredients-detail.jpg"/>
+</a>
+<div class="bl-post__body">
+<div class="bl-post__meta"><span class="bl-post__tag">Kitchen</span><span>May 14, 2026</span></div>
+<h3 class="bl-post__title"><a href="blog-single.html">How we source produce cut the same morning</a>
+</h3>
+<p class="bl-post__excerpt">A look at the 5am market run that keeps every BurgerLab build crisp and
+                fresh.</p>
+<a class="bl-post__more" href="blog-single.html">Read more →</a>
+</div>
+</article>
+<article class="bl-post" data-stagger-item="">
+<a class="bl-post__media" href="blog-single.html">
+<img alt="New spicy build launch" loading="lazy" src="../assets/images/catalog-spicy-lab.jpg"/>
+</a>
+<div class="bl-post__body">
+<div class="bl-post__meta"><span class="bl-post__tag">New drop</span><span>Apr 30, 2026</span></div>
+<h3 class="bl-post__title"><a href="blog-single.html">Introducing the Spicy Lab — our hottest build
+                  yet</a></h3>
+<p class="bl-post__excerpt">Jalapeño, chili glaze and pepper jack, engineered for heat that builds
+                slow.</p>
+<a class="bl-post__more" href="blog-single.html">Read more →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ===== CTA ===== -->
+<section class="bl-section bl-cta" id="order">
+<div class="bl-container bl-container--narrow">
+<span class="bl-eyebrow bl-jc-center">Hungry yet?</span>
+<h2 class="bl-cta__title">Reserve your table or order <em>tonight</em>.</h2>
+<p class="bl-cta__lede">Flame-grilled, stacked to spec and served at your table or at your door in 30 minutes.
+          Bundle a burger, fries and a drink and save.</p>
+<span class="bl-cta__price">Lab Bundle — $19.90</span>
+<div class="bl-cta__actions">
+<a class="bl-btn bl-btn--primary bl-btn--lg" href="reservation.html">Reserve a Table</a>
+<a class="bl-btn bl-btn--ghost bl-btn--lg" href="menu.html">View full menu</a>
+</div>
+</div>
+</section>
+</main>
+<!-- ===== Footer ===== -->
+<footer class="bl-footer">
+<div class="bl-container bl-container--wide">
+<div class="bl-footer__top">
+<div class="bl-footer__brand">
+<div class="bl-footer__brand-name"><img alt="" aria-hidden="true" class="bl-footer__brand-mark bl-footer__brand-mark--dark" height="32" src="../assets/images/logo-dark.svg" width="32"/><img alt="" aria-hidden="true" class="bl-footer__brand-mark bl-footer__brand-mark--light" height="32" src="../assets/images/logo-light.svg" width="32"/>Burger<span>Lab</span></div>
+<p class="bl-footer__about">Premium burgers, engineered in the lab and grilled over fire. Crafted fresh,
+            delivered fast — across the city, every day.</p>
+<div class="bl-footer__social">
+<a aria-label="Instagram" href="#">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+<rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle>
+</svg>
+</a>
+<a aria-label="Facebook" href="#">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+<path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h2.5l.5-3H14V9z"></path>
+</svg>
+</a>
+<a aria-label="X" href="#">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+<path d="M3 3l7.5 9.5L3.5 21H6l5.3-6.3L16 21h5l-7.8-10L20.5 3H18l-5 5.9L8 3z"></path>
+</svg>
+</a>
+</div>
+</div>
+<div class="bl-footer__col">
+<h3>Explore</h3>
+<ul>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="chef.html">The Lab Crew</a></li>
+<li><a href="team.html">Our Team</a></li>
+<li><a href="team-single.html">Team Member</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="event.html">Events</a></li>
+<li><a href="event-detail.html">Event Detail</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="bl-footer__col">
+<h3>Company</h3>
+<ul>
+<li><a href="about.html">Our story</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="faq.html">FAQs</a></li>
+<li><a href="privacy-policy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+</ul>
+</div>
+<div class="bl-footer__col">
+<h3>Visit Us</h3>
+<ul>
+<li><a href="reservation.html">Reservations</a></li>
+<li><a href="contact.html">Directions</a></li>
+<li><a href="menu.html">Order Online</a></li>
+<li><a href="services.html">Private Dining</a></li>
+<li><a href="contact.html">Catering</a></li>
+</ul>
+</div>
+</div>
+<div class="bl-footer__bottom">
+<span>© <span data-year="">2026</span> BurgerLab — All rights reserved.</span>
+<span><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+</div>
+</div>
+</footer>
+<!-- ===== Home variant switcher ===== -->
+<div class="bl-home-switcher" data-home-switcher="">
+<button aria-controls="bl-home-switcher-panel" aria-expanded="false" class="bl-home-switcher__btn" type="button">
+      Home 07
+      <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M6 9l6 6 6-6"></path>
+</svg>
+</button>
+<div class="bl-home-switcher__panel" id="bl-home-switcher-panel">
+<a href="index.html">Home 01 — Cinematic</a>
+<a href="index-2.html">Home 02 — Slider</a>
+<a href="index-3.html">Home 03 — App</a>
+<a href="index-4.html">Home 04 — Split</a>
+<a href="index-5.html">Home 05 — Statement</a>
+<a href="index-6.html">Home 06 — Bento</a>
+<a class="is-active" href="index-7.html">Home 07 — Classic</a>
+</div>
+</div>
+<button aria-label="Back to top" class="bl-totop" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 19V5M5 12l7-7 7 7"></path>
+</svg>
+</button>
+<!-- Vendor JS -->
+<script src="../assets/js/vendors/gsap.min.js"></script>
+<script src="../assets/js/vendors/ScrollTrigger.min.js"></script>
+<script src="../assets/js/vendors/swiper-bundle.min.js"></script>
+<!-- Template JS -->
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

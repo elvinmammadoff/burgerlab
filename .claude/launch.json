@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "burgerlab",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "5501", "."],
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["serve.js"],
       "port": 5501,
       "autoPort": false
     }
