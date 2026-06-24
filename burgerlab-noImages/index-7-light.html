@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>BurgerLab — Home 07 · Classic</title>
+<title>BurgerLab — Home 07 · Classic · Light</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="BurgerLab" name="author"/>
-<meta content="BurgerLab Home 07 — a premium dark-luxury burger &amp; restaurant home page with a classic full-screen photo hero, inline table-reservation bar, info band, team section and blog teaser." name="description"/>
+<meta content="BurgerLab Home 07 — a premium dark-luxury burger &amp; restaurant home page with a light-theme classic full-screen photo hero, inline table-reservation bar, info band, team section and blog teaser." name="description"/>
 <meta content="burger template, restaurant html template, dark restaurant template, food delivery, GSAP, scroll animation, premium burger, smash burger, BurgerLab" name="keywords"/>
 <!-- Open Graph -->
 <meta content="website" property="og:type"/>
-<meta content="BurgerLab — Home 07 · Classic" property="og:title"/>
+<meta content="BurgerLab — Home 07 · Classic · Light" property="og:title"/>
 <meta content="Classic photo hero with inline reservation bar, team section and blog teaser." property="og:description"/>
 <meta content="assets/images/hero-poster.jpg" property="og:image"/>
 <!-- Favicon -->
@@ -23,8 +23,11 @@
 <link href="assets/css/vendors/swiper-bundle.min.css" rel="stylesheet"/>
 <!-- Template CSS -->
 <link href="assets/css/style.css" rel="stylesheet"/>
+
+<!-- Force light theme: set before main.js so initTheme() reads it correctly -->
+<script>try{localStorage.setItem("bl-theme","light")}catch(e){}</script>
 </head>
-<body>
+<body data-theme="light">
 <!-- ===== Preloader ===== -->
 <div aria-hidden="true" class="bl-preloader">
 <div class="bl-preloader__mark"><img alt="" aria-hidden="true" class="bl-preloader__icon bl-preloader__icon--dark" height="36" src="assets/images/logo-dark.svg" width="36"/><img alt="" aria-hidden="true" class="bl-preloader__icon bl-preloader__icon--light" height="36" src="assets/images/logo-light.svg" width="36"/>Burger<span>Lab</span></div>
@@ -48,8 +51,8 @@
 <li><a href="index-4.html">Home 04 — Split</a></li>
 <li><a href="index-5.html">Home 05 — Statement</a></li>
 <li><a href="index-6.html">Home 06 — Bento</a></li>
-<li><a class="is-active" href="index-7.html">Home 07 — Classic</a>
-<a href="index-7-light.html">Home 07 — Classic (Light)</a></li>
+<li><a href="index-7.html">Home 07 — Classic</a>
+<a class="is-active" href="index-7-light.html">Home 07 — Classic (Light)</a></li>
 </ul>
 </li>
 <li><a href="menu.html">Menu</a></li>
@@ -145,21 +148,21 @@
 <div aria-label="Mini cart" class="bl-cart-drop" role="dialog">
 <div class="bl-cart-drop__items">
 <div class="bl-cart-drop__item">
-<img alt="The Lab Burger" height="50" src="assets/images/catalog-classic-stack.jpg" width="50"/>
+<img alt="The Lab Burger" height="50" src="https://placehold.co/50x50" width="50"/>
 <div class="bl-cart-drop__info">
 <div class="bl-cart-drop__name">The Lab Burger</div>
 <div class="bl-cart-drop__price"><span>×2</span>$28.00</div>
 </div>
 </div>
 <div class="bl-cart-drop__item">
-<img alt="Loaded Fries" height="50" src="assets/images/dish-loaded-fries.jpg" width="50"/>
+<img alt="Loaded Fries" height="50" src="https://placehold.co/50x50" width="50"/>
 <div class="bl-cart-drop__info">
 <div class="bl-cart-drop__name">Loaded Fries</div>
 <div class="bl-cart-drop__price"><span>×1</span>$7.00</div>
 </div>
 </div>
 <div class="bl-cart-drop__item">
-<img alt="Craft Cola" height="50" src="assets/images/dish-craft-cola.jpg" width="50"/>
+<img alt="Craft Cola" height="50" src="https://placehold.co/50x50" width="50"/>
 <div class="bl-cart-drop__info">
 <div class="bl-cart-drop__name">Craft Cola</div>
 <div class="bl-cart-drop__price"><span>×1</span>$4.50</div>
@@ -263,7 +266,7 @@
 <main id="main">
 <!-- ===== Hero (Classic photo + booking bar) ===== -->
 <section class="bl-hero bl-hero--classic bl-hero--classic-v7" id="home">
-<div aria-label="A perfectly grilled burger stacked high on a dark slate surface" class="bl-hero__bg" role="img" style="background-image: url('assets/images/hero-poster.jpg');"></div>
+<div aria-label="A perfectly grilled burger stacked high on a dark slate surface" class="bl-hero__bg" role="img" style="background-image: url('https://placehold.co/1920x800');"></div>
 <div class="bl-container">
 <div class="bl-hero__classic-inner">
 <!-- Left: hero text -->
@@ -343,7 +346,7 @@
 <div class="bl-container bl-container--wide">
 <div class="bl-split__grid">
 <div class="bl-split__media bl-reveal-fade">
-<img alt="Close-up of fresh BurgerLab ingredients — lettuce, tomato and the house sauce" loading="lazy" src="assets/images/ingredients-detail.jpg"/>
+<img alt="Close-up of fresh BurgerLab ingredients — lettuce, tomato and the house sauce" loading="lazy" src="https://placehold.co/600x400"/>
 <div class="bl-split__badge">
 <span>Since 2016 — New York City</span>
 </div>
@@ -379,7 +382,7 @@
 <!-- Classic Stack -->
 <article class="bl-product" data-stagger-item="">
 <div class="bl-product__media">
-<img alt="Classic Stack burger" loading="lazy" src="assets/images/catalog-classic-stack.jpg"/>
+<img alt="Classic Stack burger" loading="lazy" src="https://placehold.co/600x400"/>
 <button aria-label="Save Classic Stack" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
@@ -409,7 +412,7 @@
 <!-- Smoky Bacon Lab -->
 <article class="bl-product" data-stagger-item="">
 <div class="bl-product__media">
-<img alt="Smoky Bacon Lab burger" loading="lazy" src="assets/images/catalog-smoky-bacon.jpg"/>
+<img alt="Smoky Bacon Lab burger" loading="lazy" src="https://placehold.co/600x400"/>
 <button aria-label="Save Smoky Bacon Lab" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
@@ -439,7 +442,7 @@
 <!-- Spicy Lab -->
 <article class="bl-product" data-stagger-item="">
 <div class="bl-product__media">
-<img alt="Spicy Lab burger" loading="lazy" src="assets/images/catalog-spicy-lab.jpg"/>
+<img alt="Spicy Lab burger" loading="lazy" src="https://placehold.co/600x400"/>
 <button aria-label="Save Spicy Lab" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
@@ -469,7 +472,7 @@
 <!-- Truffle Melt -->
 <article class="bl-product" data-stagger-item="">
 <div class="bl-product__media">
-<img alt="Truffle Melt burger" loading="lazy" src="assets/images/catalog-truffle-melt.jpg"/>
+<img alt="Truffle Melt burger" loading="lazy" src="https://placehold.co/600x400"/>
 <button aria-label="Save Truffle Melt" aria-pressed="false" class="bl-icon-btn bl-product__fav" data-fav="" type="button">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"></path>
@@ -578,7 +581,7 @@
 <div class="bl-team-grid" data-stagger="">
 <article class="bl-team-card" data-stagger-item="">
 <div class="bl-team-card__media">
-<img alt="Marcus Reyes, Executive Chef at BurgerLab, in the kitchen" loading="lazy" src="assets/images/chef_team_1.jpg"/>
+<img alt="Marcus Reyes, Executive Chef at BurgerLab, in the kitchen" loading="lazy" src="https://placehold.co/600x400"/>
 </div>
 <div class="bl-team-card__body">
 <span class="bl-team-card__role">Executive chef</span>
@@ -597,7 +600,7 @@
 </article>
 <article class="bl-team-card" data-stagger-item="">
 <div class="bl-team-card__media">
-<img alt="Walter Briggs, Grill Master at BurgerLab, standing by the flat-top" loading="lazy" src="assets/images/chef_team_2.jpg"/>
+<img alt="Walter Briggs, Grill Master at BurgerLab, standing by the flat-top" loading="lazy" src="https://placehold.co/600x400"/>
 </div>
 <div class="bl-team-card__body">
 <span class="bl-team-card__role">Grill master</span>
@@ -616,7 +619,7 @@
 </article>
 <article class="bl-team-card" data-stagger-item="">
 <div class="bl-team-card__media">
-<img alt="Elena Torres, Pastry &amp; Bakes Lead at BurgerLab, in the kitchen" loading="lazy" src="assets/images/chef_team_3.jpg"/>
+<img alt="Elena Torres, Pastry &amp; Bakes Lead at BurgerLab, in the kitchen" loading="lazy" src="https://placehold.co/600x400"/>
 </div>
 <div class="bl-team-card__body">
 <span class="bl-team-card__role">Pastry &amp; bakes lead</span>
@@ -635,7 +638,7 @@
 </article>
 <article class="bl-team-card" data-stagger-item="">
 <div class="bl-team-card__media">
-<img alt="Kenji Watanabe, Sauce &amp; Flavor Lab Lead at BurgerLab, in the kitchen" loading="lazy" src="assets/images/chef_team_4.jpg"/>
+<img alt="Kenji Watanabe, Sauce &amp; Flavor Lab Lead at BurgerLab, in the kitchen" loading="lazy" src="https://placehold.co/600x400"/>
 </div>
 <div class="bl-team-card__body">
 <span class="bl-team-card__role">Sauce &amp; flavor lab</span>
@@ -738,7 +741,7 @@
 <div class="bl-blog-grid" data-stagger="">
 <article class="bl-post" data-stagger-item="">
 <a class="bl-post__media" href="blog-single.html">
-<img alt="The anatomy of a smash burger" loading="lazy" src="assets/images/exploded-burger-reference.jpg"/>
+<img alt="The anatomy of a smash burger" loading="lazy" src="https://placehold.co/600x400"/>
 </a>
 <div class="bl-post__body">
 <div class="bl-post__meta"><span class="bl-post__tag">Craft</span><span>May 28, 2026</span></div>
@@ -750,7 +753,7 @@
 </article>
 <article class="bl-post" data-stagger-item="">
 <a class="bl-post__media" href="blog-single.html">
-<img alt="Sourcing fresh produce" loading="lazy" src="assets/images/ingredients-detail.jpg"/>
+<img alt="Sourcing fresh produce" loading="lazy" src="https://placehold.co/600x400"/>
 </a>
 <div class="bl-post__body">
 <div class="bl-post__meta"><span class="bl-post__tag">Kitchen</span><span>May 14, 2026</span></div>
@@ -763,7 +766,7 @@
 </article>
 <article class="bl-post" data-stagger-item="">
 <a class="bl-post__media" href="blog-single.html">
-<img alt="New spicy build launch" loading="lazy" src="assets/images/catalog-spicy-lab.jpg"/>
+<img alt="New spicy build launch" loading="lazy" src="https://placehold.co/600x400"/>
 </a>
 <div class="bl-post__body">
 <div class="bl-post__meta"><span class="bl-post__tag">New drop</span><span>Apr 30, 2026</span></div>
@@ -876,8 +879,8 @@
 <a href="index-4.html">Home 04 — Split</a>
 <a href="index-5.html">Home 05 — Statement</a>
 <a href="index-6.html">Home 06 — Bento</a>
-<a class="is-active" href="index-7.html">Home 07 — Classic</a>
-<a href="index-7-light.html">Home 07 — Classic (Light)</a>
+<a href="index-7.html">Home 07 — Classic</a>
+<a class="is-active" href="index-7-light.html">Home 07 — Classic (Light)</a>
 </div>
 </div>
 <button aria-label="Back to top" class="bl-totop" type="button">

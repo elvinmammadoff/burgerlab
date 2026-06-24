@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>BurgerLab — Home 07 · Classic</title>
+<title>BurgerLab — Home 07 · Classic · Light</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="BurgerLab" name="author"/>
-<meta content="BurgerLab Home 07 — a premium dark-luxury burger &amp; restaurant home page with a classic full-screen photo hero, inline table-reservation bar, info band, team section and blog teaser." name="description"/>
+<meta content="BurgerLab Home 07 — a premium dark-luxury burger &amp; restaurant home page with a light-theme classic full-screen photo hero, inline table-reservation bar, info band, team section and blog teaser." name="description"/>
 <meta content="burger template, restaurant html template, dark restaurant template, food delivery, GSAP, scroll animation, premium burger, smash burger, BurgerLab" name="keywords"/>
 <!-- Open Graph -->
 <meta content="website" property="og:type"/>
-<meta content="BurgerLab — Home 07 · Classic" property="og:title"/>
+<meta content="BurgerLab — Home 07 · Classic · Light" property="og:title"/>
 <meta content="Classic photo hero with inline reservation bar, team section and blog teaser." property="og:description"/>
 <meta content="assets/images/hero-poster.jpg" property="og:image"/>
 <!-- Favicon -->
@@ -23,8 +23,11 @@
 <link href="assets/css/vendors/swiper-bundle.min.css" rel="stylesheet"/>
 <!-- Template CSS -->
 <link href="assets/css/style.css" rel="stylesheet"/>
+
+<!-- Force light theme: set before main.js so initTheme() reads it correctly -->
+<script>try{localStorage.setItem("bl-theme","light")}catch(e){}</script>
 </head>
-<body>
+<body data-theme="light">
 <!-- ===== Preloader ===== -->
 <div aria-hidden="true" class="bl-preloader">
 <div class="bl-preloader__mark"><img alt="" aria-hidden="true" class="bl-preloader__icon bl-preloader__icon--dark" height="36" src="assets/images/logo-dark.svg" width="36"/><img alt="" aria-hidden="true" class="bl-preloader__icon bl-preloader__icon--light" height="36" src="assets/images/logo-light.svg" width="36"/>Burger<span>Lab</span></div>
@@ -48,8 +51,8 @@
 <li><a href="index-4.html">Home 04 — Split</a></li>
 <li><a href="index-5.html">Home 05 — Statement</a></li>
 <li><a href="index-6.html">Home 06 — Bento</a></li>
-<li><a class="is-active" href="index-7.html">Home 07 — Classic</a>
-<a href="index-7-light.html">Home 07 — Classic (Light)</a></li>
+<li><a href="index-7.html">Home 07 — Classic</a>
+<a class="is-active" href="index-7-light.html">Home 07 — Classic (Light)</a></li>
 </ul>
 </li>
 <li><a href="menu.html">Menu</a></li>
@@ -876,8 +879,8 @@
 <a href="index-4.html">Home 04 — Split</a>
 <a href="index-5.html">Home 05 — Statement</a>
 <a href="index-6.html">Home 06 — Bento</a>
-<a class="is-active" href="index-7.html">Home 07 — Classic</a>
-<a href="index-7-light.html">Home 07 — Classic (Light)</a>
+<a href="index-7.html">Home 07 — Classic</a>
+<a class="is-active" href="index-7-light.html">Home 07 — Classic (Light)</a>
 </div>
 </div>
 <button aria-label="Back to top" class="bl-totop" type="button">
