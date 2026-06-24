@@ -41,24 +41,30 @@
 }
 
 /* Search result description text (uses inline styles, no class) */
-[dir="rtl"] .bl-search-result > div > div:last-child {
+[dir="rtl"] .bl-search-result>div>div:last-child {
   direction: ltr;
   text-align: right;
   unicode-bidi: embed;
 }
 
 /* Flip the arrow SVGs inside search result rows (→ → ←) */
-[dir="rtl"] .bl-search-result > svg { transform: scaleX(-1); }
+[dir="rtl"] .bl-search-result>svg {
+  transform: scaleX(-1);
+}
 
 /* ── Skip link ──────────────────────────────────────────── */
-[dir="rtl"] .bl-skip-link { left: auto; right: 1rem; }
+[dir="rtl"] .bl-skip-link {
+  left: auto;
+  right: 1rem;
+}
 
 /* ── Navigation ─────────────────────────────────────────── */
-[dir="rtl"] .bl-nav__menu a::after { left: auto; right: 0; }
+[dir="rtl"] .bl-nav__menu a::after {
+  left: auto;
+  right: 0;
+}
 
-/* Centered nav */
-[dir="rtl"] .bl-nav--centered .bl-nav__menu--left { justify-content: flex-end; }
-[dir="rtl"] .bl-nav--centered .bl-nav__right { justify-content: flex-start; }
+/* Centered nav — no overrides needed; direction:rtl handles ordering naturally */
 
 /* Floating pill header */
 
@@ -70,31 +76,60 @@
   right: 50%;
   transform: translateX(50%) translateY(6px);
 }
+
 [dir="rtl"] .bl-has-dropdown:hover .bl-dropdown,
 [dir="rtl"] .bl-has-dropdown:focus-within .bl-dropdown {
   transform: translateX(50%) translateY(0);
 }
-[dir="rtl"] .bl-dropdown--wide { left: auto; right: 0; transform: none; }
+
+[dir="rtl"] .bl-dropdown--wide {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
 [dir="rtl"] .bl-has-dropdown:hover .bl-dropdown--wide,
-[dir="rtl"] .bl-has-dropdown:focus-within .bl-dropdown--wide { transform: none; }
+[dir="rtl"] .bl-has-dropdown:focus-within .bl-dropdown--wide {
+  transform: none;
+}
 
 /* Mobile menu */
-[dir="rtl"] .bl-mobile-menu { transform: translateX(-100%); left: 0; right: auto; }
-[dir="rtl"] .bl-mobile-menu.is-open { transform: translateX(0); }
-[dir="rtl"] .bl-mobile-menu__close { left: 28px; right: auto; }
+[dir="rtl"] .bl-mobile-menu {
+  transform: translateX(-100%);
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .bl-mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .bl-mobile-menu__close {
+  left: 28px;
+  right: auto;
+}
 
 /* Cart dropdown */
-[dir="rtl"] .bl-cart-drop { right: auto; left: 0; }
+[dir="rtl"] .bl-cart-drop {
+  right: auto;
+  left: 0;
+}
 
 /* ── Logo ───────────────────────────────────────────────── */
 /* Brand name is always LTR ("Burger Lab", not "Lab Burger") */
-[dir="rtl"] .bl-logo { direction: ltr; }
+[dir="rtl"] .bl-logo {
+  direction: ltr;
+}
 
 /* ── Preloader ──────────────────────────────────────────── */
-[dir="rtl"] .bl-preloader__mark { direction: ltr; }
+[dir="rtl"] .bl-preloader__mark {
+  direction: ltr;
+}
 
 /* ── Breadcrumb ─────────────────────────────────────────── */
-[dir="rtl"] .bl-breadcrumb__sep { transform: scaleX(-1); }
+[dir="rtl"] .bl-breadcrumb__sep {
+  transform: scaleX(-1);
+}
 
 /* ── Sections & titles ──────────────────────────────────── */
 /* English headings need LTR direction so periods stay at the right end */
@@ -110,17 +145,31 @@
   text-align: right;
   unicode-bidi: embed;
 }
+
 [dir="rtl"] .bl-section-title,
 [dir="rtl"] .bl-section-lede,
-[dir="rtl"] .bl-section-eyebrow { text-align: center; }
-[dir="rtl"] .bl-section-title { direction: ltr; unicode-bidi: embed; }
+[dir="rtl"] .bl-section-eyebrow {
+  text-align: center;
+}
+
+[dir="rtl"] .bl-section-title {
+  direction: ltr;
+  unicode-bidi: embed;
+}
 
 /* ── Buttons ─────────────────────────────────────────────── */
-[dir="rtl"] .bl-btn svg { transform: scaleX(-1); }
+[dir="rtl"] .bl-btn svg {
+  transform: scaleX(-1);
+}
 
 /* ── Ticker / Marquee ───────────────────────────────────── */
-[dir="rtl"] .bl-ticker { direction: rtl; }
-[dir="rtl"] .bl-ticker__track { animation-direction: reverse; }
+[dir="rtl"] .bl-ticker {
+  direction: rtl;
+}
+
+[dir="rtl"] .bl-ticker__track {
+  animation-direction: reverse;
+}
 
 /* ── Info bar ────────────────────────────────────────────── */
 
@@ -131,19 +180,42 @@
 /* ── Blog / Article ─────────────────────────────────────── */
 
 /* ── Menu ────────────────────────────────────────────────── */
-[dir="rtl"] .bl-menu-item__price { margin-left: 0; margin-right: auto; }
-[dir="rtl"] .bl-menu-cat-nav { text-align: right; }
+[dir="rtl"] .bl-menu-item__price {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* ── Layer row (Inside The Lab Burger page) ──────────────── */
+[dir="rtl"] .bl-layer-row__tag {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .bl-menu-cat-nav {
+  text-align: right;
+}
+
 /* Menu sidebar layout */
-[dir="rtl"] .bl-menu-nav a::before { right: 0; left: auto; }
+[dir="rtl"] .bl-menu-nav a::before {
+  right: 0;
+  left: auto;
+}
 
 /* ── Gallery ─────────────────────────────────────────────── */
-[dir="rtl"] .bl-gallery { direction: rtl; }
+[dir="rtl"] .bl-gallery {
+  direction: rtl;
+}
 
 /* ── Team / Chef ─────────────────────────────────────────── */
 
 /* ── Stats / Counter ─────────────────────────────────────── */
-[dir="rtl"] .bl-stat { text-align: center; }
-[dir="rtl"] .bl-stats { direction: rtl; }
+[dir="rtl"] .bl-stat {
+  text-align: center;
+}
+
+[dir="rtl"] .bl-stats {
+  direction: rtl;
+}
 
 /* ── Ingredient / Feature cards ──────────────────────────── */
 
@@ -152,25 +224,42 @@
 /* ── Pagination ──────────────────────────────────────────── */
 
 /* ── FAQ accordion ───────────────────────────────────────── */
-[dir="rtl"] .bl-faq__trigger svg { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .bl-faq__trigger svg {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 /* Careers animated accordion */
-[dir="rtl"] .bl-faq__item summary::after { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .bl-faq__item summary::after {
+  margin-left: 0;
+  margin-right: auto;
+}
 
 /* ── Services ────────────────────────────────────────────── */
-[dir="rtl"] .bl-service-card__icon { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .bl-service-card__icon {
+  margin-left: 0;
+  margin-right: auto;
+}
 
 /* ── Testimonials ────────────────────────────────────────── */
 
 /* ── Order tracking ──────────────────────────────────────── */
 
 /* ── Pricing ─────────────────────────────────────────────── */
-[dir="rtl"] .bl-pricing-card__features { text-align: right; }
+[dir="rtl"] .bl-pricing-card__features {
+  text-align: right;
+}
 
 /* ── Loyalty / Rewards ───────────────────────────────────── */
-[dir="rtl"] .bl-loyalty-tier { text-align: center; }
+[dir="rtl"] .bl-loyalty-tier {
+  text-align: center;
+}
 
 /* ── Search results ──────────────────────────────────────── */
-[dir="rtl"] .bl-search-result svg { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .bl-search-result svg {
+  margin-left: 0;
+  margin-right: auto;
+}
 
 /* ── Press / Media ───────────────────────────────────────── */
 
@@ -179,65 +268,129 @@
 /* ── CTA section ─────────────────────────────────────────── */
 
 /* ── Footer column lists ─────────────────────────────────── */
-[dir="rtl"] .bl-footer__col ul { text-align: right; }
+[dir="rtl"] .bl-footer__col ul {
+  text-align: right;
+}
+
 /* Some footer <li> elements contain multiple inline <a> links.
    Making them block prevents inline overflow beyond the container edge. */
-[dir="rtl"] .bl-footer__col ul a { display: block; }
+[dir="rtl"] .bl-footer__col ul a {
+  display: block;
+}
 
 /* ── Forms ───────────────────────────────────────────────── */
 [dir="rtl"] .bl-input,
 [dir="rtl"] .bl-select,
-[dir="rtl"] .bl-textarea { text-align: right; }
-[dir="rtl"] .bl-field label { text-align: right; }
-[dir="rtl"] .bl-picker__icon { right: auto; left: 0.95rem; }
-[dir="rtl"] .bl-input--picker { padding-right: 1rem; padding-left: 2.7rem; }
+[dir="rtl"] .bl-textarea {
+  text-align: right;
+}
+
+[dir="rtl"] .bl-field label {
+  text-align: right;
+}
+
+[dir="rtl"] .bl-picker__icon {
+  right: auto;
+  left: 0.95rem;
+}
+
+[dir="rtl"] .bl-input--picker {
+  padding-right: 1rem;
+  padding-left: 2.7rem;
+}
 
 /* ── Booking bar (hero inline form) ─────────────────────── */
 [dir="rtl"] .bl-booking-bar__field {
   border-right: none;
   border-left: 1px solid rgba(248, 244, 234, 0.1);
 }
-[dir="rtl"] .bl-booking-bar__field:last-of-type { border-left: none; }
+
+[dir="rtl"] .bl-booking-bar__field:last-of-type {
+  border-left: none;
+}
 
 /* ── Booking card (home-v7) ─────────────────────────────── */
 [dir="rtl"] .bl-booking-card__select-wrap::after {
   right: auto;
   left: 0.85rem;
 }
-[dir="rtl"] .bl-booking-card__select { padding: 0.65rem 0.85rem 0.65rem 2.2rem; }
-[dir="rtl"] .bl-booking-card .bl-picker__icon { right: auto; left: 0.75rem; }
+
+[dir="rtl"] .bl-booking-card__select {
+  padding: 0.65rem 0.85rem 0.65rem 2.2rem;
+}
+
+[dir="rtl"] .bl-booking-card .bl-picker__icon {
+  right: auto;
+  left: 0.75rem;
+}
+
 [dir="rtl"] .bl-booking-card .bl-booking-card__picker input {
   padding: 0.65rem 0.85rem 0.65rem 2.4rem;
 }
 
 /* ── Hero v7 two-column ──────────────────────────────────── */
-[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-inner { direction: rtl; }
-[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-eyebrow { justify-content: flex-end; }
-[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-sub { margin-left: auto; margin-right: 0; }
+[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-inner {
+  direction: rtl;
+}
+
+[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-eyebrow {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-sub {
+  margin-left: auto;
+  margin-right: 0;
+}
 
 /* ── Page hero ───────────────────────────────────────────── */
-[dir="rtl"] .bl-page-hero__eyebrow { text-align: center; }
+[dir="rtl"] .bl-page-hero__eyebrow {
+  text-align: center;
+}
 
 /* ── Footer ──────────────────────────────────────────────── */
-/* Brand name stays LTR so icon + "Burger Lab" reads correctly */
-[dir="rtl"] .bl-footer__brand-name { direction: ltr; }
+/* Brand name stays LTR so icon + "Burger Lab" reads correctly;
+   flex-end aligns it to the visual right (start side in RTL layout) */
+[dir="rtl"] .bl-footer__brand-name {
+  direction: ltr;
+  justify-content: flex-end;
+}
+
+/* Statement footer — restore center alignment overridden by the global h2/p LTR rule */
+[dir="rtl"] .bl-footer__statement h2 { text-align: center; }
+[dir="rtl"] .bl-footer__statement p  { text-align: center; }
 
 /* ── Cart ─────────────────────────────────────────────────── */
-[dir="rtl"] .bl-cart-item__remove { left: 0; right: auto; }
+[dir="rtl"] .bl-cart-item__remove {
+  left: 0;
+  right: auto;
+}
 
 /* ── Checkout ─────────────────────────────────────────────── */
 
 /* ── Scroll-to-top ───────────────────────────────────────── */
-[dir="rtl"] .bl-totop { left: 1.5rem; right: auto; }
+[dir="rtl"] .bl-totop {
+  left: 1.5rem;
+  right: auto;
+}
 
 /* ── Home switcher ───────────────────────────────────────── */
-[dir="rtl"] .bl-home-switcher { left: 1.5rem; right: auto; }
+[dir="rtl"] .bl-home-switcher {
+  left: 1.5rem;
+  right: auto;
+}
 
 /* ── Swiper / Slider ─────────────────────────────────────── */
-[dir="rtl"] .swiper { direction: rtl; }
+[dir="rtl"] .swiper {
+  direction: rtl;
+}
 
 /* ── Responsive adjustments ──────────────────────────────── */
 @media (max-width: 900px) {
-  [dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-eyebrow { justify-content: center; }
-  [dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-sub { margin-right: auto; }
+  [dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-eyebrow {
+    justify-content: center;
+  }
+
+  [dir="rtl"] .bl-hero--classic-v7 .bl-hero__classic-sub {
+    margin-right: auto;
+  }
 }
