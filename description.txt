@@ -1,3 +1,34 @@
+Themeforest
+
+Upload Caregory:
+HTML5
+________________________
+Name:
+BurgerLab | Fast Food Restaurant HTML Template
+________________________
+Category:
+Site Templates > Entertainment > Restaurants & Cafes
+________________________
+High Resolution:
+Yes
+________________________
+Compatible Browsers:
+Firefox, Safari, Opera, Chrome, Edge
+________________________
+Compatible With:
+Vanilla JS, GSAP
+________________________
+Files Included:
+HTML Files, CSS Files, SCSS Files, JS Files
+________________________
+Demo URL:
+https://burgerlab-studio.vercel.app/
+________________________
+Tags:
+restaurant, burger, food delivery, cafe, html template, burger bar, dinner, bistro, catering, steak house, rtl, dark theme, reservation
+
+________________________
+HTML Description:
 <div class="user-html user-html__with-lazy-load"><h3 id="item-description__burgerlab-burger-and-restaurant-html-template"><strong>BurgerLab — Fast Food &amp; Restaurant HTML Template</strong></h3>
 <p><strong>BurgerLab</strong> is a premium, modern, and fully responsive HTML5 &amp; CSS3 template crafted specifically for fast food restaurants, cafes, coffee shops, bakeries, and food delivery businesses. It ships with <strong>7 distinct homepages</strong> — Cinematic, Slider, App, Split, Statement, Bento and Classic — powered by GSAP + ScrollTrigger, plus <strong>10 header layouts</strong>, <strong>10 footer layouts</strong> and <strong>35+ inner pages</strong>, all built on a single shared design-token system.
 <br><br>Looks great on all screen sizes and devices. Fully responsive, fast loading, and easy to customize without deep coding knowledge.</p>
@@ -94,7 +125,7 @@ Web3Forms-powered Contact &amp; Reservation forms — success messages auto-hide
 <ul>
 <li>GSAP + ScrollTrigger – <a href="https://gsap.com" rel="nofollow">GSAP</a></li>
 <li>Swiper 11 – <a href="https://swiperjs.com" rel="nofollow">Swiper</a></li>
-<li>PhotoSwipe – <a href="http://photoswipe.net" rel="nofollow">PhotoSwipe</a></li>
+<li>PhotoSwipe – <a href="https://photoswipe.com" rel="nofollow">PhotoSwipe</a></li>
 <li>Web3Forms – <a href="https://web3forms.com" rel="nofollow">Web3Forms</a></li>
 <li>OpenStreetMap – <a href="https://www.openstreetmap.org" rel="nofollow">OpenStreetMap</a></li>
 </ul>
