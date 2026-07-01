@@ -869,7 +869,15 @@ $bl-font-mono: "JetBrains Mono", ui-monospace, monospace;</code></pre>
           <details style="border:1px solid var(--bl-line);border-radius:var(--bl-radius);margin-bottom:.75rem;overflow:hidden">
             <summary style="padding:1rem 1.25rem;font-family:var(--bl-font-head);font-weight:500;cursor:pointer;list-style:none">The hero video on Home 01 is not playing</summary>
             <div style="padding:.75rem 1.25rem 1.25rem;color:var(--bl-muted);border-top:1px solid var(--bl-line)">
-              <p>The demo references a placeholder video path. Replace <code>src="assets/videos/hero.mp4"</code> inside <code>index.html</code> with your own video file. Keep the <code>muted autoplay playsinline loop</code> attributes for autoplay to work in all browsers.</p>
+              <p>The <strong>No-Images</strong> package ships without a video file — the <code>&lt;source&gt;</code> tag inside the <code>&lt;video&gt;</code> element is intentionally left empty so no copyrighted media is distributed.</p>
+              <p>To add your own video:</p>
+              <ol style="margin:.5rem 0 0 1.25rem;line-height:1.8">
+                <li>Copy your video file into <code>assets/videos/</code> (e.g. <code>assets/videos/hero.mp4</code>).</li>
+                <li>Open <code>index.html</code> and locate the HTML comment inside the <code>&lt;video&gt;</code> element near the hero section.</li>
+                <li>Replace the comment with: <code>&lt;source src="assets/videos/hero.mp4" type="video/mp4"/&gt;</code></li>
+                <li>Keep the <code>muted playsinline loop</code> attributes on the <code>&lt;video&gt;</code> tag for autoplay to work in all browsers.</li>
+              </ol>
+              <p style="margin-top:.75rem">Recommended spec: MP4 (H.264), 1920×1080, under 8 MB, no audio track.</p>
             </div>
           </details>
 
