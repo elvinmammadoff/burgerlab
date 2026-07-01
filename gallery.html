@@ -433,10 +433,11 @@
   <script src="assets/js/ScrollTrigger.min.js"></script>
   <!-- Template JS -->
   <script src="assets/js/main.js"></script>
-  <script type="module">
-    import PhotoSwipeLightbox from './assets/js/photoswipe-lightbox.esm.min.js';
-    import PhotoSwipe from './assets/js/photoswipe.esm.min.js';
-    const lightbox = new PhotoSwipeLightbox({
+  <script src="assets/js/photoswipe.umd.min.js"></script>
+  <script src="assets/js/photoswipe-lightbox.umd.min.js"></script>
+  <script>
+    (function () {
+      var lightbox = new PhotoSwipeLightbox({
       gallery: '.bl-gallery',
       children: 'a.bl-gallery__item',
       pswpModule: PhotoSwipe,
@@ -444,7 +445,8 @@
       bgOpacity: 0.92,
       padding: { top: 20, bottom: 20, left: 20, right: 20 }
     });
-    lightbox.init();
+      lightbox.init();
+    })();
   </script>
 </body>
 
