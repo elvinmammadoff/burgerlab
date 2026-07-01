@@ -27,7 +27,6 @@
 [dir="rtl"] p,
 [dir="rtl"] li,
 [dir="rtl"] .bl-section-lede,
-[dir="rtl"] .bl-page-hero__lede,
 [dir="rtl"] .bl-team-card__bio,
 [dir="rtl"] .bl-ing-card__text,
 [dir="rtl"] .bl-post__excerpt,
@@ -138,7 +137,6 @@
 [dir="rtl"] h3,
 [dir="rtl"] h4,
 [dir="rtl"] .bl-hero__title,
-[dir="rtl"] .bl-page-hero__title,
 [dir="rtl"] .bl-cta__title,
 [dir="rtl"] .bl-post__title a {
   direction: ltr;
@@ -148,7 +146,9 @@
 
 [dir="rtl"] .bl-section-title,
 [dir="rtl"] .bl-section-lede,
-[dir="rtl"] .bl-section-eyebrow {
+[dir="rtl"] .bl-section-eyebrow,
+[dir="rtl"] .bl-page-hero__title,
+[dir="rtl"] .bl-page-hero__lede {
   text-align: center;
 }
 
@@ -356,8 +356,13 @@
 }
 
 /* Statement footer — restore center alignment overridden by the global h2/p LTR rule */
-[dir="rtl"] .bl-footer__statement h2 { text-align: center; }
-[dir="rtl"] .bl-footer__statement p  { text-align: center; }
+[dir="rtl"] .bl-footer__statement h2 {
+  text-align: center;
+}
+
+[dir="rtl"] .bl-footer__statement p {
+  text-align: center;
+}
 
 /* ── Cart ─────────────────────────────────────────────────── */
 [dir="rtl"] .bl-cart-item__remove {
